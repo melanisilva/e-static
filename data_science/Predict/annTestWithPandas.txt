@@ -1,0 +1,32 @@
+import numpy, random, os
+from pandas import DataFrame
+import pandas as pd
+
+weights = [1] #Saves random weights in a list. Weights are modified during the learning process.
+error = 0
+
+filename = r'Population.xlsx'
+df = pd.read_excel(filename)
+
+def Learn(input0,input1, output) :
+   outputP = input1+weights[0]  #get the output from from the function
+   errorRate = output - outputP	# get the differenc between the output that you get and the actual input given by the user.
+   #change the weightages according to the errors.
+   print(errorRate)
+   weights[0] = weights[0]+errorRate
+
+
+#Learning
+
+for i in range(1,len(df.index)-10):
+    print(df.loc[i][0])
+    Learn(df.loc[i-1][1],df.loc[i][1],df.loc[i+1][1])
+       
+    
+#testing
+print("Start testing")
+print("Testing")
+for i in range(len(df.index)-10,len(df.index)-2):
+    outputP = df.loc[i][1]+weights[0]
+    print((outputP/df.loc[i+1][1])*100) #prints percentage
+print("done")   
