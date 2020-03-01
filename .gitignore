@@ -1,21 +1,21 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
+######################
+#       Common       #
+######################
 
 # compiled output
-/dist
-/tmp
-/out-tsc
-# Only exists if Bazel was run
-/bazel-out
+dist/
+public/
+temp/
+
+# testing
+coverage
 
 # dependencies
-client/node_modules
+node_modules/
 
-# profiling files
-chrome-profiler-events*.json
-speed-measure-plugin*.json
 
 # IDEs and editors
-/.idea
+.idea/
 .project
 .classpath
 .c9/
@@ -31,15 +31,28 @@ speed-measure-plugin*.json
 !.vscode/extensions.json
 .history/*
 
+######################
+#   Client ignores   #
+######################
+
+# compiled output
+client/out-tsc
+
+# Only exists if Bazel was run
+client/bazel-out
+
+# profiling files
+chrome-profiler-events*.json
+speed-measure-plugin*.json
+
 # misc
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-npm-debug.log
-yarn-error.log
-testem.log
-/typings
+**/.sass-cache
+**/connect.lock
+**/libpeerconnection.log
+**/npm-debug.log
+**/yarn-error.log
+**/testem.log
+**/typings
 
 # System Files
 .DS_Store
