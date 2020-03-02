@@ -4,17 +4,23 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WorkshopComponent } from './pages/workshop/workshop.component';
-import { StatisticsComponent } from './statistics/statistics.component';
+import { StatisticsComponent } from './pages/statistics/statistics.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DefaultModule } from './layouts/default/default.module';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    WorkshopComponent,
-    StatisticsComponent
+    // WorkshopComponent,
+    // StatisticsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    DefaultModule
   ],
   providers: [],
   bootstrap: [AppComponent]
