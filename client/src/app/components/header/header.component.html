@@ -1,27 +1,36 @@
-<mat-toolbar color="primary">
+<mat-toolbar>
   <mat-toolbar-row>
-
-    <button mat-icon-button>
-      <mat-icon>menu</mat-icon>
-    </button>
-
-    <span>APP LOGO</span>
+    <!-- <img class="logo" src="../../../assets/img/idea-09.png" alt=""> -->
+    <span style="padding-left: 20px;">E-Static</span>
 
     <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
-      <ul fxLayout="row" fxLayoutGap="200px">
+      <ul fxLayout="row" fxLayoutGap="10px">
+
+        <button mat-raised-button>
+          <img src="../../../assets/img/github-logo.svg" alt="" style="width: 22px;"/>
+           Star
+          </button>
+
         <li>
           <button mat-icon-button>
-            <mat-icon>Settings</mat-icon>
+            <i class="material-icons">
+              settings
+              </i>
           </button>
         </li>
+
         <li>
-          <button mat-icon-button>
-            <mat-icon>Help</mat-icon>
-          </button>
+            <button mat-button [matMenuTriggerFor]="menu">
+              <i class="material-icons">
+              account_circle
+              </i>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>Profile</button>
+              <button mat-menu-item>SignOut</button>
+            </mat-menu>
         </li>
-        <li>
-          menu
-        </li>
+
       </ul>
     </div>
 

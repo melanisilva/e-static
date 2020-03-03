@@ -6,7 +6,8 @@ import { RouterModule } from '@angular/router';
 import { WorkshopComponent } from './../../pages/workshop/workshop.component';
 import { StatisticsComponent } from './../../pages/statistics/statistics.component';
 import { ComponentsModule } from './../../components/components.module';
-import { MatSidenavModule} from '@angular/material';
+import { MatSidenavModule, MatDividerModule, MatCardModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,10 @@ import { MatSidenavModule} from '@angular/material';
   CommonModule,
     RouterModule,
     ComponentsModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatDividerModule,
+    FlexLayoutModule,
+    MatCardModule
   ]
 })
 export class DefaultModule { }
