@@ -128,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "e-static"
+  "defaultProject": "e-static",
+  "cli": {
+    "analytics": false
+  }
 }
