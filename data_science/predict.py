@@ -1,10 +1,10 @@
-import numpy, random, os
+import numpy as np
+import random, os
 from pandas import DataFrame
 import pandas as pd
 
 weights = [1,1,1,1] #Saves random weights in a list. Weights are modified during the learning process.
 error = 0
-weights2 = [1,1,1]
 
 filename = r'CombinedDataset.xlsx'
 df = pd.read_excel(filename)
@@ -34,52 +34,81 @@ for i in range(1,len(df.index)-10):    #Domestic consumer account
 print(weights)
 
 #testing
+predictedPopulation = []
+predictedGdp = []
+predictedDCA = []
 print("Start testing")
 print("Testing population")
 for i in range(len(df.index)-10,len(df.index)-3):
     #print(df.loc[i][0])
-    outputP = df.loc[i][1]+weights[0]
+    outputP = int(df.loc[i][1])+weights[0]
     #print((outputP/df.loc[i+1][1])*100) #prints percentage
-    predictedPopulation = outputP
+    predictedPopulation.append(outputP)
 
 print("GDP Per Capita")
 for i in range(len(df.index)-10,len(df.index)-3):
     #print(df.loc[i][0])
-    outputP = df.loc[i][3]+weights[1]
+    outputP = int(df.loc[i][3])+weights[1]
     #print((outputP/df.loc[i+1][3])*100) #prints percentage
-    predictedPopulation = outputP
+    predictedGdp.append(outputP)
 
 print("Domestic Consumer Acc")
 for i in range(len(df.index)-10,len(df.index)-3):
     #print(df.loc[i][0])
-    outputP = df.loc[i][4]+weights[2]
+    outputP = int(df.loc[i][4])+weights[2]
     #print((outputP/df.loc[i+1][4])*100) #prints percentage
-    predictedPopulation = outputP
-    
+    predictedDCA.append(outputP)
+
 print("End Test \n")
 print("Train sales")
-for i in range(1,len(df.index)-10):   #Sales
-   outputQ = df.loc[i][1]*weights2[0]+df.loc[i][3]*weights2[1]+df.loc[i][4]*weights2[2]
-   errorRate = df.loc[i][6]-outputQ
-   print(df.loc[i][6])
-   print("predicted : ")
-   print(outputQ)
-   print(".")
-   print(errorRate)
-   weights2[0] += errorRate * df.loc[i][1]
-   weights2[1] += errorRate * df.loc[i][3]
-   weights2[2] += errorRate * df.loc[i][4]
 
-print("WEights")
-print(weights2)
-print("Test Sales\n")
+#Train Sales Model
+
+a = np.array([[1,df.loc[1][1],df.loc[1][3],df.loc[1][4]]])
+for i in range(2,len(df.index)-10):
+        b = np.array([[1,df.loc[i][1],df.loc[i][3],df.loc[i][4]]])
+        print(df.loc[i][0])
+        a = np.append(a,b,axis=0)
+
+b = np.transpose(a)
+c = np.dot(b,a)
+print(" ")
+print(" ")
+d = np.linalg.inv(c)
+print(d)
+print(" ")
+
+e = np.array([[df.loc[1][6]]])
+for i in range(2,len(df.index)-10):
+        f = np.array([[df.loc[i][6]]])
+        e = np.append(e,f,axis=0)
+
+
+print(" ")
+
+g = np.dot(b,e)
+print(g)
+
+coeff = np.dot(d,g)
+print(" ")
+print(coeff[0][0])
+
+predicted = coeff[0][0]+(df.loc[10][1]*coeff[1][0])+(df.loc[10][3]*coeff[2][0])+(df.loc[10][4]*coeff[3][0])
+print(predicted)
+print(df.loc[10][6])
+print((predicted/df.loc[10][6])*100)
+
+theCount = 0
 for i in range(len(df.index)-10,len(df.index)-3):
-   print(df.loc[i][0])
-   outputQ = df.loc[i][1]*weights2[0]+df.loc[i][3]*weights2[1]+df.loc[i][4]*weights2[2]
-   print((outputQ/df.loc[i][6])*100) #prints percentage
-   #print(outputQ)
-   #print(df.loc[i][6])
-   #print(weights2)
-   predictedSales = outputP
+        #predicted = coeff[0][0]+(df.loc[i][1]*coeff[1][0])+(df.loc[i][3]*coeff[2][0])+(df.loc[i][4]*coeff[3][0])
+        predicted = coeff[0][0]+(predictedPopulation[theCount]*coeff[1][0])+(predictedGdp[theCount]*coeff[2][0])+(predictedDCA[theCount]*coeff[3][0])
+        theCount = theCount + 1
+        print((predicted/df.loc[i][6])*100) #prints percentage
+
+
+#End train sales model
+
+
+
 
 print("done") 
