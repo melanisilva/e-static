@@ -4,6 +4,7 @@ import { DefaultComponent } from './layouts/default/default.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { WorkshopComponent } from './pages/workshop/workshop.component';
 import { StatisticsComponent } from './pages/statistics/statistics.component';
+import { InformationComponent } from './pages/information/information.component';
 
 const routes: Routes = [{
   path: '',
@@ -17,6 +18,9 @@ const routes: Routes = [{
   },{
     path:'statistics',
     component:StatisticsComponent
+  },{
+    path:'information',
+    component:InformationComponent
   }]
 }];
 

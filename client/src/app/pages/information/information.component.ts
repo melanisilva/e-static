@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { XhrFactory } from '@angular/common/http';
 
 @Component({
   selector: 'app-information',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InformationComponent implements OnInit {
 
-  constructor() { }
+  constructor() {}
+  ngOnInit() {}
 
-  ngOnInit() {
+  onClickMe(){
+    
   }
-
 }
