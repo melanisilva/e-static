@@ -1,57 +1,46 @@
+<div class="container">
+  <h1>Enter details </h1>
+  <form>
+    <div class="form-group">
+      <label for="name">Year *</label>
+      <select class="form-control" id="year" required>
+        <option *ngFor="year" [value]="year">{{year}}</option>
+      </select>
+    </div>
 
-<div class="main-content">
-  <div class="row">
-    <div class="col-md-8">
-      <div class="card">
-        <div class="card-header">
-          <h5 class="title">Edit Data Set </h5>
-        </div>
-        <div class="card-body">
-          <form>
-            <div class="row">
-              <div class="col-md-5 pr-1">
-                <div class="form-group">
-                  <label>Year </label>
-                  <input type="text" class="form-control"  placeholder="year" value=" ">
-                </div>
-              </div>
-              <div class="col-md-3 px-1">
-                <div class="form-group">
-                  <label>Population</label>
-                  <input type="text" class="form-control" placeholder="Population" value=" ">
-                </div>
-              </div>
+    <div class="form-group">
+      <label for="alterEgo">Population *</label>
+      <input type="text" class="form-control" id="alterEgo" required>
+    </div>
 
-              <div class="col-md-3 px-1">
-                <div class="form-group">
-                  <label>GDP</label>
-                  <input type="text" class="form-control" placeholder="GDP" value=" ">
-                </div>
-              </div>
-             
-              <div class="col-md-3 px-1">
-                <div class="form-group">
-                  <label>GDP</label>
-                  <input type="text" class="form-control" placeholder="GDP" value=" ">
-                </div>
-              </div>
+    <div class="form-group">
+      <label for="alterEgo">GDP *</label>
+      <input type="text" class="form-control" id="alterEgo" required>
+    </div>
 
-              <div class="col-md-3 px-1">
-                <div class="form-group">
-                  <label>GDP</label>
-                  <input type="text" class="form-control" placeholder="GDP" value=" ">
-                </div>
-              </div>
-            </div>
-      
-         
+    <div class="form-group">
+      <label for="alterEgo">Variable 1 *</label>
+      <input type="text" class="form-control" id="alterEgo" required >
+    </div>
+   
+    <div class="form-group">
+      <label for="alterEgo">Variable 2 *</label>
+      <input type="text" class="form-control" id="alterEgo" required>
+    </div>
 
+    <div class="form-group">
+      <label for="alterEgo">Variable 3 *</label>
+      <input type="text" class="form-control" id="alterEgo" required>
+    </div>
 
-</form>
-</div>
-</div>
-</div>
-</div>
+    <div class="form-group">
+      <label for="alterEgo">Variable 4 *</label>
+      <input type="text" class="form-control" id="alterEgo" required>
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+
+  </form>
 </div>
         
 

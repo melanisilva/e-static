@@ -14,7 +14,7 @@ import { DefaultModule } from './layouts/default/default.module';
 @NgModule({
   declarations: [
     AppComponent,
-    // WorkshopComponent,
+     //WorkshopComponent,
     // StatisticsComponent
   ],
   imports: [

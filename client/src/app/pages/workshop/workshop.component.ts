@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./workshop.component.scss']
 })
 export class WorkshopComponent implements OnInit {
+  year = [1995,1996,1997,1998];
+  constructor(
 
-  constructor() { }
+    
+  ) { }
 
   ngOnInit() {
   }
