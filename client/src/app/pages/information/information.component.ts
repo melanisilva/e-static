@@ -9,9 +9,10 @@ import { XhrFactory } from '@angular/common/http';
 export class InformationComponent implements OnInit {
 
   constructor() {}
-  ngOnInit() {}
-
-  onClickMe(){
+  ngOnInit() {
     
+  }
+  onClickMe(){
+    console.log("it works");
   }
 }
