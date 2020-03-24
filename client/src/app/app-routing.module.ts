@@ -18,8 +18,12 @@ const routes: Routes = [{
   },{
     path:'statistics',
     component:StatisticsComponent
+<<<<<<< HEAD
   },
   {
+=======
+  },{
+>>>>>>> 2c63757756a205b87a0479bc15f14b9b8b201053
     path:'information',
     component:InformationComponent
   }]
