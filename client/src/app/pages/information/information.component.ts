@@ -7,20 +7,16 @@ import { XhrFactory } from '@angular/common/http';
   styleUrls: ['./information.component.scss']
 })
 export class InformationComponent implements OnInit {
+  title = "Information";
+  public jaffna = "helloooo";
+
 
   constructor() {}
-  ngOnInit() {
+  ngOnInit() {}
+
+    Jaffna(){
+      console.log("heeey");
+      this.jaffna = "working!!!!!!!!!!!!!!!!!!";
+    }
     
-  }
-  onClickMe(){
-    console.log("it works");
-  }
-<<<<<<< HEAD
-
-  myfuntion(){
-    console.log("Fooo");
-  }
-
-=======
->>>>>>> 2c63757756a205b87a0479bc15f14b9b8b201053
 }
