@@ -3,7 +3,7 @@ import random, os
 from pandas import DataFrame
 import pandas as pd
 
-weights = [1,1,1,1] #Saves random weights in a list. Weights are modified during the learning process.
+weights = [1,1,1,1,1,1] #Saves random weights in a list. Weights are modified during the learning process.
 error = 0
 
 filename = r'CombinedDataset.xlsx'
@@ -30,6 +30,14 @@ for i in range(1,len(df.index)-10):  #GDP Per capita
 for i in range(1,len(df.index)-10):    #Domestic consumer account  
    #print(df.loc[i][0])
    Learn(df.loc[i][4],df.loc[i+1][4],2)
+
+for i in range(1,len(df.index)-10):    #GDP Agriculture  
+   #print(df.loc[i][0])
+   Learn(df.loc[i][2],df.loc[i+1][2],3)
+
+for i in range(1,len(df.index)-10):    #GDP Service  
+   #print(df.loc[i][0])
+   Learn(df.loc[i][8],df.loc[i+1][8],4)
 
 print(weights)
 
