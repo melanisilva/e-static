@@ -106,14 +106,17 @@ print(predicted)
 print(df.loc[10][6])
 print((predicted/df.loc[10][6])*100)
 
+percentage = 0
 theCount = 0
 for i in range(len(df.index)-10,len(df.index)-3):
         #predicted = coeff[0][0]+(df.loc[i][1]*coeff[1][0])+(df.loc[i][3]*coeff[2][0])+(df.loc[i][4]*coeff[3][0])
         predicted = coeff[0][0]+(predictedPopulation[theCount]*coeff[1][0])+(predictedGdp[theCount]*coeff[2][0])+(predictedDCA[theCount]*coeff[3][0])
         theCount = theCount + 1
         print((predicted/df.loc[i][6])*100) #prints percentage
+        percentage =  percentage + predicted/df.loc[i][6]*100
 
-
+print("")
+print("Average percentage : ", percentage/(theCount))
 #End train sales model
 
 
