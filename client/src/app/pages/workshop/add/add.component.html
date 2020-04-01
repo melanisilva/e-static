@@ -1,13 +1,26 @@
-<p>add works!</p>
+
 <!DOCTYPE html>
 <html>
 
 <body>
 <router-outlet></router-outlet>
-
+<ul>
+  <li> <a routerLink="/add">
+    Add data 
+  </a></li>
+  <li> <a routerLink="/delete">
+    Delete data 
+  </a></li>
+  <li> <a routerLink="/update">
+    Update data 
+  </a></li>
+  <li> <a routerLink="/view">
+    View data 
+  </a></li>
+</ul>
 
 <div class="container">
-  <h1>Enter details </h1>
+  <h1>Enter details to add data  </h1>
   <form >
     <div class="form-group">
       <label for="name">Year *</label>
