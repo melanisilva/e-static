@@ -1,7 +1,14 @@
 .mapdiv{
+<<<<<<< HEAD
   width:65%;
   margin-left:100px;
   margin-top:30px;
+=======
+    width:65%;
+    width:20%;
+    margin-left:100px;
+    margin-top:30px;
+>>>>>>> fd85421cd1a64c02f9bdfb5d741fe010ed89e04f
 }
 
 .mapdiv path {
@@ -16,6 +23,7 @@
 }
 
 header,footer{
+<<<<<<< HEAD
   border: 1px solid rgba(0, 0, 0, 0.8);
   height: 100px;
   margin-left: 10px;
@@ -30,6 +38,22 @@ padding-left: 10px;
 padding-right: 10px;
 padding-top: 10px;
 grid-gap: 10px;
+=======
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    height: 100px;
+    margin-left: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+#grid {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: 750px 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  grid-gap: 10px;
+>>>>>>> fd85421cd1a64c02f9bdfb5d741fe010ed89e04f
 }
 #grid-parts {
 border: 1px solid rgba(0, 0, 0, 0.8);

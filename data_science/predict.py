@@ -3,7 +3,7 @@ import random, os
 from pandas import DataFrame
 import pandas as pd
 
-weights = [1,1,1,1] #Saves random weights in a list. Weights are modified during the learning process.
+weights = [1,1,1,1,1,1] #Saves random weights in a list. Weights are modified during the learning process.
 error = 0
 
 filename = r'CombinedDataset.xlsx'
@@ -30,6 +30,14 @@ for i in range(1,len(df.index)-10):  #GDP Per capita
 for i in range(1,len(df.index)-10):    #Domestic consumer account  
    #print(df.loc[i][0])
    Learn(df.loc[i][4],df.loc[i+1][4],2)
+
+for i in range(1,len(df.index)-10):    #GDP Agriculture  
+   #print(df.loc[i][0])
+   Learn(df.loc[i][2],df.loc[i+1][2],3)
+
+for i in range(1,len(df.index)-10):    #GDP Service  
+   #print(df.loc[i][0])
+   Learn(df.loc[i][8],df.loc[i+1][8],4)
 
 print(weights)
 
@@ -98,14 +106,17 @@ print(predicted)
 print(df.loc[10][6])
 print((predicted/df.loc[10][6])*100)
 
+percentage = 0
 theCount = 0
 for i in range(len(df.index)-10,len(df.index)-3):
         #predicted = coeff[0][0]+(df.loc[i][1]*coeff[1][0])+(df.loc[i][3]*coeff[2][0])+(df.loc[i][4]*coeff[3][0])
         predicted = coeff[0][0]+(predictedPopulation[theCount]*coeff[1][0])+(predictedGdp[theCount]*coeff[2][0])+(predictedDCA[theCount]*coeff[3][0])
         theCount = theCount + 1
         print((predicted/df.loc[i][6])*100) #prints percentage
+        percentage =  percentage + predicted/df.loc[i][6]*100
 
-
+print("")
+print("Average percentage : ", percentage/(theCount))
 #End train sales model
 
 

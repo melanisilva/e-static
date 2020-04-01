@@ -8,10 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class WorkshopComponent implements OnInit {
   year = [1995,1996,1997,1998];
   constructor(
-
-    
   ) { }
-
   ngOnInit() {
   }
 
