@@ -1,36 +1,36 @@
 .mapdiv{
-    width:75%;
-    margin-left:100px;
-    margin-top:30px;
+  width:65%;
+  margin-left:100px;
+  margin-top:30px;
 }
 
 .mapdiv path {
-    fill: #f2f2f2;
-    stroke: #e6e6e6;
-    stroke-width:2px;
-    transition: fill 0.3s;
+  fill: #f2f2f2;
+  stroke: #e6e6e6;
+  stroke-width:2px;
+  transition: fill 0.3s;
 }
 
 .mapdiv :hover {
-    fill:#0000FF;
+  fill:#0000FF;
 }
 
 header,footer{
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    width: 1875px;
-    height: 100px;
-    margin-left: 10px;
-    font-size: 20px;
-    text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  height: 100px;
+  margin-left: 10px;
+  font-size: 20px;
+  text-align: center;
 }
 #grid {
-  display: grid;
-  grid-template-columns: 1036.5px 828.5px;
-  grid-template-rows: 1127px 0px;
-  padding-left: 10px;
-  padding-top: 10px;
-  grid-gap: 10px;
+display: grid;
+grid-template-columns: 60% 40%;
+grid-template-rows: 750px 0px;
+padding-left: 10px;
+padding-right: 10px;
+padding-top: 10px;
+grid-gap: 10px;
 }
 #grid-parts {
-  border: 1px solid rgba(0, 0, 0, 0.8);
+border: 1px solid rgba(0, 0, 0, 0.8);
 }

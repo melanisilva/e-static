@@ -10,8 +10,4 @@ export class InformationComponent implements OnInit {
 
   constructor() {}
   ngOnInit() {}
-
-  onClickMe(){
-    
-  }
 }

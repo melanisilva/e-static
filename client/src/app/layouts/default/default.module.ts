@@ -7,14 +7,17 @@ import { WorkshopComponent } from './../../pages/workshop/workshop.component';
 import { StatisticsComponent } from './../../pages/statistics/statistics.component';
 import { ComponentsModule } from './../../components/components.module';
 import { MatSidenavModule, MatDividerModule, MatCardModule } from '@angular/material';
+import{InformationComponent} from './../../pages/information/information.component'
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
     DefaultComponent,
     DashboardComponent,
     WorkshopComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    InformationComponent
   ],
   imports: [
   CommonModule,
@@ -23,7 +26,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatSidenavModule,
     MatDividerModule,
     FlexLayoutModule,
-    MatCardModule
+    MatCardModule,
+    MatGridListModule
   ]
 })
 export class DefaultModule { }
