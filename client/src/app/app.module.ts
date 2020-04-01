@@ -7,6 +7,10 @@ import { WorkshopComponent } from './pages/workshop/workshop.component';
 import { StatisticsComponent } from './pages/statistics/statistics.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DefaultModule } from './layouts/default/default.module';
+import { AddComponent } from './pages/workshop/add/add.component';
+import { DeleteComponent } from './pages/workshop/delete/delete.component';
+import { UpdateComponent } from './pages/workshop/update/update.component';
+import { ViewComponent } from './pages/workshop/view/view.component';
 
 
 
@@ -14,6 +18,10 @@ import { DefaultModule } from './layouts/default/default.module';
 @NgModule({
   declarations: [
     AppComponent,
+    AddComponent,
+    DeleteComponent,
+    UpdateComponent,
+    ViewComponent,
      //WorkshopComponent,
     // StatisticsComponent
   ],
