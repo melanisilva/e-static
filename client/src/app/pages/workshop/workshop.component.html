@@ -2,63 +2,43 @@
 <html>
 
 <body>
+<br>
+<br>
+<br>
+<br>
+<br>
 <router-outlet></router-outlet>
-<ul>
-  <li> <a routerLink="/add">
-    Add data 
-  </a></li>
-  <li> <a routerLink="/delete">
-    Delete data 
-  </a></li>
-  <li> <a routerLink="/update">
-    Update data 
-  </a></li>
-  <li> <a routerLink="/view">
-    View data 
-  </a></li>
-</ul>
 
-<div class="container">
-  <h1>Enter details </h1>
-  <form >
-    <div class="form-group">
-      <label for="name">Year *</label>
-      <select class="form-control" id="year" required>
-        
-      </select>
+
+
+  <div class="col">
+    <div class="container-2">
+      <a routerLink="/add" class="btn btn-one">
+        <span>Add Data  </span>
+      </a>
     </div>
 
-    <div class="form-group">
-      <label for="alterEgo">Population *</label>
-      <input type="text" class="form-control" id="alterEgo" required>
+    <div class="container-2">
+      <a routerLink="/delete" class="btn btn-one">
+        <span>Delete Data </span>
+      </a>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="container-1">
+      <a routerLink="/update" class="btn btn-one">
+        <span>Update Data</span>
+      </a>
     </div>
 
-    <div class="form-group">
-      <label for="alterEgo">GDP per capita *</label>
-      <input type="text" class="form-control" id="alterEgo" required>
+    <div class="container-1">
+      <a routerLink="/view" class="btn btn-one">
+        <span>View Data </span>
+      </a>
     </div>
+  </div>
 
-    <div class="form-group">
-      <label for="alterEgo">Domestic Consumer Account*</label>
-      <input type="text" class="form-control" id="alterEgo" required >
-    </div>
-   
-    <div class="form-group">
-      <label for="alterEgo">GDP for Service Sector *</label>
-      <input type="text" class="form-control" id="alterEgo" required>
-    </div>
-
-    <div class="form-group">
-      <label for="alterEgo">Average Electricty Price *</label>
-      <input type="text" class="form-control" id="alterEgo" required>
-    </div>
-
-
-
-    <button type="submit" class="btn btn-success button">Submit</button>
-
-  </form>
-</div>
 
 </body>
 </html>
