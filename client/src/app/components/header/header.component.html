@@ -1,4 +1,8 @@
-<mat-toolbar>
+
+<div class="container"
+    [class.mat-elevation-z17]="!isActive"
+    [class.mat-elevation-z15]="isActive">
+  <mat-toolbar mat-elevation-z17>
   <mat-toolbar-row>
     <!-- <img class="logo" src="../../../assets/img/idea-09.png" alt=""> -->
     <span style="padding-left: 20px;">E-Static</span>
@@ -34,6 +38,6 @@
 
       </ul>
     </div>
-
   </mat-toolbar-row>
 </mat-toolbar>
+</div>

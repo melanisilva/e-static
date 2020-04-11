@@ -6,6 +6,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { WorkshopComponent } from './pages/workshop/workshop.component';
 import { StatisticsComponent } from './pages/statistics/statistics.component';
 import { InformationComponent } from './pages/information/information.component';
+import { SettingsComponent } from './pages/settings/settings.component';
 import { AddComponent } from './pages/workshop/add/add.component';
 import { DeleteComponent } from './pages/workshop/delete/delete.component';
 import { UpdateComponent } from './pages/workshop/update/update.component';
@@ -29,6 +30,9 @@ const routes: Routes = [{
   },{
     path:'information',
     component:InformationComponent
+  },{
+    path: 'settings',
+    component : SettingsComponent
   },{
     path:'add',
   component :AddComponent

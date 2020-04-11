@@ -5,11 +5,13 @@ import { DashboardComponent } from 'src/app/pages/dashboard/dashboard.component'
 import { RouterModule } from '@angular/router';
 import { WorkshopComponent } from './../../pages/workshop/workshop.component';
 import { StatisticsComponent } from './../../pages/statistics/statistics.component';
+import { SettingsComponent } from './../../pages/settings/settings.component';
 import { ComponentsModule } from './../../components/components.module';
 import { MatSidenavModule, MatDividerModule, MatCardModule } from '@angular/material';
 import{InformationComponent} from './../../pages/information/information.component'
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     DashboardComponent,
     WorkshopComponent,
     StatisticsComponent,
-    InformationComponent
+    InformationComponent,
+    SettingsComponent
   ],
   imports: [
   CommonModule,
