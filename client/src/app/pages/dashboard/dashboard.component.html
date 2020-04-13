@@ -57,25 +57,39 @@
   <div>Pie Charts</div>
 </div> -->
 <div class="main-container-dashboard">
+  <div class="title-dashboard">
+    <h2>Dashboard</h2>
+  </div>
 
-  <div
-  fxLayout="row"
-  fxLayoutAlign="space-between center"
-  fxLayoutGap="15px"
-  class="stats-cards"
->
-<button class="dashboardButton" mat-raised-button routerLink="/statistics">
-  Statistics
-</button>
+  <ul class="cards">
+    <li class="card">
+      <div class="card__inner imageStat" >
+        <h2>Statistics <small></small></h2>
+        <div class="card__buttons">
+          <div [routerLink]="['/statistics']">Visit</div>
+        </div>
+      </div>
+      <h3 class="card__tagline">Statistics of the future demand</h3>
 
-<button class="dashboardButton" mat-raised-button routerLink="/workshop">
-  Workshop
-</button>
+    </li>
+    <li class="card">
+      <div class="card__inner imageWork">
+        <h2>Workshop <small></small></h2>
+        <div class="card__buttons">
+          <div [routerLink]="['/workshop']">Visit</div>
+        </div>
+      </div>
+      <h3 class="card__tagline">Alter data set and the formula</h3>
 
-<button class="dashboardButton" mat-raised-button routerLink="/information">
-  Information
-</button>
-
-
-</div>
+    </li>
+    <li class="card">
+      <div class="card__inner imageInfo">
+        <h2>Information <small></small></h2>
+        <div class="card__buttons">
+          <div [routerLink]="['/information']">Visit</div>
+        </div>
+      </div>
+      <h3 class="card__tagline">View more info about Electricity demand</h3>
+    </li>
+  </ul>
 </div>
