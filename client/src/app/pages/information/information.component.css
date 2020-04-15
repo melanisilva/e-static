@@ -1,50 +1,69 @@
-.mapdiv {
-  width:20%;
-  margin-left: 100px;
-  margin-top: 30px;
-  height: 1000px;
-}
-
-#division1{
-  fill: #FFC937;
-  stroke: rgb(204, 160, 39);
-  stroke-width: 2px;
-  transition: fill 0.3s;
-}
-
-#division2{
-  fill:#B4FC78 ;
-  stroke: rgb(124, 207, 57) ;
-  stroke-width: 2px;
-  transition: fill 0.3s;
-}
-
-#division3{
-  fill:#FF68A9 ;
-  stroke:#E84189;
-  stroke-width: 2px;
-  transition: fill 0.3s;
-}
-
-#division4{
-  fill: #995CEF;
-  stroke: #7833D7;
-  stroke-width: 2px;
-  transition: fill 0.3s;
-}
-
-
-
-#division1:hover , #division2:hover ,#division3:hover ,#division4:hover{
-  fill: #ffffff;
-}
-
-
-header,
-footer {
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  height: 100px;
+header,footer{
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  height: 105px;
   margin-left: 10px;
   font-size: 20px;
   text-align: center;
+  padding: 5px;
+}
+
+h1,h2{
+  text-align: center;
+}
+
+.main-grid{
+  display: grid;
+  grid-template-columns: 20% 80% ;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.information-display{
+  border: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+.divisions {
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  display: grid;
+  grid-template-columns: auto auto ;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.divisions > div {
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.division1{
+  grid-column: 1 / span 2;
+}
+
+.division4{
+  grid-column: 1 / span 2;
+}
+
+
+
+table{
+  margin-left: 30px;
+  margin-bottom: 50px;
+  width:50%;
+  border-collapse: collapse;
+}
+
+.cal1{
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+
+}
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
 }
