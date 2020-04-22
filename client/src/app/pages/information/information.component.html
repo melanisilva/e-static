@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Information</title>
-        <link rel="stylesheet" href="information.component.css">
+        <link rel="stylesheet" href="information.component.scss">
         <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </head>
     <body>
@@ -11,62 +11,37 @@
                 <h1>{{title}}</h1>
         </header>
 
-        <div class = "main-grid">
-            <div class="divisions">
-                <div class="division1" (click)="division1()" onclick="divi1()">1</div>
-                <div class="division2" (click)="division2()">2</div>
-                <div class="division3" (click)="division3()">3</div>  
-                <div class="division4" (click)="division4()">4</div>
+        <button (click)="displayBlock1()"> Display block 1!</button>
+        <div id = "block1">
+            <div class = "grid1">
+                <div class="divisions">
+                    <div class="division1" (click)="division1()">1</div>
+                    <div class="division2" (click)="division2()">2</div>
+                    <div class="division3" (click)="division3()">3</div>  
+                    <div class="division4" (click)="division4()">4</div>
+                </div>
+
+                <div class = "information-display">
+                    <h2>{{infoTitle}}</h2>
+                    <div id = "table1"></div>
+                </div>
+
+
+
             </div>
+        </div>
 
-            <div class = "information-display">
-                <h2>{{infoTitle}}</h2>
-                <div id = "table"></div>
-            </div>
+        <button (click)="displayBlock2()"> Display block 2!</button>
+        <div id = "block2">
+            <div id = "table2"></div>
+        </div>
 
-
-
+        <button (click)="displayBlock3()"> Display block 3!</button>
+        <div id = "block3">
+            <div id = "table3"></div>
         </div>
 
         
         <footer></footer>
-        <script>
-
-            var division1 = [   ["Number of CEB Distribution Areas","17/62"],
-                                ["Number of Consumer Service Centres","57/221"],
-                                ["Distribution Divistion 1","Anuradhapura","Vavuniya","Mannar","Mullativu","Jaffna","Kilinochchi","Puttalam","Kurunegala","Polonnaruwa"]
-                            ];
-
-            var division2 = [   ["Number of CEB Distribution Areas","22/62"],
-                                ["Number of Consumer Service Centres","80/221"],
-                                ["Distribution Divistion 2","Gampaha","Kandy","Matale","Nuwara Eliya","Trincomalee","Ampara","Batticaloa"]
-                            ];
-            var division3 = [   ["Number of CEB Distribution Areas","13/62"],
-                                ["Number of Consumer Service Centres","47/221"],
-                                ["Distribution Divistion 3","Ratnapura","Badulla","Moneragala","Kegalle","Colombo"]
-                            ]; 
-            var division4 = [   ["Number of CEB Distribution Areas","10/62"],
-                                ["Number of Consumer Service Centres","37/221"],
-                                ["Distribution Divistion 4","Galle","Hambantota","Matara","Kalutara"]
-                            ]; 
-            
-            var pass = "<table>"
-
-            function divi1(){
-                for(var i = 0;i<division1.length;i++){
-                    
-                    pass += "<tr><th>"+division1[i][0]+"</th><td>"+division1[i][1]+"</td></tr>";
-
-                    for(var j = 2;j<division1[i].length;j++){
-                                pass +="<tr><th></th><td>"+division1[i][j]+"</td></tr>";
-                    }
-
-                }
-
-                pass+="</table>"
-                document.getElementById("table").innerHTML = pass;
-                console.log(pass)
-            }
-        </script>
     </body>
 </html>
