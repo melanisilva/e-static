@@ -13,7 +13,7 @@ import { UpdateComponent } from './pages/workshop/update/update.component';
 import { ViewComponent } from './pages/workshop/view/view.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+
 const appRoutes:Routes=[
   {path: 'pets',component :ViewComponent}
   
@@ -37,8 +37,8 @@ const appRoutes:Routes=[
     BrowserAnimationsModule,
     DefaultModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes),
-    ReactiveFormsModule
+    RouterModule.forRoot(appRoutes)
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
