@@ -4,7 +4,7 @@ body{
 }
 ul {
     list-style-type: none;
-    margin: 0;
+    margin-left: 500;
     padding: 0;
     overflow: hidden;
     background-color: #333;
@@ -43,4 +43,6 @@ ul {
     transition-duration: 0.4s;
     cursor: pointer;
   }
-
+  .container{
+  margin-right: 750px;
+  }

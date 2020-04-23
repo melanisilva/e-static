@@ -11,8 +11,13 @@ import { AddComponent } from './pages/workshop/add/add.component';
 import { DeleteComponent } from './pages/workshop/delete/delete.component';
 import { UpdateComponent } from './pages/workshop/update/update.component';
 import { ViewComponent } from './pages/workshop/view/view.component';
+import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
-
+const appRoutes:Routes=[
+  {path: 'pets',component :ViewComponent}
+  
+  ];
 
 
 @NgModule({
@@ -22,6 +27,7 @@ import { ViewComponent } from './pages/workshop/view/view.component';
     DeleteComponent,
     UpdateComponent,
     ViewComponent,
+    
      //WorkshopComponent,
     // StatisticsComponent
   ],
@@ -30,6 +36,8 @@ import { ViewComponent } from './pages/workshop/view/view.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     DefaultModule,
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

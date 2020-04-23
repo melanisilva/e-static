@@ -1,83 +1,34 @@
+
+<router-outlet></router-outlet>
 <ul>
-    <li> <a routerLink="/add">
-      Add data 
-    </a></li>
-    <li> <a routerLink="/delete">
-      Delete data 
-    </a></li>
-    <li> <a routerLink="/update">
-      Update data 
-    </a></li>
-    <li> <a routerLink="/view">
-      View data 
-    </a></li>
-  </ul>
-  <!DOCTYPE html>
-  <html ng-app>
- 
-  <body ng-init ="list=['one','two','three']">
-  <ul>
-  
-  </ul>
- <br>
-  
+  <li> <a routerLink="/add">
+    Add Data 
+  </a></li>
+  <li> <a routerLink="/delete">
+    Delete Data 
+  </a></li>
+  <li> <a routerLink="/update">
+    Update Data 
+  </a></li>
+  <li> <a routerLink="/view">
+    View Data 
+  </a></li>
+</ul>
+
+<div>
   <table>
     <tr>
-      <th>Year</th>
-      <th>Population</th>
-      <th>GDP per capita</th>
-      <th>Domestic Consumer Account</th>
-      <th>GDP for agriculture sector</th>
-      <th>GDP for service sector</th>
-      <th>Average Electricity price</th>
+      <th>Name</th>
+      <th>Species</th>
+      <th>breed</th>
+
+ 
     </tr>
-    <tr>
-      <td>1995</td>
-      <td>xxx</td>
-      <td>xxx</td>
-      <td>xxx</td>
-      <td>xxx</td>
-      <td>xxx</td>
-      <td>xxx</td>
+    <tr *ngFor="let items of pets">
+      <td>{{items.name}}</td>
+      <td>{{items.species}}</td>
+      <td>{{items.breed}}</td>
     </tr>
-    <tr>
-      <td>1995</td>
-      <td>xxx</td>
-      <td>xxx</td>
-      <td>xxx</td>
-      <td>xxx</td>
-      <td>xxx</td>
-      <td>xxx</td>
-    </tr>
-    <tr>
-      <td>1996</td>
-      <td>xxx</td>
-      <td>xxx</td>
-      <td>xxx</td>
-      <td>xxx</td>
-      <td>xxx</td>
-      <td>xxx</td>
-    </tr>
-    <tr>
-      <td>1997</td>
-      <td>xxx</td>
-      <td>xxx</td>
-      <td>xxx</td>
-      <td>xxx</td>
-      <td>xxx</td>
-      <td>xxx</td>
-    </tr>
-    <tr>
-      <td>1998</td>
-      <td>xxx</td>
-      <td>xxx</td>
-      <td>xxx</td>
-      <td>xxx</td>
-      <td>xxx</td>
-      <td>xxx</td>
-    </tr>
-  
   </table>
   
-  </body>
-  </html>
+ </div>
