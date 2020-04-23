@@ -3,13 +3,14 @@
 }
 
 body {
-  background: whiteSmoke;
   padding: 5%;
+  font-family: 'Montserrat';
 }
 
 .title-dashboard{
   h2{
   text-align: center;
+  font-family: 'Montserrat';
   }
 }
 
@@ -17,7 +18,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 0;
+  margin-top: 4%;
   padding: 0;
   text-align: center;
 
@@ -29,8 +30,8 @@ body {
 
 .card {
   position: relative;
-  width: 31.33333%;
-  margin: 1%;
+  width: 25%;
+  margin: 3%;
   background: whiteSmoke;
   box-shadow: 1px 1px 5px #999;
 
@@ -47,9 +48,10 @@ body {
     h2 {
       color: white;
       margin: 0;
+      font-family: 'Montserrat';
       text-decoration-line: overline;
-      padding: 30% 0;
-      text-shadow: 1px 1px 20px #000;
+      padding: 5%;
+      text-shadow: 1px 1px 10px #000;
       line-height: 18px;
       text-transform: uppercase;
 
@@ -86,7 +88,7 @@ body {
 
       &:hover {
         color: #ffde00;
-        background: #000;
+        background: #999;
       }
 
     }
@@ -115,25 +117,8 @@ body {
   }
 
 }
-
-.card__inner.imageStat{
-  position: relative;
-  background: url("../../../assets/img/dashboard-icon1.jpg");
-  background-size: cover;
-  overflow: hidden
-}
-
-.card__inner.imageWork{
-  position: relative;
-  background: url("../../../assets/img/dashboard-icon2.jpg");
-  background-size: cover;
-  overflow: hidden
-}
-.card__inner.imageInfo{
-  position: relative;
-  background: url("../../../assets/img/dashboard-icon3.jpg");
-  background-size: cover;
-  overflow: hidden
+.card_icon{
+padding: 5%;
 }
 
 

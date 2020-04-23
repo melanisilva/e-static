@@ -5,11 +5,14 @@ ul li{
   list-style: none;
 }
 .logo{
-    height: 40px;
+    width: 120px;
     float: left;
 }
 mat-toolbar{
-  background: #8e9eab;  /* fallback for old browsers */
+  background: #ffffff;  /* fallback for old browsers */
+  border-bottom: solid;
+  border-width: 1px;
+  border-bottom-color: #FBD509;
   position: relative;
   z-index: 2;
 

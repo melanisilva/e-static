@@ -1,93 +1,35 @@
-<!-- <br />
-<div
-  fxLayout="row"
-  fxLayoutAlign="space-between center"
-  fxLayoutGap="5px"
-  class="stats-cards"
->
-  <mat-card fxFlex="25" >
-    <h4 style="margin-top: 0px; margin-bottom: 3px;">Electricity Demand 2018 (GWh)</h4>
-    <h1 style="float: right; margin-top: 0px; color: #00d68f;">4060</h1>
-  </mat-card>
-  <mat-card fxFlex="25">
-    <h4 style="margin-top: 0px; margin-bottom: 3px;">Demand Forecast 2018 (GWh)</h4>
-    <h1 style="float: right; margin-top: 0px; color:blue;">4271</h1>
-  </mat-card>
-  <mat-card fxFlex="25">
-    <h4 style="margin-top: 0px; margin-bottom: 3px;">Error Rate</h4>
-    <h1 style="float: right; margin-top: 0px; color: red;">19.2%</h1>
-  </mat-card>
-</div>
-
-<br />
-<br />
-
-<div>
-  <app-widget-area></app-widget-area>
-</div>
-
-<br />
-<br />
-<mat-divider></mat-divider>
-
-<br />
-<br />
-
-<div
-  fxLayout="row"
-  fxLayoutAlign="space-between center"
-  fxLayoutGap="20px"
-  class="stats-cards"
->
-  <mat-card fxFlex="25">
-    <app-widget-card></app-widget-card>
-  </mat-card>
-  <mat-card fxFlex="25">
-    <app-widget-card></app-widget-card>
-  </mat-card>
-  <mat-card fxFlex="25">
-    <app-widget-card></app-widget-card>
-  </mat-card>
-</div>
-
-<mat-divider></mat-divider>
-
-<div>
-  <div>Table</div>
-  <div>Pie Charts</div>
-</div> -->
 <div class="main-container-dashboard">
   <div class="title-dashboard">
-    <h2>Dashboard</h2>
+    <h2 >Dashboard</h2>
   </div>
 
   <ul class="cards">
     <li class="card">
-      <div class="card__inner imageStat" >
-        <h2>Statistics <small></small></h2>
-        <div class="card__buttons">
-          <div [routerLink]="['/statistics']">Visit</div>
-        </div>
+      <div class="card_icon">
+        <img src="../../../assets/img/icon2.gif" alt="">
+      </div>
+      <div class="card__inner" [routerLink]="['/statistics']" >
+        <h2>Statistics</h2>
       </div>
       <h3 class="card__tagline">Statistics of the future demand</h3>
 
     </li>
     <li class="card">
-      <div class="card__inner imageWork">
-        <h2>Workshop <small></small></h2>
-        <div class="card__buttons">
-          <div [routerLink]="['/workshop']">Visit</div>
-        </div>
+      <div class="card_icon">
+        <img src="../../../assets/img/icon1.gif" alt="">
+      </div>
+      <div class="card__inner" [routerLink]="['/workshop']">
+        <h2>Workshop </h2>
       </div>
       <h3 class="card__tagline">Alter data set and the formula</h3>
 
     </li>
     <li class="card">
-      <div class="card__inner imageInfo">
-        <h2>Information <small></small></h2>
-        <div class="card__buttons">
-          <div [routerLink]="['/information']">Visit</div>
-        </div>
+      <div class="card_icon">
+        <img src="../../../assets/img/icon3_14.gif" alt="">
+      </div>
+      <div class="card__inner" [routerLink]="['/information']">
+        <h2>Information </h2>
       </div>
       <h3 class="card__tagline">View more info about Electricity demand</h3>
     </li>

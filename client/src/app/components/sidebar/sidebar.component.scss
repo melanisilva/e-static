@@ -1,8 +1,26 @@
 :host {
+  font-family: 'Montserrat';
   .material-icons {
     vertical-align: middle;
     margin-right: 20px;
   }
+
+  .mat-nav-list .mat-list-item {
+    font-family: 'Montserrat';
+    margin: 10px;
+  }
+  .side-bar-title{
+    margin-top: 50px;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .material-icons{
+    color: #ecc700;
+  }
+  .mat-divider {
+    border-top-color: #FBD509;
+}
   .profile-card {
     text-align: center;
     padding: 0 20px 20px 20px;
