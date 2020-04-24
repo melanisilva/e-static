@@ -22,7 +22,7 @@ public class DemandForecastController {
 
     @GetMapping("/demf")
     public List<DemandForecast> getAllForecasts() {
-        Sort sortByCreatedAtDesc = Sort.by(Sort.Direction.DESC, "createdAt");
+        Sort sortByCreatedAtDesc = Sort.by(Sort.Direction.DESC, "Year");
         return demandForecastRepository.findAll(sortByCreatedAtDesc);
     }
 

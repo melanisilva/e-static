@@ -16,21 +16,29 @@ public class DemandForecast {
     @Id
     private String id;
 
-    @Field
-    private int year;
-    @Field
+    @Field("Year")
+    private String year;
+    @Field("Population")
     private String population;
+    @Field("GDP Agriculture")
     private String GDPAgri;
+    @Field("GDP Per Capita")
     private String GDPPerCap;
+    @Field("Domestic Consumer Account")
     private String domesticConsumer;
-
-
+    @Field("Average Electricity Price")
     private String avgElectricity;
+    @Field("Electricity Sales")
     private String eSales;
+    @Field("Electricity Classes")
     private String eClass;
+    @Field("GDP Service")
     private String GDPService;
 
-    public DemandForecast(String id, int year, String population, String GDPAgri, String GDPPerCap, String domesticConsumer, String avgElectricity, String eSales, String eClass, String GDPService) {
+    public DemandForecast() {
+    }
+
+    public DemandForecast(String id, String year, String population, String GDPAgri, String GDPPerCap, String domesticConsumer, String avgElectricity, String eSales, String eClass, String GDPService) {
         this.id = id;
         this.year = year;
         this.population = population;
@@ -51,11 +59,11 @@ public class DemandForecast {
         this.id = id;
     }
 
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
 
