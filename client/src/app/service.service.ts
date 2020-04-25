@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Pets } from './pages/workshop/view/view.component';
+import { Data } from './pages/workshop/view/view.component';
 
 
 @Injectable({
@@ -9,8 +9,8 @@ import { Pets } from './pages/workshop/view/view.component';
 export class DataServiceService {
 
   constructor(private http: HttpClient) { }
-  retrievepets(){
-    return this.http.get<Pets[]>('http://localhost:8080/pets/')}
+  retrieveData(){
+    return this.http.get<Data[]>('http://localhost:8080/api/demf')}
 
   addData(adding:object){
     return this.http.post<any>("http://localhost:8080/add/",adding)

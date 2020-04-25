@@ -16,21 +16,30 @@
 </ul>
 
 <div>
-  <table>
-    <tr>
-      <th>Year</th>
-      <th>Population</th>
-      <th>GDP per Capita</th>
-      <th>Domestic Consumer Account</th>
-      <th>GDP (agriculture)</th>
-      <th>GDP (service)</th>
-      <th>Avg Electricity Price</th>
-    </tr>
-    <tr *ngFor="let items of pets">
-      <td>{{items.name}}</td>
-      <td>{{items.species}}</td>
-      <td>{{items.breed}}</td>
-    </tr>
-  </table>
+  <br>
+  <br>
+  <div>
+    <table>
+      <tr>
+        <th>Year</th>
+        <th>Population</th>
+        <th>Domestic Consumer</th>
+        <th>GDP per Capita</th>
+        <th>GDP (Agriculture)</th>
+        <th>GDP (Service)</th>
+        <th>Avg Electricity Price</th>
+        <th>Electricity Sales</th>
+      </tr>
+      <tr *ngFor="let items of data">
+        <td>{{items.year}}</td>
+        <td>{{items.population}}</td>
+        <td>{{items.domesticConsumer}}</td>
+        <td>{{items.gdpperCap}}</td>
+        <td>{{items.gdpagri}}</td>
+        <td>{{items.gdpservice}}</td>
+        <td>{{items.avgElectricity}}</td>
+        <td>{{items.eSales}}</td>
+      </tr>
+    </table>
   
  </div>

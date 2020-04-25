@@ -2,11 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { DataServiceService } from 'src/app/service.service';
 
 
-export class Pets{
+
+export class Data{
   constructor(
-    public name:string,
-    public species:string,
-    public breed:string,
+    public year:string,
+    public population:string,
+    public domesticConsumer:string,
+    public eSales:string,
+    public gdpagri:string,
+    public gdpperCap:string,
+    public gdpservice:string,
+    public avgElectricity:string,
   ){}
 }
 @Component({
@@ -15,14 +21,14 @@ export class Pets{
   styleUrls: ['./view.component.scss']
 })
 export class ViewComponent implements OnInit {
-pets :Pets[]
+data :Data[]
   constructor(private service :DataServiceService) { }
 
   ngOnInit() {
-    this.service.retrievepets().subscribe(
+    this.service.retrieveData().subscribe(
       Response =>{
-        this.pets =Response
-        console.log(this.pets)
+        this.data =Response
+        console.log(this.data)
       }
     )
     
