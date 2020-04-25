@@ -4,15 +4,39 @@
 
 body {
   padding: 5%;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
 }
 
-.title-dashboard{
-  h2{
-  text-align: center;
-  font-family: 'Montserrat';
+.title-dashboard {
+  h2 {
+    text-align: center;
+    font-family: "Montserrat";
   }
 }
+
+// mat-grid-tile {
+// }
+// mat-grid-list {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+//   margin-top: 4%;
+//   padding: 0;
+//   text-align: center;
+
+
+//   mat-card {
+//     position: relative;
+
+//     .image_container {
+//       padding: 5%;
+//     }
+//   }
+
+//     @media (max-width: 550px) {
+//     flex-direction: column;
+//   }
+// }
 
 .cards {
   display: flex;
@@ -34,6 +58,7 @@ body {
   margin: 3%;
   background: whiteSmoke;
   box-shadow: 1px 1px 5px #999;
+  border-radius: 5%;
 
   @media (max-width: 815px) {
     width: 48%;
@@ -79,8 +104,6 @@ body {
       border-top: 1px solid #ccc;
       border-bottom: 1px solid #ccc;
 
-
-
       &:first-child {
         background: #fff;
         border-right: 1px solid #ccc;
@@ -107,8 +130,6 @@ body {
     padding : 2%;
   }
 
-
-
   p {
     position: absolute;
     bottom: 0;
@@ -120,5 +141,3 @@ body {
 .card_icon{
 padding: 5%;
 }
-
-

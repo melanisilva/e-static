@@ -1,41 +1,46 @@
-
-<div class="navbar-container"
-    [class.mat-elevation-z17]="!isActive"
-    [class.mat-elevation-z15]="isActive">
+<div
+  class="navbar-container"
+  [class.mat-elevation-z17]="!isActive"
+  [class.mat-elevation-z15]="isActive"
+>
   <mat-toolbar mat-elevation-z17>
-  <mat-toolbar-row>
-    <img class="logo" src="../../../assets/img/logo.JPG" alt="">
-    <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
-      <ul fxLayout="row" fxLayoutGap="10px">
-
-        <button mat-raised-button>
-          <img src="../../../assets/img/github-logo.svg" alt="" style="width: 22px;"/>
-           Star
+    <mat-toolbar-row>
+      <img class="logo" src="../../../assets/img/Capture.JPG" alt="" />
+      <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+        <ul fxLayout="row" fxLayoutGap="10px">
+          <li>
+          <button mat-button>
+            <img
+              src="../../../assets/img/icons/icons8-github-64.png"
+              alt=""
+              style="width: 30px;"
+            />
+            Star
           </button>
-
-        <li>
-          <button mat-icon-button>
-            <i class="material-icons">
+          </li>
+          <li>
+            <button mat-button>
+              <img
+                src="../../../assets/img/icons/settings.png"
+                alt=""
+                style="width: 30px;"
+              />
               settings
-              </i>
-          </button>
-        </li>
-
-        <li>
-            <!-- <button mat-button [matMenuTriggerFor]="menu"> -->
-              <button mat-button routerLink="/login">
-              <i class="material-icons">
-              account_circle
-              </i> LOGIN
             </button>
-            <mat-menu #menu="matMenu">
-              <button mat-menu-item>Profile</button>
-              <button mat-menu-item>SignOut</button>
-            </mat-menu>
-        </li>
+          </li>
 
-      </ul>
-    </div>
-  </mat-toolbar-row>
-</mat-toolbar>
+          <li>
+            <button mat-button routerLink="/login">
+              <img
+                src="../../../assets/img/icons/login.png"
+                alt=""
+                style="width: 30px;"
+              />
+              Login
+            </button>
+          </li>
+        </ul>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
 </div>

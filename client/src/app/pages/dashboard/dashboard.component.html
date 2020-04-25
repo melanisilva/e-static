@@ -1,34 +1,78 @@
 <div class="main-container-dashboard">
+
+  <!-- <mat-grid-list cols="3" rowHeight="2:1">
+    <mat-grid-tile>
+      <div class="card-container">
+        <div class="card_icon">
+          <img src="../../../assets/img/icon2.gif" alt="">
+        </div>
+        <div class="card__inner" [routerLink]="['/statistics']" >
+          <h2>Statistics</h2>
+        </div>
+        <h3 class="card__tagline">Statistics of the future demand</h3>
+      </div> -->
+
+      <!-- <mat-card [routerLink]="['/statistics']" >
+        <div class = "image_container">
+          <img src="../../../assets/img/icon2.gif" alt="">
+        </div>
+        <div>
+          <h2>Statistics</h2>
+        </div>
+      </mat-card> -->
+    <!-- </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card [routerLink]="['/workshop']">
+        <div class = "image_container">
+          <img src="../../../assets/img/icon1.gif" alt="">
+        </div>
+        <div>
+          <h2>Workshop</h2>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card [routerLink]="['/information']">
+        <div class = "image_container">
+          <img src="../../../assets/img/icon3_14.gif" alt="">
+        </div>
+        <div>
+          <h2>Information</h2>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list> -->
+
   <div class="title-dashboard">
     <h2 >Dashboard</h2>
   </div>
 
-  <ul class="cards">
-    <li class="card">
+  <ul class="cards" style="list-style-type:none;">
+    <li class="card" [routerLink]="['/statistics']">
       <div class="card_icon">
         <img src="../../../assets/img/icon2.gif" alt="">
       </div>
-      <div class="card__inner" [routerLink]="['/statistics']" >
+      <div class="card__inner"  >
         <h2>Statistics</h2>
       </div>
       <h3 class="card__tagline">Statistics of the future demand</h3>
 
     </li>
-    <li class="card">
+    <li class="card" [routerLink]="['/workshop']">
       <div class="card_icon">
         <img src="../../../assets/img/icon1.gif" alt="">
       </div>
-      <div class="card__inner" [routerLink]="['/workshop']">
+      <div class="card__inner" >
         <h2>Workshop </h2>
       </div>
       <h3 class="card__tagline">Alter data set and the formula</h3>
 
     </li>
-    <li class="card">
+    <li class="card" [routerLink]="['/information']">
       <div class="card_icon">
         <img src="../../../assets/img/icon3_14.gif" alt="">
       </div>
-      <div class="card__inner" [routerLink]="['/information']">
+      <div class="card__inner" >
         <h2>Information </h2>
       </div>
       <h3 class="card__tagline">View more info about Electricity demand</h3>

@@ -3,6 +3,7 @@ navbar-container{
 }
 ul li{
   list-style: none;
+  padding-right: 5%;
 }
 .logo{
     width: 120px;
@@ -12,9 +13,14 @@ mat-toolbar{
   background: #ffffff;  /* fallback for old browsers */
   border-bottom: solid;
   border-width: 1px;
-  border-bottom-color: #FBD509;
+  border-bottom-color: #00a8cc;
   position: relative;
   z-index: 2;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+  mat-button{
+    padding-right: 3%;
+  }
 
 }
 mat-elevation-z2{
@@ -22,13 +28,3 @@ mat-elevation-z2{
   z-index: 2;
 }
 
-mat-raised-button{
-  color: #333;
-  text-decoration: none;
-  text-shadow: 0 1px 0 #fff;
-  white-space: nowrap;
-  cursor: pointer;
-}
-button{
-  margin-right: 10px;
-}

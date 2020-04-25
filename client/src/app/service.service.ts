@@ -3,8 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Pets } from './pages/workshop/view/view.component';
 
 
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -16,4 +14,3 @@ export class DataServiceService {
 
 
   }
- 

@@ -4,22 +4,25 @@
     vertical-align: middle;
     margin-right: 20px;
   }
-
   .mat-nav-list .mat-list-item {
     font-family: 'Montserrat';
     margin: 10px;
+
+    img{
+      padding-right: 5%;
+    }
   }
   .side-bar-title{
     margin-top: 50px;
     font-family: 'Montserrat';
     font-weight: bold;
     font-size: 20px;
+    margin-top: 10px;
   }
-  .material-icons{
-    color: #ecc700;
-  }
+
   .mat-divider {
-    border-top-color: #FBD509;
+    border-top-color: #0c7b93;
+    opacity: 0.3;
 }
   .profile-card {
     text-align: center;
