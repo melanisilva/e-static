@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Pets } from './pages/workshop/view/view.component';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
+import { Data } from './pages/workshop/view/view.component';
 
 
 @Injectable({
@@ -11,8 +11,9 @@ import { retry, catchError } from 'rxjs/operators';
 export class DataServiceService {
 
   constructor(private http: HttpClient) { }
-  retrievepets(){
-    return this.http.get<Pets[]>('http://localhost:8080/pets/').pipe(
+
+  retrieveData(){
+    return this.http.get<Data[]>('http://localhost:8080/api/demf').pipe(
       retry(1),
       catchError(this.handleError)
     );

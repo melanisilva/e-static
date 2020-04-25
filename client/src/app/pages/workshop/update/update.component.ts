@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataServiceService } from '../../../service.service';
+import { DataServiceService } from 'src/app/service.service';
+
 
 @Component({
   selector: 'app-update',
