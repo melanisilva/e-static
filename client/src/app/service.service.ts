@@ -11,20 +11,21 @@ import { Data } from './pages/workshop/view/view.component';
 export class DataServiceService {
 
   constructor(private http: HttpClient) { }
-
+//calling api for view 
   retrieveData(){
     return this.http.get<Data[]>('http://localhost:8080/api/demf').pipe(
       retry(1),
       catchError(this.handleError)
     );
   }
-
+// calling api for add
   addData(adding:object){
     return this.http.post<any>("http://localhost:8080/add/",adding).pipe(
       retry(1),
       catchError(this.handleError)
     );
   }
+//callimn api for update
   updateData(updating:object){
     return this.http.post<any>("http://localhost:8080/update/",updating).pipe(
       retry(1),
