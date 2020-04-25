@@ -35,11 +35,12 @@ export class DataServiceService {
   }
 
   //to delete 
-  public deletePost() {
-    let endPoints = "http://localhost:8080/api/demf"
-    this.http.delete(this.url + endPoints).subscribe(data => {
-      console.log(data);
-    });
+  deleteData(deleting:object){
+    return this.http.delete<any>("http://localhost:8080/delete/",deleting).pipe(
+      retry(1),
+      catchError(this.handleError)
+    );
+
   }
 
 
