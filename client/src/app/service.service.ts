@@ -9,7 +9,7 @@ import { Data } from './pages/workshop/view/view.component';
   providedIn: 'root'
 })
 export class DataServiceService {
-
+  url: string;
   constructor(private http: HttpClient) { }
 //calling api for view 
   retrieveData(){
@@ -32,6 +32,14 @@ export class DataServiceService {
       catchError(this.handleError)
     );
 
+  }
+
+  //to delete 
+  public deletePost() {
+    let endPoints = "http://localhost:8080/api/demf"
+    this.http.delete(this.url + endPoints).subscribe(data => {
+      console.log(data);
+    });
   }
 
 
