@@ -9,7 +9,7 @@ import { DataServiceService } from '../../../service.service';
   
 })
 export class AddComponent implements OnInit {
-public name="";
+  public name="";
   constructor(private service:DataServiceService) { }
 
   ngOnInit(): void {
@@ -38,6 +38,11 @@ public name="";
       (data)=>{
         console.log(data);
       }
+
+
+
+
+
     )
 
   }
