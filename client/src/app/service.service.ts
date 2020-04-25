@@ -12,5 +12,12 @@ export class DataServiceService {
   retrievepets(){
     return this.http.get<Pets[]>('http://localhost:8080/pets/')}
 
+  addData(adding:object){
+    return this.http.post<any>("http://localhost:8080/add/",adding)
+  }
+  updateData(updating:object){
+    return this.http.post<any>("http://localhost:8080/update/",updating)
+  }
+
 
   }

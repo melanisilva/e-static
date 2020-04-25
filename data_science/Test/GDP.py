@@ -2,7 +2,7 @@ from pandas import DataFrame
 import pandas as pd
 import numpy as np
 
-filename = r'CombinedDataset1.xlsx'
+filename = r'CombinedDataset.xlsx'
 df = pd.read_excel(filename)
 
 a = np.array([[1,df.loc[1][1],df.loc[1][3],df.loc[1][4]]])

@@ -52,14 +52,15 @@ export class InformationComponent{
 
   division1(){
     this.infoTitle = "division 1!!!"
-    this.pass = "<table>"
+    this.pass = "<table style= 'margin-left: 50px;margin-bottom: 50px;width:70%;border-collapse: collapse;'>"
 
       for(var i = 0;i<this.distributdiv1.length;i++){
         for(var j = 1;j<this.distributdiv1[i].length;j++){
           if(j == 1){
-            this.pass += "<tr><th rowspan='"+(this.distributdiv1[i].length-1)+"'>"+this.distributdiv1[i][j-1]+"</th><td>"+this.distributdiv1[i][j]+"</td></tr>";
+            this.pass += "<tr><th rowspan='"+(this.distributdiv1[i].length-1)+"' style= 'border: 1px solid #ddd; padding-top: 12px;padding-bottom: 12px;padding-left:30px;text-align: left;background-color: black;color: white;'>"+
+            this.distributdiv1[i][j-1]+"</th><td  style= 'border: 1px solid #ddd;padding: 8px;'>"+this.distributdiv1[i][j]+"</td></tr>";
           }else{
-            this.pass +="<tr><td>"+this.distributdiv1[i][j]+"</td></tr>";
+            this.pass +="<tr><td style= 'border: 1px solid #ddd;padding: 8px;'>"+this.distributdiv1[i][j]+"</td></tr>";
           }
         }
 
@@ -72,15 +73,16 @@ export class InformationComponent{
 
   division2(){
     this.infoTitle = "division 2!!!"
-    this.pass = "<table>"
+    this.pass = "<table style= 'margin-left: 50px;margin-bottom: 50px;width:70%;border-collapse: collapse;'>"
 
 
       for(var i = 0;i<this.distributdiv2.length;i++){
         for(var j = 1;j<this.distributdiv2[i].length;j++){
           if(j == 1){
-            this.pass += "<tr><th rowspan='"+(this.distributdiv2[i].length-1)+"'>"+this.distributdiv2[i][j-1]+"</th><td>"+this.distributdiv2[i][j]+"</td></tr>";
+            this.pass += "<tr><th rowspan='"+(this.distributdiv2[i].length-1)+"'  style= 'border: 1px solid #ddd; padding-top: 12px;padding-bottom: 12px;padding-left:30px;text-align: left;background-color: black;color: white;'>"+
+            this.distributdiv2[i][j-1]+"</th><td style= 'border: 1px solid #ddd;padding: 8px;'>"+this.distributdiv2[i][j]+"</td></tr>";
           }else{
-            this.pass +="<tr><td>"+this.distributdiv2[i][j]+"</td></tr>";
+            this.pass +="<tr><td style= 'border: 1px solid #ddd;padding: 8px;'>"+this.distributdiv2[i][j]+"</td></tr>";
           }
         }
 
@@ -93,15 +95,16 @@ export class InformationComponent{
 
   division3(){
     this.infoTitle = "division 3!!!"
-    this.pass = "<table>"
+    this.pass = "<table style= 'margin-left: 50px;margin-bottom: 50px;width:70%;border-collapse: collapse;'>"
 
     
       for(var i = 0;i<this.distributdiv3.length;i++){
         for(var j = 1;j<this.distributdiv3[i].length;j++){
           if(j == 1){
-            this.pass += "<tr><th rowspan='"+(this.distributdiv3[i].length-1)+"'>"+this.distributdiv3[i][j-1]+"</th><td>"+this.distributdiv3[i][j]+"</td></tr>";
+            this.pass += "<tr><th rowspan='"+(this.distributdiv3[i].length-1)+"'  style= 'border: 1px solid #ddd; padding-top: 12px;padding-bottom: 12px;padding-left:30px;text-align: left;background-color: black;color: white;'>"+
+            this.distributdiv3[i][j-1]+"</th><td style= 'border: 1px solid #ddd;padding: 8px;'>"+this.distributdiv3[i][j]+"</td></tr>";
           }else{
-            this.pass +="<tr><td>"+this.distributdiv3[i][j]+"</td></tr>";
+            this.pass +="<tr><td style= 'border: 1px solid #ddd;padding: 8px;'>"+this.distributdiv3[i][j]+"</td></tr>";
           }
         }
 
@@ -113,15 +116,16 @@ export class InformationComponent{
   }
     division4(){
         this.infoTitle = "division 4!!!"
-        this.pass = "<table>"
+        this.pass = "<table style= 'margin-left: 50px;margin-bottom: 50px;width:70%;border-collapse: collapse;'>"
 
 
-        for(var i = 0;i<this.distributdiv3.length;i++){
-          for(var j = 1;j<this.distributdiv3[i].length;j++){
+        for(var i = 0;i<this.distributdiv4.length;i++){
+          for(var j = 1;j<this.distributdiv4[i].length;j++){
             if(j == 1){
-              this.pass += "<tr><th rowspan='"+(this.distributdiv3[i].length-1)+"'>"+this.distributdiv3[i][j-1]+"</th><td>"+this.distributdiv3[i][j]+"</td></tr>";
+              this.pass += "<tr><th rowspan='"+(this.distributdiv4[i].length-1)+"'  style= 'border: 1px solid #ddd; padding-top: 12px;padding-bottom: 12px;padding-left:30px;text-align: left;background-color: black;color: white;'>"+
+              this.distributdiv4[i][j-1]+"</th><td style= 'border: 1px solid #ddd;padding: 8px;'>"+this.distributdiv4[i][j]+"</td></tr>";
             }else{
-              this.pass +="<tr><td>"+this.distributdiv3[i][j]+"</td></tr>";
+              this.pass +="<tr><td style= 'border: 1px solid #ddd;padding: 8px;'>"+this.distributdiv4[i][j]+"</td></tr>";
             }
           }
     
@@ -160,12 +164,21 @@ displayBlock2(){
     toggle.style.display = "none";
   }
     
-  this.pass = "<table>";
+  this.pass = "<table style= 'margin-left: 50px;margin-bottom: 50px;width:70%;border-collapse: collapse;'>";
+
   for(var i = 0;i<this.CEBinstalledCapacity.length;i++){
     if(i!=0){
-      this.pass += "<tr><td>"+this.CEBinstalledCapacity[i][0]+"</td><td>"+this.CEBinstalledCapacity[i][1]+"</td><td>"+this.CEBinstalledCapacity[i][2]+"</td><td>"+this.CEBinstalledCapacity[i][3]+"</td></tr>";
+      this.pass += "<tr><td style= 'border: 1px solid #ddd;padding: 8px;'>"+this.CEBinstalledCapacity[i][0]+
+      "</td><td style= 'border: 1px solid #ddd;padding: 8px;'>"+this.CEBinstalledCapacity[i][1]+
+      "</td><td style= 'border: 1px solid #ddd;padding: 8px;'>"+this.CEBinstalledCapacity[i][2]+
+      "</td><td style= 'border: 1px solid #ddd;padding: 8px;'>"+this.CEBinstalledCapacity[i][3]+
+      "</td></tr>";
     }else{
-      this.pass += "<tr><th>"+this.CEBinstalledCapacity[i][0]+"</th><th>"+this.CEBinstalledCapacity[i][1]+"</th><th>"+this.CEBinstalledCapacity[i][2]+"</th><th>"+this.CEBinstalledCapacity[i][3]+"</th></tr>";
+      this.pass += "<tr><th style= 'border: 1px solid #ddd; padding-top: 12px;padding-bottom: 12px;padding-left:30px;text-align: left;background-color: black;color: white;'>"+this.CEBinstalledCapacity[i][0]+
+      "</th><th style= 'border: 1px solid #ddd; padding-top: 12px;padding-bottom: 12px;padding-left:30px;text-align: left;background-color: black;color: white;'>"+this.CEBinstalledCapacity[i][1]+
+      "</th><th style= 'border: 1px solid #ddd; padding-top: 12px;padding-bottom: 12px;padding-left:30px;text-align: left;background-color: black;color: white;'>"+this.CEBinstalledCapacity[i][2]+
+      "</th><th style= 'border: 1px solid #ddd; padding-top: 12px;padding-bottom: 12px;padding-left:30px;text-align: left;background-color: black;color: white;'>"+this.CEBinstalledCapacity[i][3]+
+      "</th></tr>";
     }
   }
   
@@ -186,15 +199,21 @@ displayBlock3(){
     toggle.style.display = "none";
   }
 
-  this.pass = "<table>";
+  this.pass = "<table style= 'margin-left: 50px;margin-bottom: 50px;width:70%;border-collapse: collapse;'>";
 
-  
-  this.pass = "<table>";
   for(var i = 0;i<this.PinstalledCapacity.length;i++){
     if(i!=0){
-      this.pass += "<tr><td>"+this.PinstalledCapacity[i][0]+"</td><td>"+this.PinstalledCapacity[i][1]+"</td><td>"+this.PinstalledCapacity[i][2]+"</td><td>"+this.PinstalledCapacity[i][3]+"</td></tr>";
+      this.pass += "<tr><td>"+this.PinstalledCapacity[i][0]+
+      "</td><td style= 'border: 1px solid #ddd;padding: 8px;'>"+this.PinstalledCapacity[i][1]+
+      "</td><td style= 'border: 1px solid #ddd;padding: 8px;'>"+this.PinstalledCapacity[i][2]+
+      "</td><td style= 'border: 1px solid #ddd;padding: 8px;'>"+this.PinstalledCapacity[i][3]+
+      "</td></tr>";
     }else{
-      this.pass += "<tr><th>"+this.PinstalledCapacity[i][0]+"</th><th>"+this.PinstalledCapacity[i][1]+"</th><th>"+this.PinstalledCapacity[i][2]+"</th><th>"+this.PinstalledCapacity[i][3]+"</th></tr>";
+      this.pass += "<tr><th style= 'border: 1px solid #ddd; padding-top: 12px;padding-bottom: 12px;padding-left:30px;text-align: left;background-color: black;color: white;'>"+this.PinstalledCapacity[i][0]+
+      "</th><th style= 'border: 1px solid #ddd; padding-top: 12px;padding-bottom: 12px;padding-left:30px;text-align: left;background-color: black;color: white;'>"+this.PinstalledCapacity[i][1]+
+      "</th><th style= 'border: 1px solid #ddd; padding-top: 12px;padding-bottom: 12px;padding-left:30px;text-align: left;background-color: black;color: white;'>"+this.PinstalledCapacity[i][2]+
+      "</th><th style= 'border: 1px solid #ddd; padding-top: 12px;padding-bottom: 12px;padding-left:30px;text-align: left;background-color: black;color: white;'>"+this.PinstalledCapacity[i][3]+
+      "</th></tr>";
     }
   }
 
