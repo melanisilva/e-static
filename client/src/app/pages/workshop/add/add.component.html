@@ -27,35 +27,41 @@
 
     <div class="form-group">
       <label for="alterEgo">Population *</label>
-      <input type="text" class="form-control" id="addPopulation" ng-model="error1" required>
-      <p style= "color: red;">{{error1}}</p>
+      <input type="text" class="form-control" id="addPopulation" required>
+      <div id= 'error1'></div>
     </div>
 
     <div class="form-group">
       <label for="alterEgo">GDP per capita *</label>
       <input type="text" class="form-control" id="addGDP1" required>
+      <div id= 'error2'></div>
     </div>
 
     <div class="form-group">
       <label for="alterEgo">Domestic Consumer Account*</label>
       <input type="text" class="form-control" id="addDom" required >
+      <div id= 'error3'></div>
     </div>
 
     <div class="form-group">
       <label for="alterEgo">GDP for Agriculture Sector*</label>
       <input type="text" class="form-control" id="addGDP2" required >
+      <div id= 'error4'></div>
     </div>
    
     <div class="form-group">
       <label for="alterEgo">GDP for Service Sector *</label>
       <input type="text" class="form-control" id="addGDP3" required>
+      <div id= 'error5'></div>
     </div>
 
     <div class="form-group">
       <label for="alterEgo">Average Electricty Price *</label>
       <input type="text" class="form-control" id="addAvg" required>
+      <div id= 'error6'></div>
     </div>
 
+    <p id ="Mainerror"></p>
 
 
     <button type="submit" class="btn btn-success button" (click) = "passAdd()">Submit</button>
