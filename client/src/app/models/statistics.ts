@@ -1,4 +1,4 @@
-interface IStatistics {
+export interface IStatistics {
   year: string;
   population: string;
   domesticConsumer: string;

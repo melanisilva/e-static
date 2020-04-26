@@ -3,6 +3,7 @@ import { ChartDataSets, ChartOptions } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
 import { DataServiceService } from '../../service.service';
 import {Subscription} from 'rxjs';
+import {IStatistics} from '../../models';
 
 @Component({
   selector: 'app-statistics',
@@ -12,16 +13,14 @@ import {Subscription} from 'rxjs';
 export class StatisticsComponent implements OnInit {
 
   private statsDataSubscription: Subscription;
-
-  lineChartData: ChartDataSets[] = [
+  // Demand Chart
+  public lineChartLabels: Label[] = [];
+  public demandChartData: ChartDataSets[] = [
     {
-      data: [173, 185, 230, 256, 257, 303, 334, 344, 393, 430, 496, 527, 557, 655, 678, 708, 762, 711, 785, 858, 950, 981, 1066, 1173],
-      label: 'Electricity Demand'
-    },
+      label: 'Electricity Demand',
+      data: []
+    }
   ];
-
-  lineChartLabels: Label[] = ['1977', '1978', '1979', '1980', '1981', '1982', '1983', '1984', '1985', '1986', '1987', '1988', '1989',
-    '1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000'];
 
   lineChartOptions = {
     responsive: true,
@@ -29,20 +28,43 @@ export class StatisticsComponent implements OnInit {
 
   lineChartColors: Color[] = [
     {
-      borderColor: '#0c7b93'
+      borderColor: '#0c7b93',
+      backgroundColor: 'rgba(166,177,225,1)',
     },
   ];
 
   lineChartLegend = true;
   lineChartPlugins = [];
   lineChartType = 'line';
+// ---------------------------------------------------//
+
+  public gdpChartData: ChartDataSets[] = [
+    {
+      label: 'Gross Domestic Product (GDP)',
+      data: []
+    }
+  ];
+
+  public populationChartData: ChartDataSets[] = [
+    {
+      label: 'Population',
+      data: []
+    }
+  ];
 
   constructor(private service: DataServiceService) { }
 
   ngOnInit() {
-    this.statsDataSubscription = this.service.retrieveData()
-      .subscribe((response) => {
-        console.log(response);
+    this.statsDataSubscription = this.service.getStatistics()
+      .subscribe((response: IStatistics[]) => {
+        if (response && response instanceof Array && response.length > 0) {
+          response.reverse().map((item) => {
+            this.lineChartLabels.push(item.year);
+            this.demandChartData[0].data.push(parseInt(item.eSales, 10));
+            this.gdpChartData[0].data.push(parseInt(item.gdpservice, 10));
+            this.populationChartData[0].data.push(parseInt(item.population, 10));
+          });
+        }
       });
   }
 }

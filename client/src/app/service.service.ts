@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Data } from './pages/workshop/view/view.component';
+import {IStatistics} from './models';
 
 
 @Injectable({
@@ -42,6 +43,13 @@ export class DataServiceService {
       catchError(this.handleError)
     );
 
+  }
+
+  public getStatistics(): Observable<IStatistics[]> {
+    return this.http.get<IStatistics[]>('http://localhost:8080/api/demf').pipe(
+      retry(1),
+      catchError(this.handleError)
+    );
   }
 
 
