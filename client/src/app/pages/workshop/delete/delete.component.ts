@@ -13,8 +13,8 @@ export class DeleteComponent implements OnInit {
   ngOnInit(): void {
   }
   passDelete(){
-    let year = (<HTMLInputElement>document.getElementById('year')).value;
     
+    var year = document.getElementById("year");
     var deleting ={
       year:year
     };
@@ -22,6 +22,7 @@ export class DeleteComponent implements OnInit {
     this.service.deleteData(deleting).subscribe(
       (data)=>{
         console.log(data);
+        alert ("The data has been deleted")
       }
     )
 

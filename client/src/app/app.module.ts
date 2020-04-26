@@ -13,6 +13,7 @@ import { UpdateComponent } from './pages/workshop/update/update.component';
 import { ViewComponent } from './pages/workshop/view/view.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 const appRoutes:Routes=[
   {path: 'pets',component :ViewComponent}
@@ -27,6 +28,7 @@ const appRoutes:Routes=[
     DeleteComponent,
     UpdateComponent,
     ViewComponent,
+
     
      //WorkshopComponent,
     // StatisticsComponent
@@ -37,7 +39,9 @@ const appRoutes:Routes=[
     BrowserAnimationsModule,
     DefaultModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    ReactiveFormsModule,
+    FormsModule
    
   ],
   providers: [],
