@@ -78,13 +78,12 @@ def main():
 
     a = np.array([[1,float(df.loc[1][1]),float(df.loc[1][3]),float(df.loc[1][4]),float(df.loc[1][2]),float(df.loc[1][8])]])
     for i in range(2,len(df.index)-4):
-            b = np.array([[1,float(df.loc[i][1]),float(df.loc[i][3]),float(df.loc[i][4]),float(df.loc[i][2]),float(df.loc[i][8])]])
-            a = np.append(a,b,axis=0)
+        b = np.array([[1,float(df.loc[i][1]),float(df.loc[i][3]),float(df.loc[i][4]),float(df.loc[i][2]),float(df.loc[i][8])]])
+        a = np.append(a,b,axis=0)
 
     b = np.transpose(a)
     c = np.dot(b,a)
     d = np.linalg.inv(c)
-
     e = np.array([[float(df.loc[1][6])]])
     for i in range(2,len(df.index)-4):
             f = np.array([[float(df.loc[i][6])]])
@@ -93,8 +92,12 @@ def main():
     g = np.dot(b,e)
 
     coeff = np.dot(d,g)
-
-    print(len(coeff))
+    
+    print(weights)
+    for i in range(len(weights)):
+       modelFile.write(str(weights[i]))
+       modelFile.write("\n")
+       
     for i in range(len(coeff)):
        modelFile.write(str(coeff[i][0]))
        modelFile.write("\n")

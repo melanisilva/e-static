@@ -21,14 +21,14 @@ export class DataServiceService {
   }
 // calling api for add
   addData(adding:object){
-    return this.http.post<any>("http://localhost:8080/add/",adding).pipe(
+    return this.http.post<any>("http://localhost:8080/add/api/demf",adding).pipe(
       retry(1),
       catchError(this.handleError)
     );
   }
 //callimn api for update
   updateData(updating:object){
-    return this.http.post<any>("http://localhost:8080/update/",updating).pipe(
+    return this.http.post<any>("http://localhost:8080/update/api/demf",updating).pipe(
       retry(1),
       catchError(this.handleError)
     );

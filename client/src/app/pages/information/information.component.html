@@ -10,15 +10,15 @@
         <header>
                 <h1>{{title}}</h1>
         </header>
-
-        <button (click)="displayBlock1()"> Display block 1!</button>
+  
+        <button (click)="displayBlock1()">Deviation Destributions</button>
         <div id = "block1">
             <div class = "grid1">
                 <div class="divisions">
-                    <div class="division1" (click)="division1()">1</div>
-                    <div class="division2" (click)="division2()">2</div>
-                    <div class="division3" (click)="division3()">3</div>  
-                    <div class="division4" (click)="division4()">4</div>
+                    <div class="division1" (click)="division1()">Deviation - 1</div>
+                    <div class="division2" (click)="division2()">Deviation - 2</div>
+                    <div class="division3" (click)="division3()">Deviation - 3</div>  
+                    <div class="division4" (click)="division4()">Deviation - 4</div>
                 </div>
 
                 <div class = "information-display">
@@ -31,15 +31,44 @@
             </div>
         </div>
 
-        <button (click)="displayBlock2()"> Display block 2!</button>
+        <button (click)="displayBlock2()">The total Installed Capacity Of CEB</button>
         <div id = "block2">
+            <h2>{{infoTitle2}}</h2>
+            <h1></h1>
             <div id = "table2"></div>
         </div>
 
-        <button (click)="displayBlock3()"> Display block 3!</button>
+        <button (click)="displayBlock3()"> The total Installed Capacity Of Private</button>
         <div id = "block3">
+            <h2>{{infoTitle3}}</h2>
             <div id = "table3"></div>
         </div>
+
+        
+        <button (click)="displayBlock4()">Electricity Generation</button>
+        <div id = "block4">
+            <h2>{{infoTitle4}}</h2>
+            <p>{{para1}}</p>
+        </div>
+
+        <button (click)="displayBlock5()">Maximum Demand</button>
+        <div id = "block5">
+            <h2>{{infoTitle5}}</h2>
+            <p>{{para2}}</p>
+        </div>
+
+        <button (click)="displayBlock6()">System Losses </button>
+        <div id = "block6">
+            <h2>{{infoTitle6}}</h2>
+            <p>{{para3}}</p>
+        </div>
+
+        <button (click)="displayBlock7()">Electricity Sales (Billed)</button>
+        <div id = "block7">
+            <h2>{{infoTitle7}}</h2>
+            <p>{{para4}}</p>
+        </div>
+          
 
         
         <footer></footer>
