@@ -23,42 +23,48 @@
   <form >
     <div class="form-group">
       <label for="name">Year *</label>
-      <select class="form-control" id="year" required>
+      <input class="form-control" id="year" required>
         
-      </select>
+      
     </div>
 
     <div class="form-group">
       <label for="alterEgo">Population *</label>
       <input type="text" class="form-control" id="updatePopulation" required>
+      <div id= 'error1'></div>
     </div>
 
     <div class="form-group">
       <label for="alterEgo">GDP per capita *</label>
       <input type="text" class="form-control" id="updateGDP1" required>
+      <div id= 'error2'></div>
     </div>
 
     <div class="form-group">
       <label for="alterEgo">Domestic Consumer Account*</label>
       <input type="text" class="form-control" id="updateDom" required >
+      <div id= 'error3'></div>
     </div>
 
     <div class="form-group">
       <label for="alterEgo">GDP for Agriculture Sector*</label>
       <input type="text" class="form-control" id="updateGDP2" required >
+      <div id= 'error4'></div>
     </div>
    
     <div class="form-group">
       <label for="alterEgo">GDP for Service Sector *</label>
       <input type="text" class="form-control" id="updateGDP3" required>
+      <div id= 'error5'></div>
     </div>
 
     <div class="form-group">
       <label for="alterEgo">Average Electricty Price *</label>
       <input type="text" class="form-control" id="updateAvg" required>
+      <div id= 'error6'></div>
     </div>
 
-
+    <p id ="Mainerror"></p>
 
     <button type="submit" class="btn btn-success button" (click)="passUpdate()">Submit</button>
     <button type="reset" class="btn btn-success button" value="Reset">Reset</button>

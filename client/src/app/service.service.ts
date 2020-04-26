@@ -36,7 +36,7 @@ export class DataServiceService {
 
   //to delete 
   deleteData(deleting:object){
-    return this.http.delete<any>("http://localhost:8080/delete/",deleting).pipe(
+    return this.http.delete<any>("http://localhost:8080/delete/api/demf/{year}",deleting).pipe(
       retry(1),
       catchError(this.handleError)
     );
