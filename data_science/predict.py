@@ -57,27 +57,27 @@ def main():
     predictedAgriculture = []
     predictedService = []
     #print("Testing population")
-    for i in range(len(df.index)-4,len(df.index)-3):
+    for i in range(len(df.index)-4,len(df.index)):
         outputP = float(df.loc[i][1])+weights[0]
         predictedPopulation.append(outputP)
 
     #print("GDP Per Capita")
-    for i in range(len(df.index)-4,len(df.index)-3):
+    for i in range(len(df.index)-4,len(df.index)):
         outputP = float(df.loc[i][3])+weights[1]
         predictedGdp.append(outputP)
 
      #print("Domestic Consumer Acc")
-    for i in range(len(df.index)-4,len(df.index)-3):
+    for i in range(len(df.index)-4,len(df.index)):
         outputP = float(df.loc[i][4])+weights[2]
         predictedDCA.append(outputP)
 
     #print("Agriculture")
-    for i in range(len(df.index)-4,len(df.index)-3):
+    for i in range(len(df.index)-4,len(df.index)):
         outputP = float(df.loc[i][2])+weights[3]
         predictedAgriculture.append(outputP)
         
     #print("Service")
-    for i in range(len(df.index)-4,len(df.index)-3):
+    for i in range(len(df.index)-4,len(df.index)):
         outputP = float(df.loc[i][8])+weights[4]
         predictedService.append(outputP)
 
@@ -114,8 +114,9 @@ def main():
     percentage = 0
     theCount = 0
     print(predictedPopulation)
-    for i in range(len(df.index)-4,len(df.index)-3):
-            print(df.loc[i][1])
+    for i in range(len(df.index)-4,len(df.index)):
+            print(df.loc[i][1],df.loc[i][3],df.loc[i][4],df.loc[i][2],df.loc[i][8])
+            #popu gdppercapita Dmc agri serv
             predicted = coeff[0][0]+(float(df.loc[i][1])*coeff[1][0])+(float(df.loc[i][3])*coeff[2][0])+(float(df.loc[i][4])*coeff[3][0])+(float(df.loc[i][2])*coeff[4][0])+(float(df.loc[i][8])*coeff[5][0])
             theCount = theCount + 1
             percentage =  percentage + predicted/float(df.loc[i][6])*100
