@@ -37,20 +37,22 @@ export class StatisticsComponent implements OnInit {
   lineChartPlugins = [];
   lineChartType = 'line';
 // ---------------------------------------------------//
-
+// GDP chart
   public gdpChartData: ChartDataSets[] = [
     {
       label: 'Gross Domestic Product (GDP)',
       data: []
     }
   ];
-
+// Population chart
   public populationChartData: ChartDataSets[] = [
     {
       label: 'Population',
       data: []
     }
   ];
+
+  // complete chart
 
   constructor(private service: DataServiceService) { }
 

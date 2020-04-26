@@ -1,7 +1,7 @@
 .main_container{
   background-color: white;
 }
-.title-dashboard {
+.title{
   h2 {
     text-align: center;
     font-family: "Montserrat";
@@ -30,6 +30,7 @@
 
   &.main{
     width: 75%;
+
   }
 
   &.sub{

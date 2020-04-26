@@ -14,6 +14,7 @@ import { ViewComponent } from './pages/workshop/view/view.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { PredictDemandPageComponent } from './pages/statistics/predict-demand-page/predict-demand-page.component';
 
 const appRoutes: Routes = [
   {path: 'pets', component : ViewComponent}
@@ -28,6 +29,7 @@ const appRoutes: Routes = [
     DeleteComponent,
     UpdateComponent,
     ViewComponent,
+    PredictDemandPageComponent,
   ],
   imports: [
     BrowserModule,
