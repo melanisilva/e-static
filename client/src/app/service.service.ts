@@ -11,8 +11,9 @@ import { Data } from './pages/workshop/view/view.component';
 export class DataServiceService {
   url: string;
   constructor(private http: HttpClient) { }
-//calling api for view 
-  retrieveData(){
+
+//calling api for view
+  retrieveData() {
     return this.http.get<Data[]>('http://localhost:8080/api/demf').pipe(
       retry(1),
       catchError(this.handleError)
@@ -34,7 +35,7 @@ export class DataServiceService {
 
   }
 
-  //to delete 
+  //to delete
   deleteData(deleting:object){
     return this.http.delete<any>("http://localhost:8080/delete/api/demf/{year}",deleting).pipe(
       retry(1),
