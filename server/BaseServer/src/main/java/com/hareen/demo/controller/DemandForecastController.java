@@ -4,6 +4,7 @@ import com.hareen.demo.models.DemandForecast;
 import com.hareen.demo.repository.DemandForecastRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Optional;
 
 @RestController // im saying this is my rest controller
 @RequestMapping("/api") // the url to comeinto the controller
@@ -33,8 +35,8 @@ public class DemandForecastController {
     public ResponseEntity<DemandForecast>addDemandForecast(@RequestBody DemandForecast demandForecast){
         try{
             DemandForecast _demandForecast = demandForecastRepository.save(new DemandForecast(demandForecast.getYear(),demandForecast.getPopulation(),,demandForecast.getGDPAgri(),demandForecast.getGDPPerCap(),demandForecast.getDomesticConsumer(),demandForecast.getAvgElectricity(),false));
-            return new ResponseEntity<>(_demandForecast,HttpStatus.CREATED)
-        }catch{
+            return new ResponseEntity<>(_demandForecast,HttpStatus.CREATED);
+        }catch(Exception e){
             return new ResponseEntity<>(null,HttpStatus.EXPECTATION_FAILED);
         }
     }
@@ -42,7 +44,7 @@ public class DemandForecastController {
 
     @PutMapping("/demf/{year}")
     public ResponseEntity <DemandForecast>updatedDemandForecast(@PathVariable("year") int year,@RequestBody DemandForecast demandForecast){
-        Optional<DemandForecast> demandForecastData = demandForecastRepository.findById(year);
+        Optional<DemandForecast> demandForecastData = demandForecastRepository.findById(String.valueOf(year));
 
         if(demandForecastData.isPresent()){
             DemandForecast _demandForecast = demandForecastData.get();
@@ -90,11 +92,11 @@ public class DemandForecastController {
     }
 
 
-    @RequestMapping(value = "/demf/{add}",method = RequsetMethod.POST)
-    public add add(@RequestBody add addData){
-        DemandForecast demandForecast = new DemandForecast();
-        demandForecastController.
-        return addData; 
-    }
+//    @RequestMapping(value = "/demf/{add}",method = RequsetMethod.POST)
+//    public add add(@RequestBody add addData){
+//        DemandForecast demandForecast = new DemandForecast();
+//        demandForecastController.
+//        return addData;
+//    }
 
 }

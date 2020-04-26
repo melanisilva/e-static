@@ -47,21 +47,21 @@ export class UpdateComponent implements OnInit {
                   document.getElementById("error6").innerHTML = this.error;
                   return false;
                 }
-            
+
 
 
               }else{
                 document.getElementById("error5").innerHTML = this.error;
                 return false;
               }
-            
+
 
 
             }else{
               document.getElementById("error4").innerHTML = this.error;
               return false;
             }
-            
+
 
 
           }else{
@@ -74,7 +74,7 @@ export class UpdateComponent implements OnInit {
           return false;
         }
 
-      
+
     }else{
       document.getElementById("error1").innerHTML = this.error;
       return false;
@@ -92,7 +92,7 @@ export class UpdateComponent implements OnInit {
 
   passUpdate(){
       if(this.errorControl){
-          
+
         let year = (<HTMLInputElement>document.getElementById('year')).value;
         let updatePopulation = (<HTMLInputElement>document.getElementById('updatePopulation')).value;
         let updateGDP1 = (<HTMLInputElement>document.getElementById('updateGDP1')).value;
@@ -111,11 +111,11 @@ export class UpdateComponent implements OnInit {
           updateAvg:updateAvg
         };
 
-        this.service.updateData(updating,year).subscribe(
-          (data)=>{
-            console.log(data);
-          }
-        )
+        // this.service.updateData(updating,year).subscribe(
+        //   (data)=>{
+        //     console.log(data);
+        //   }
+        // )
       }else{
 
         document.getElementById("Mainerror").innerHTML = this.mainError;
