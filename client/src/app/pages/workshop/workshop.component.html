@@ -1,50 +1,49 @@
-<!DOCTYPE html>
-<html>
-
-<body>
-<br>
-<br>
-<br>
-<br>
-<br>
-<router-outlet></router-outlet>
-
 
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,348&display=swap" rel="stylesheet">
 
-  <div class="col">
-    <div class="container-1">
-      <img src="../../../assets/img/add.png">
-      <a routerLink="/add" class="btn btn-one">
-        <span >Add Data  </span>
-      </a>
+<div class="main-container-workshop">
+  <ul class="cards" style="list-style-type:none;">
+
+  <li class="card" [routerLink]="['/view']">
+    <div class="card_icon">
+      <img src="../../../assets/img/view.png" alt="">
     </div>
-
-    <div class="container-1">
-      <img src="../../../assets/img/delete.png">
-      <a routerLink="/delete" class="btn btn-one">
-        <span>Delete Data </span>
-      </a>
+    <div class="card__inner"  >
+      <h2>View Data</h2>
     </div>
-  </div>
+  </li>
 
-  <div class="col">
-    <div class="container-1">
-      <img src="../../../assets/img/update.png">
-      <a routerLink="/update" class="btn btn-one">
-        <span >Update Data</span>
-      </a>
+  <li class="card" [routerLink]="['/update']">
+    <div class="card_icon">
+      <img src="../../../assets/img/update.png" alt="">
     </div>
-
-    <div class="container-1">
-      <img src="../../../assets/img/view.png">
-      <a routerLink="/view" class="btn btn-one">
-        <span >View Data </span>
-      </a>
+    <div class="card__inner" >
+      <h2>Update </h2>
     </div>
-  </div>
+  </li>
 
+</ul>
+  <ul class="cards" style="list-style-type:none;">
 
-</body>
-</html>
+  <li class="card" [routerLink]="['/delete']">
+    <div class="card_icon">
+      <img src="../../../assets/img/delete.png" alt="">
+    </div>
+    <div class="card__inner" >
+      <h2>Delete </h2>
+    </div>
+  </li>
+
+  <li class="card" [routerLink]="['/add']">
+    <div class="card_icon">
+      <img src="../../../assets/img/add.png" alt="">
+    </div>
+    <div class="card__inner" >
+      <h2>Add </h2>
+    </div>
+  </li>
+
+  </ul>
+</div>
+
 

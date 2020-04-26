@@ -1,108 +1,116 @@
 @import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
 
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
 
-    background: rgba(255, 255, 255, 0);
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  text-align: center;
+
+  @media (max-width: 550px) {
+    flex-direction: column;
   }
 
-  .col {
-    height: 100%;
-    margin-top: 70px;
-    padding: 20px;
-  }
-
-  div[class*=container] {
-    text-align: center;
-    height: 45%;
-    justify-content: center;
-    align-items: center;
-
-  }
-
-  .function-text{
-    font-size: 0.7vw;
-    color: #111111;
-  }
-  a{
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 1vw;
-  }
-
-a:hover{
-  text-decoration: none;}
-
+}
 img{
-  width: 50%;
+  max-width: 100%;
   height: auto;
-  margin-bottom: 30px;
 }
 
-  .container-1 {
-    margin: 30px;
-    background-color: white;
-    border: #111111;
-    box-shadow: 1px 1px 5px #999;
-    border-radius: 5%;
-    overflow:auto;
+h3{
+  font-size: 0.8vw;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.card {
+  position: relative;
+  width: 22%;
+  height: 20%;
+  margin: 1%;
+  box-shadow: 1px 1px 6px #999;
+  border-radius: 4.5%;
+  background: white;
+
+  @media (max-width: 815px) {
+    width: 48%;
   }
 
-  .container-2 {
-    background: #ffffff;
+  @media (max-width: 550px) {
+    width: 100%;
   }
 
-  .btn {
-    position: relative;
-    color: white;
-    width: 256px;
-    height: 64px;
-    line-height: 64px;
-    transition: all 0.3s;
-    span {
-      transition: all 0.3s;
-      font-size: 1.5vw;
-      color: #111111;
+  &__inner {
 
+    h2 {
+      color: #000000;
+      margin: 0;
+      font-family: 'Josefin Sans', sans-serif;
+      text-decoration-line: overline;
+      padding: 5%;
+      font-size: 2vw;
+
+      small {
+        font-style: italic;
+        display: inherit;
+      }
+    }
+
+  }
+
+  &__buttons {
+    position: absolute;
+    width: 100%;
+    transform: translateY(0);
+    transition: transform .5s ease;
+
+    div {
+      position: relative;
+      float: left;
+      width: 100%;
+      padding: 10px;
+      text-decoration: none;
+      color: black;
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+
+      &:first-child {
+        background: #fff;
+        border-right: 1px solid #ccc;
+      }
+
+      &:hover {
+        color: #ffde00;
+        background: #999;
+      }
+
+    }
+
+  }
+
+  &:hover {
+    .card__buttons {
+      transform: translateY(-38px);
     }
   }
 
-  .btn::before, .btn::after {
-    content: '';
+  &__tagline {
+    font-size: 1rem;
+    font-weight: 100;
+    padding : 2%;
+  }
+
+  p {
     position: absolute;
-    transition: all 0.3s;
     bottom: 0;
-    left: 0;
+    text-align: center;
     width: 100%;
-    height: 100%;
-    z-index: 1;
   }
 
-  .btn-one::before {
-    left: 4px;
-    z-index: 1;
-
-    opacity: 0;
-    background: rgba(255, 255, 255, 0.1);
-    transform: scale(0.1, 1);
-  }
-
-  .btn-one:hover::before {
-    opacity: 1;
-    transform: scale(1, 1);
-  }
-
-  .btn-one::after {
-    transition: all 0.3s;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-  }
-
-  .btn-one:hover::after {
-    transform: scale(1, .1);
-    opacity: 0;
-  }
+}
+.card_icon{
+  padding: 5%;
+}
 
 
 
