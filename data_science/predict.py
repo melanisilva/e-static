@@ -15,9 +15,13 @@ def Learn(input1, output,x) :
 
 def databaseConnect():
     client = MongoClient('mongodb+srv://admin:admin@cluster0-1er6h.mongodb.net/estatic?retryWrites=true&w=majority')
+    print(type(client))
     db = client.estatic
+    print(type(db))    
     collection = db['demand_forecast']
+    print(type(collection))    
     cursor = collection.find({})
+    print(type(cursor))    
 
     df = DataFrame([], columns=list('ABCDEFGHI'))
     for post in cursor:
@@ -71,7 +75,8 @@ def main():
     for i in range(len(df.index)-4,len(df.index)-3):
         outputP = float(df.loc[i][2])+weights[3]
         predictedAgriculture.append(outputP)
-
+        
+    #print("Service")
     for i in range(len(df.index)-4,len(df.index)-3):
         outputP = float(df.loc[i][8])+weights[4]
         predictedService.append(outputP)
@@ -108,14 +113,17 @@ def main():
 
     percentage = 0
     theCount = 0
+    print(predictedPopulation)
     for i in range(len(df.index)-4,len(df.index)-3):
-            predicted = coeff[0][0]+(predictedPopulation[theCount]*coeff[1][0])+(predictedGdp[theCount]*coeff[2][0])+(predictedDCA[theCount]*coeff[3][0])+(predictedAgriculture[theCount]*coeff[4][0])+(predictedService[theCount]*coeff[5][0])
+            print(df.loc[i][1])
+            predicted = coeff[0][0]+(float(df.loc[i][1])*coeff[1][0])+(float(df.loc[i][3])*coeff[2][0])+(float(df.loc[i][4])*coeff[3][0])+(float(df.loc[i][2])*coeff[4][0])+(float(df.loc[i][8])*coeff[5][0])
             theCount = theCount + 1
             percentage =  percentage + predicted/float(df.loc[i][6])*100
+            print(predicted)
 
     print("accuracy percentage : ", percentage/(theCount))
-    print("done") 
-
+    print("done")
+   
 
 if __name__ == "__main__":
         main()
