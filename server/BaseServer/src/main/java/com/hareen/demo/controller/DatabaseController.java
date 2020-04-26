@@ -12,11 +12,9 @@ import org.springframework.boot.SpringApplication;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.io.StringWriter;
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+
 
 public class DatabaseController {
     public static void main(String[] args) throws Exception{
@@ -32,29 +30,18 @@ public class DatabaseController {
         }
         String[] str = s.split(",");
         BigDecimal population = new BigDecimal(str[2].substring(16,str[2].length()-1));
-        System.out.println(population);
-        BigDecimal gdpPerCapita = new BigDecimal(str[3].substring(21,str[3].length()-1));
-        System.out.println(gdpPerCapita);
-        BigDecimal DomesticConsumerAcc = new BigDecimal(str[4].substring(20,str[4].length()-1));
-        System.out.println(DomesticConsumerAcc);
-        BigDecimal agriculture = new BigDecimal(str[5].substring(31,str[5].length()-1));
-        System.out.println(agriculture);
+        BigDecimal agriculture = new BigDecimal(str[3].substring(21,str[3].length()-1));
+        BigDecimal gdpPerCapita = new BigDecimal(str[4].substring(20,str[4].length()-1));
+        BigDecimal DomesticConsumerAcc = new BigDecimal(str[5].substring(31,str[5].length()-1));
         BigDecimal service = new BigDecimal(str[9].substring(17,str[9].length()-2));
-        System.out.println(service);
-
         for(int i =0;i<20;i++){
-//            population = population.add(model.get(0));
-//            gdpPerCapita = gdpPerCapita.add(model.get(1));
-//            DomesticConsumerAcc = DomesticConsumerAcc.add(model.get(2));
-//            agriculture = agriculture.add(model.get(3));
-//            service = service.add(model.get(4));
-            System.out.println(model.get(5));
+            population = population.add(model.get(0));
+            gdpPerCapita = gdpPerCapita.add(model.get(1));
+            DomesticConsumerAcc = DomesticConsumerAcc.add(model.get(2));
+            agriculture = agriculture.add(model.get(3));
+            service = service.add(model.get(4));
             BigDecimal sales = model.get(5).add(population.multiply(model.get(6))).add(gdpPerCapita.multiply(model.get(7))).add(DomesticConsumerAcc.multiply(model.get(8))).add(agriculture.multiply(model.get(9))).add(service.multiply(model.get(10)));
             System.out.println(sales);
-        }
-
-        for(int i = 5;i<model.size();i++){
-            System.out.println(model.get(i));
         }
 
     }
