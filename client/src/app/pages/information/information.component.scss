@@ -31,7 +31,7 @@ h1,h2{
 .divisions {
   border: 1px solid rgba(0, 0, 0, 0.8);
   display: grid;
-  grid-template-columns: auto auto ;
+  grid-template-columns: auto ;
   grid-gap: 10px;
   padding: 10px;
 }
@@ -41,14 +41,6 @@ h1,h2{
   text-align: center;
   padding: 20px 0;
   font-size: 30px;
-}
-
-.division1{
-  grid-column: 1 / span 2;
-}
-
-.division4{
-  grid-column: 1 / span 2;
 }
 
 button{

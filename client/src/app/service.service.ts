@@ -3,7 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Data } from './pages/workshop/view/view.component';
+import {IStatistics} from './models';
 
+const baseUrl = 'http://localhost:8080/api/demf';
 
 @Injectable({
   providedIn: 'root'
@@ -11,36 +13,45 @@ import { Data } from './pages/workshop/view/view.component';
 export class DataServiceService {
   url: string;
   constructor(private http: HttpClient) { }
-//calling api for view 
-  retrieveData(){
+
+// calling api for view
+  retrieveData() {
     return this.http.get<Data[]>('http://localhost:8080/api/demf').pipe(
       retry(1),
       catchError(this.handleError)
     );
   }
 // calling api for add
-  addData(adding:object){
-    return this.http.post<any>("http://localhost:8080/add/",adding).pipe(
+  addData(adding: object){
+    return this.http.post<any>('http://localhost:8080/add/api/demf',adding).pipe(
       retry(1),
       catchError(this.handleError)
     );
   }
 //callimn api for update
   updateData(updating:object){
-    return this.http.post<any>("http://localhost:8080/update/",updating).pipe(
+    return this.http.post<any>("http://localhost:8080/update/api/demf",updating).pipe(
       retry(1),
       catchError(this.handleError)
     );
 
   }
 
-  //to delete 
-  deleteData(object){
-    return this.http.delete<any>("http://localhost:8080/delete/api/demf/{year}").pipe(
+
+  //delete data with error handled
+  delete(year) {
+    return this.http.delete(`${baseUrl}/${year}`).pipe(
+      retry(1),
+      catchError(this.handleError)
+
+    );
+  }
+
+  public getStatistics(): Observable<IStatistics[]> {
+    return this.http.get<IStatistics[]>('http://localhost:8080/api/demf').pipe(
       retry(1),
       catchError(this.handleError)
     );
-
   }
 
   handleError(error) {

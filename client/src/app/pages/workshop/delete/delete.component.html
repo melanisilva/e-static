@@ -18,22 +18,22 @@
     View Data 
   </a></li>
 </ul>
-
+<div>
 <div class="container">
   <h1>Enter the year to delete data  </h1>
   <form >
     <div class="form-group">
       <label for="name">Year *</label>
-      <input class="form-control" id="year" required>
+      <input class="form-control" id="year"  [(ngModel)]="currentTutorial.year" name = "year" required>
         
       
     </div>
 
-    <button type="submit" class="btn btn-success button" (click) = "passDelete()">Submit</button>
+    <button type="submit" class="btn btn-success button" (click) = "deleteTutorial()">Submit</button>
     <button type="reset" class="btn btn-success button" value="Reset">Reset</button>
   </form>
   
 </div>
-
+</div>
 </body>
 </html>

@@ -15,9 +15,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
-const appRoutes:Routes=[
-  {path: 'pets',component :ViewComponent}
-  
+const appRoutes: Routes = [
+  {path: 'pets', component : ViewComponent}
+
   ];
 
 
@@ -28,10 +28,6 @@ const appRoutes:Routes=[
     DeleteComponent,
     UpdateComponent,
     ViewComponent,
-
-    
-     //WorkshopComponent,
-    // StatisticsComponent
   ],
   imports: [
     BrowserModule,
@@ -41,8 +37,10 @@ const appRoutes:Routes=[
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,
-    FormsModule
-   
+    FormsModule,
+
+    RouterModule.forRoot(appRoutes),
+
   ],
   providers: [],
   bootstrap: [AppComponent]
