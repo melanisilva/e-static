@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataServiceService } from 'src/app/service.service';
 
 @Component({
   selector: 'app-delete',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeleteComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service:DataServiceService) { }
 
   ngOnInit(): void {
+  }
+  passDelete(){
+    let year = (<HTMLInputElement>document.getElementById('year')).value;
+    
+    var deleting ={
+      year:year
+    };
+
+    this.service.deleteData(deleting).subscribe(
+      (data)=>{
+        console.log(data);
+      }
+    )
+
   }
 
 }
