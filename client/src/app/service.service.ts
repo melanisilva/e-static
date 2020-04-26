@@ -5,6 +5,7 @@ import { retry, catchError } from 'rxjs/operators';
 import { Data } from './pages/workshop/view/view.component';
 import {IStatistics} from './models';
 
+const baseUrl = 'http://localhost:8080/api/demf';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class DataServiceService {
   url: string;
   constructor(private http: HttpClient) { }
 
-//calling api for view
+// calling api for view
   retrieveData() {
     return this.http.get<Data[]>('http://localhost:8080/api/demf').pipe(
       retry(1),
@@ -21,28 +22,29 @@ export class DataServiceService {
     );
   }
 // calling api for add
-  addData(adding:object){
-    return this.http.post<any>("http://localhost:8080/add/",adding).pipe(
+  addData(adding: object){
+    return this.http.post<any>('http://localhost:8080/add/api/demf',adding).pipe(
       retry(1),
       catchError(this.handleError)
     );
   }
 //callimn api for update
   updateData(updating:object){
-    return this.http.post<any>("http://localhost:8080/update/",updating).pipe(
+    return this.http.post<any>("http://localhost:8080/update/api/demf",updating).pipe(
       retry(1),
       catchError(this.handleError)
     );
 
   }
 
-  //to delete
-  deleteData(deleting:object){
-    return this.http.delete<any>("http://localhost:8080/delete/api/demf/{year}",deleting).pipe(
+
+  //delete data with error handled
+  delete(year) {
+    return this.http.delete(`${baseUrl}/${year}`).pipe(
       retry(1),
       catchError(this.handleError)
-    );
 
+    );
   }
 
   public getStatistics(): Observable<IStatistics[]> {
@@ -51,7 +53,6 @@ export class DataServiceService {
       catchError(this.handleError)
     );
   }
-
 
   handleError(error) {
     let errorMessage = '';

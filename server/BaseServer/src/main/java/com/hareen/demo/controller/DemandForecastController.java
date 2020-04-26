@@ -48,7 +48,7 @@ public class DemandForecastController {
 ////                    DemandForecast updatedDemandForecast = demandForecastRepository.save(demandForecastData);
 ////                    return ResponseEntity.ok().body(updatedDemandForecast);
 ////                }).orElse(ResponseEntity.notFound().build());
-//    }
+//  }
 
     @DeleteMapping(value="/demf/{year}")
     public ResponseEntity<?> deleteForecast(@PathVariable("year") String year) {
@@ -57,6 +57,14 @@ public class DemandForecastController {
                     demandForecastRepository.deleteById(year);
                     return ResponseEntity.ok().build();
                 }).orElse(ResponseEntity.notFound().build());
+    }
+
+
+    @RequestMapping(value = "/demf/{add}",method = RequsetMethod.POST)
+    public add add(@RequestBody add addData){
+        DemandForecast demandForecast = new DemandForecast();
+        demandForecastController.
+        return addData; 
     }
 
 }

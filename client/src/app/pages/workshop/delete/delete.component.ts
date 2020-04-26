@@ -7,24 +7,27 @@ import { DataServiceService } from 'src/app/service.service';
   styleUrls: ['./delete.component.scss']
 })
 export class DeleteComponent implements OnInit {
-
+currentTutorial = null;
+message = '';
   constructor(private service:DataServiceService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
-  passDelete(){
-    let year = (<HTMLInputElement>document.getElementById('year')).value;
-    
-    var deleting ={
+
+  deleteTutorial() {
+
+    let year=(<HTMLInputElement>document.getElementById('year')).value;
+    var deleting={
       year:year
-    };
-
-    this.service.deleteData(deleting).subscribe(
-      (data)=>{
-        console.log(data);
-      }
-    )
-
+    }
+    this.service.delete(year).subscribe(
+        response => {
+          console.log(response);
+          this.message = 'The data was succesfully deleted';
+        },
+        error => {
+          console.log(error);
+        });
   }
 
 }
