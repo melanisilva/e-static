@@ -27,7 +27,7 @@ export class DataServiceService {
   }
 //callimn api for update
   updateData(updating:object){
-    return this.http.post<any>("http://localhost:8080/update/api/demf",updating).pipe(
+    return this.http.put<any>("http://localhost:8080/update/api/demf/{year}",updating).pipe(
       retry(1),
       catchError(this.handleError)
     );
