@@ -35,17 +35,14 @@ export class DataServiceService {
 
   }
 
-  //to delete 
- // deleteData(object){
-   // return this.http.delete<any>("http://localhost:8080/delete/api/demf/{year}").pipe(
-     // retry(1),
-      //catchError(this.handleError)
-    //);
-
-  //}
-  
+ 
+  //delete data with error handled
   delete(year) {
-    return this.http.delete(`${baseUrl}/${year}`);
+    return this.http.delete(`${baseUrl}/${year}`).pipe(
+      retry(1),
+      catchError(this.handleError)
+
+    );
   }
 
   handleError(error) {
