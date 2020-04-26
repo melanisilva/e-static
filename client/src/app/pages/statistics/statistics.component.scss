@@ -1,0 +1,42 @@
+.main_container{
+  background-color: white;
+}
+.title{
+  h2 {
+    text-align: center;
+    font-family: "Montserrat";
+  }
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 4%;
+  padding: 0;
+  text-align: center;
+
+  @media (max-width: 550px) {
+    flex-direction: column;
+  }
+
+}
+
+.card {
+  position: relative;
+  margin: 3%;
+  box-shadow: 1px 1px 5px #999;
+  border-radius: 2%;
+  background: white;
+
+  &.main{
+    width: 75%;
+
+  }
+
+  &.sub{
+    width: 40%;
+    float: left;
+  }
+
+}
+

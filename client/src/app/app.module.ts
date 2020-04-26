@@ -14,10 +14,11 @@ import { ViewComponent } from './pages/workshop/view/view.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { PredictDemandPageComponent } from './pages/statistics/predict-demand-page/predict-demand-page.component';
 
-const appRoutes:Routes=[
-  {path: 'pets',component :ViewComponent}
-  
+const appRoutes: Routes = [
+  {path: 'pets', component : ViewComponent}
+
   ];
 
 
@@ -28,10 +29,7 @@ const appRoutes:Routes=[
     DeleteComponent,
     UpdateComponent,
     ViewComponent,
-
-    
-     //WorkshopComponent,
-    // StatisticsComponent
+    PredictDemandPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,8 +39,10 @@ const appRoutes:Routes=[
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,
-    FormsModule
-   
+    FormsModule,
+
+    RouterModule.forRoot(appRoutes),
+
   ],
   providers: [],
   bootstrap: [AppComponent]

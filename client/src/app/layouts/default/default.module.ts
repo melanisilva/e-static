@@ -12,6 +12,7 @@ import{InformationComponent} from './../../pages/information/information.compone
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { from } from 'rxjs';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { from } from 'rxjs';
     MatDividerModule,
     FlexLayoutModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    ChartsModule
   ]
 })
 export class DefaultModule { }

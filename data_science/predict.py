@@ -15,9 +15,13 @@ def Learn(input1, output,x) :
 
 def databaseConnect():
     client = MongoClient('mongodb+srv://admin:admin@cluster0-1er6h.mongodb.net/estatic?retryWrites=true&w=majority')
+    print(type(client))
     db = client.estatic
+    print(type(db))    
     collection = db['demand_forecast']
+    print(type(collection))    
     cursor = collection.find({})
+    print(type(cursor))    
 
     df = DataFrame([], columns=list('ABCDEFGHI'))
     for post in cursor:
@@ -53,26 +57,27 @@ def main():
     predictedAgriculture = []
     predictedService = []
     #print("Testing population")
-    for i in range(len(df.index)-4,len(df.index)-3):
+    for i in range(len(df.index)-4,len(df.index)):
         outputP = float(df.loc[i][1])+weights[0]
         predictedPopulation.append(outputP)
 
     #print("GDP Per Capita")
-    for i in range(len(df.index)-4,len(df.index)-3):
+    for i in range(len(df.index)-4,len(df.index)):
         outputP = float(df.loc[i][3])+weights[1]
         predictedGdp.append(outputP)
 
      #print("Domestic Consumer Acc")
-    for i in range(len(df.index)-4,len(df.index)-3):
+    for i in range(len(df.index)-4,len(df.index)):
         outputP = float(df.loc[i][4])+weights[2]
         predictedDCA.append(outputP)
 
     #print("Agriculture")
-    for i in range(len(df.index)-4,len(df.index)-3):
+    for i in range(len(df.index)-4,len(df.index)):
         outputP = float(df.loc[i][2])+weights[3]
         predictedAgriculture.append(outputP)
-
-    for i in range(len(df.index)-4,len(df.index)-3):
+        
+    #print("Service")
+    for i in range(len(df.index)-4,len(df.index)):
         outputP = float(df.loc[i][8])+weights[4]
         predictedService.append(outputP)
 
@@ -108,14 +113,18 @@ def main():
 
     percentage = 0
     theCount = 0
-    for i in range(len(df.index)-4,len(df.index)-3):
-            predicted = coeff[0][0]+(predictedPopulation[theCount]*coeff[1][0])+(predictedGdp[theCount]*coeff[2][0])+(predictedDCA[theCount]*coeff[3][0])+(predictedAgriculture[theCount]*coeff[4][0])+(predictedService[theCount]*coeff[5][0])
+    print(predictedPopulation)
+    for i in range(len(df.index)-4,len(df.index)):
+            print(df.loc[i][1],df.loc[i][3],df.loc[i][4],df.loc[i][2],df.loc[i][8])
+            #popu gdppercapita Dmc agri serv
+            predicted = coeff[0][0]+(float(df.loc[i][1])*coeff[1][0])+(float(df.loc[i][3])*coeff[2][0])+(float(df.loc[i][4])*coeff[3][0])+(float(df.loc[i][2])*coeff[4][0])+(float(df.loc[i][8])*coeff[5][0])
             theCount = theCount + 1
             percentage =  percentage + predicted/float(df.loc[i][6])*100
+            print(predicted)
 
     print("accuracy percentage : ", percentage/(theCount))
-    print("done") 
-
+    print("done")
+   
 
 if __name__ == "__main__":
         main()

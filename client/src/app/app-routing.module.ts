@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { WorkshopComponent } from './pages/workshop/workshop.component';
 import { StatisticsComponent } from './pages/statistics/statistics.component';
+import { PredictDemandPageComponent } from './pages/statistics/predict-demand-page/predict-demand-page.component';
 import { InformationComponent } from './pages/information/information.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { AddComponent } from './pages/workshop/add/add.component';
@@ -18,34 +19,37 @@ const routes: Routes = [{
   children: [{
     path: '',
     component: DashboardComponent
-  },{
-    path:'login',
-    component:LoginComponent
-  },{
-    path:'workshop',
-    component:WorkshopComponent
-  },{
-    path:'statistics',
-    component:StatisticsComponent
-  },{
-    path:'information',
-    component:InformationComponent
-  },{
+  }, {
+    path: 'login',
+    component: LoginComponent
+  }, {
+    path: 'workshop',
+    component: WorkshopComponent
+  }, {
+    path: 'statistics',
+    component: StatisticsComponent
+  }, {
+    path: 'information',
+    component: InformationComponent
+  }, {
     path: 'settings',
     component : SettingsComponent
-  },{
-    path:'add',
-  component :AddComponent
-},{
-  path:'delete',
-  component :DeleteComponent
-},{
-  path:'update',
-  component :UpdateComponent
-},{
-  path:'view',
-  component :ViewComponent
-}
+  }, {
+    path: 'add',
+  component : AddComponent
+}, {
+  path: 'delete',
+  component : DeleteComponent
+}, {
+  path: 'update',
+  component : UpdateComponent
+}, {
+  path: 'view',
+  component : ViewComponent
+}, {
+    path: 'predict-demand',
+    component : PredictDemandPageComponent
+  }
 ]
 }];
 

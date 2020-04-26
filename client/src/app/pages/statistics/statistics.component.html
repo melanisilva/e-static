@@ -1,1 +1,76 @@
-<p>Edit the data set as required ! </p>
+<div class="main_container">
+  <div class="title">
+    <h2 >Statistics</h2>
+  </div>
+  <ul class="cards">
+    <!--demand chart-->
+    <li class="card main">
+      <div class="demand-chart-wrapper">
+        <canvas
+          baseChart
+          [datasets]="demandChartData"
+          [labels]="lineChartLabels"
+          [options]="lineChartOptions"
+          [colors]="lineChartColors"
+          [legend]="lineChartLegend"
+          [chartType]="lineChartType"
+          [plugins]="lineChartPlugins"
+        >
+        </canvas>
+      </div>
+    </li>
+    <div>
+      <button mat-button [routerLink]="['/predict-demand']">
+        Predict Future Demand
+      </button>
+    </div>
+    <!--Gdp chart-->
+    <li class="card sub">
+      <div class="gdp-chart-wrapper">
+        <canvas
+          baseChart
+          [datasets]="gdpChartData"
+          [labels]="lineChartLabels"
+          [options]="lineChartOptions"
+          [colors]="lineChartColors"
+          [legend]="lineChartLegend"
+          [chartType]="lineChartType"
+          [plugins]="lineChartPlugins"
+        >
+        </canvas>
+      </div>
+    </li>
+    <!--population chart-->
+    <li class="card sub">
+      <div class="gdp-chart-wrapper">
+        <canvas
+          baseChart
+          [datasets]="populationChartData"
+          [labels]="lineChartLabels"
+          [options]="lineChartOptions"
+          [colors]="lineChartColors"
+          [legend]="lineChartLegend"
+          [chartType]="lineChartType"
+          [plugins]="lineChartPlugins"
+        >
+        </canvas>
+      </div>
+    </li>
+    <!--population chart-->
+    <li class="card main">
+      <div class="gdp-chart-wrapper">
+        <canvas
+          baseChart
+          [datasets]="populationChartData"
+          [labels]="lineChartLabels"
+          [options]="lineChartOptions"
+          [colors]="lineChartColors"
+          [legend]="lineChartLegend"
+          [chartType]="lineChartType"
+          [plugins]="lineChartPlugins"
+        >
+        </canvas>
+      </div>
+    </li>
+  </ul>
+</div>
