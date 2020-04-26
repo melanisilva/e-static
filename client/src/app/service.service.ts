@@ -4,6 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Data } from './pages/workshop/view/view.component';
 
+const baseUrl = 'http://localhost:8080/api/demf';
 
 @Injectable({
   providedIn: 'root'
@@ -34,13 +35,14 @@ export class DataServiceService {
 
   }
 
-  //to delete 
-  deleteData(object){
-    return this.http.delete<any>("http://localhost:8080/delete/api/demf/{year}").pipe(
+ 
+  //delete data with error handled
+  delete(year) {
+    return this.http.delete(`${baseUrl}/${year}`).pipe(
       retry(1),
       catchError(this.handleError)
-    );
 
+    );
   }
 
   handleError(error) {
