@@ -9,7 +9,7 @@ import { Data } from './pages/workshop/view/view.component';
   providedIn: 'root'
 })
 export class DataServiceService {
-
+  url: string;
   constructor(private http: HttpClient) { }
 //calling api for view 
   retrieveData(){
@@ -28,6 +28,15 @@ export class DataServiceService {
 //callimn api for update
   updateData(updating:object){
     return this.http.post<any>("http://localhost:8080/update/",updating).pipe(
+      retry(1),
+      catchError(this.handleError)
+    );
+
+  }
+
+  //to delete 
+  deleteData(deleting:object){
+    return this.http.delete<any>("http://localhost:8080/delete/",deleting).pipe(
       retry(1),
       catchError(this.handleError)
     );
