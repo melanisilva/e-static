@@ -111,7 +111,7 @@ export class UpdateComponent implements OnInit {
           updateAvg:updateAvg
         };
 
-        this.service.updateData(updating).subscribe(
+        this.service.updateData(updating,year).subscribe(
           (data)=>{
             console.log(data);
           }
