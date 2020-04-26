@@ -15,8 +15,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes:Routes=[
-  {path: 'pets',component :ViewComponent}
-  
+
   ];
 
 
@@ -26,8 +25,8 @@ const appRoutes:Routes=[
     AddComponent,
     DeleteComponent,
     UpdateComponent,
-    ViewComponent,
-    
+    ViewComponent
+
      //WorkshopComponent,
     // StatisticsComponent
   ],
@@ -37,8 +36,8 @@ const appRoutes:Routes=[
     BrowserAnimationsModule,
     DefaultModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
-   
+    RouterModule.forRoot(appRoutes),
+
   ],
   providers: [],
   bootstrap: [AppComponent]
