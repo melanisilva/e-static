@@ -11,8 +11,16 @@ export class LoginComponent implements OnInit {
   password: String;
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
+
+  LoginUser()
+  {
+    if(this.username== "Admin" && this.password=="12345")
+  {
+    console.log("Welcome")
+  }
+  }
+    
+
 }
-
-
