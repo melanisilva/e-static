@@ -1,6 +1,7 @@
 package com.hareen.demo.controller;
 
 import com.hareen.demo.models.DemandForecast;
+import com.hareen.demo.models.Prediction;
 import com.hareen.demo.repository.DemandForecastRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -68,6 +70,17 @@ public class DemandForecastController {
         return demandForecastRepository.findById(id)
                 .map(demandForecast -> ResponseEntity.ok().body(demandForecast))
                 .orElse(ResponseEntity.notFound().build());
+    }
+
+    @GetMapping(value="/data")
+    public ResponseEntity<List> get1(){
+        Prediction p = new Prediction();
+        p.setId("123");
+        p.setValue("999");
+        System.out.println(p);
+        List<Prediction> veh = new ArrayList<Prediction>();
+        veh.add(p);
+        return new ResponseEntity<List>(veh, HttpStatus.OK);
     }
 
 //    @PutMapping(value="/demf/{id}")
