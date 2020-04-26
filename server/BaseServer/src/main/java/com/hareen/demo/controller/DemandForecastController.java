@@ -50,11 +50,11 @@ public class DemandForecastController {
 ////                }).orElse(ResponseEntity.notFound().build());
 //    }
 
-    @DeleteMapping(value="/demf/{id}")
-    public ResponseEntity<?> deleteForecast(@PathVariable("id") String id) {
-        return demandForecastRepository.findById(id)
+    @DeleteMapping(value="/demf/{year}")
+    public ResponseEntity<?> deleteForecast(@PathVariable("year") String year) {
+        return demandForecastRepository.findById(year)
                 .map(demandForecast -> {
-                    demandForecastRepository.deleteById(id);
+                    demandForecastRepository.deleteById(year);
                     return ResponseEntity.ok().build();
                 }).orElse(ResponseEntity.notFound().build());
     }
