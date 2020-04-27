@@ -16,11 +16,13 @@ export class LoginComponent implements OnInit {
 
   LoginUser()
   {
-    if(this.username== "Admin" && this.password=="12345")
+    if(this.username== "admin" && this.password=="12345")
   {
     console.log("Welcome")
-  }
-  }
+    alert("log in succesfull");
     
-
+  }else{
+    alert("invalid");
+  }
+  }
 }
