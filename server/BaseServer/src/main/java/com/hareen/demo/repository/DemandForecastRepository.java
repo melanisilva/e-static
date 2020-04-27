@@ -12,8 +12,4 @@ public interface DemandForecastRepository extends MongoRepository <DemandForecas
     public boolean deleteByYear();
 
 	public void deleteByYear(String year);
-    
-
-	
-
 }

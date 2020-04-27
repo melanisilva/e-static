@@ -24,7 +24,7 @@ message = '';
         response => {
           console.log(response);
           console.log("The data was succesfully deleted")
-          this.message = 'The data was succesfully deleted';
+          alert( 'The data was succesfully deleted');
         },
         error => {
           console.log(error);
