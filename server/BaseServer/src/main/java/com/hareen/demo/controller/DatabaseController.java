@@ -18,6 +18,7 @@ import java.util.ArrayList;
 
 public class DatabaseController {
     public static BigDecimal predict() throws Exception{
+        train();
         ArrayList<BigDecimal> model = getModel();
         MongoClientURI url = new MongoClientURI("mongodb+srv://admin:admin@cluster0-1er6h.mongodb.net/estatic?retryWrites=true&w=majority");
         MongoClient client = new MongoClient(url);
@@ -59,5 +60,8 @@ public class DatabaseController {
         return model;
     }
 
+    public static void train() throws Exception{
+        Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"cd ../../data_science && python predict.py\"");
+    }
 
 }
