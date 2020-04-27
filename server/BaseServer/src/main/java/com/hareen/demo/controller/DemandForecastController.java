@@ -1,14 +1,18 @@
 package com.hareen.demo.controller;
 
 import com.hareen.demo.models.DemandForecast;
+import com.hareen.demo.models.Prediction;
 import com.hareen.demo.repository.DemandForecastRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController // im saying this is my rest controller
@@ -35,6 +39,15 @@ public class DemandForecastController {
         return demandForecastRepository.findById(id)
                 .map(demandForecast -> ResponseEntity.ok().body(demandForecast))
                 .orElse(ResponseEntity.notFound().build());
+    }
+    @CrossOrigin("*")
+    @GetMapping(value="/predict")
+    public ResponseEntity<Prediction> getPrediction() throws Exception{
+        Prediction p = new Prediction();
+        BigDecimal prediction1 = DatabaseController.predict();
+        String prediction = prediction1.toString();
+        p.setValue(prediction);
+        return new ResponseEntity<Prediction>(p, HttpStatus.OK);
     }
 
 //    @PutMapping(value="/demf/{id}")
