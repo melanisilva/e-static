@@ -23,6 +23,7 @@ message = '';
     this.service.delete(year).subscribe(
         response => {
           console.log(response);
+          console.log("The data was succesfully deleted")
           this.message = 'The data was succesfully deleted';
         },
         error => {

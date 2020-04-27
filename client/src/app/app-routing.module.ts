@@ -1,7 +1,7 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DefaultComponent } from './layouts/default/default.component';
-import { LoginComponent } from './login/login.component';
+
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { WorkshopComponent } from './pages/workshop/workshop.component';
 import { StatisticsComponent } from './pages/statistics/statistics.component';
@@ -12,6 +12,7 @@ import { AddComponent } from './pages/workshop/add/add.component';
 import { DeleteComponent } from './pages/workshop/delete/delete.component';
 import { UpdateComponent } from './pages/workshop/update/update.component';
 import { ViewComponent } from './pages/workshop/view/view.component';
+import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [{
   path: '',
