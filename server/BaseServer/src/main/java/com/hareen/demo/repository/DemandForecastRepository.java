@@ -10,7 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 public interface DemandForecastRepository extends MongoRepository <DemandForecast,String> {
 
     public boolean deleteByYear();
-    
+
+	public void deleteByYear(String year);
     
 
 	
