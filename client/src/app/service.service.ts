@@ -46,13 +46,21 @@ export class DataServiceService {
 
     );
   }
-
+//get data for satistics charts
   public getStatistics(): Observable<IStatistics[]> {
     return this.http.get<IStatistics[]>('http://localhost:8080/api/demf').pipe(
       retry(1),
       catchError(this.handleError)
     );
   }
+
+// //get forecasted data
+// public getForecastedValue(){
+//   return this.http.get<any>('http://localhost:8080/api/data').pipe(
+//     retry(1),
+//     catchError(this.handleError)
+//   );
+// }
 
   handleError(error) {
     let errorMessage = '';

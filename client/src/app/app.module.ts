@@ -14,6 +14,7 @@ import { ViewComponent } from './pages/workshop/view/view.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ChartsModule } from 'ng2-charts';
 import { PredictDemandPageComponent } from './pages/statistics/predict-demand-page/predict-demand-page.component';
 
 const appRoutes: Routes = [
@@ -40,9 +41,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,
     FormsModule,
-
     RouterModule.forRoot(appRoutes),
-
+    ChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

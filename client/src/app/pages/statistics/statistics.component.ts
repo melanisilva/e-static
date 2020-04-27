@@ -18,14 +18,17 @@ export class StatisticsComponent implements OnInit {
   public demandChartData: ChartDataSets[] = [
     {
       label: 'Electricity Demand',
-      data: []
+      data: [],
+      fill: false,
     }
   ];
 
   lineChartOptions = {
     responsive: true,
   };
-
+  lineChartDisplay = {
+    display : false,
+  };
   lineChartColors: Color[] = [
     {
       borderColor: '#0c7b93',
@@ -52,7 +55,6 @@ export class StatisticsComponent implements OnInit {
     }
   ];
 
-  // complete chart
 
   constructor(private service: DataServiceService) { }
 
