@@ -31,8 +31,8 @@ export class StatisticsComponent implements OnInit {
   };
   lineChartColors: Color[] = [
     {
-      borderColor: '#0c7b93',
-      backgroundColor: 'rgba(166,177,225,1)',
+      borderColor: '#424874',
+      backgroundColor: '#dcd6f7',
     },
   ];
 

@@ -54,13 +54,13 @@ export class DataServiceService {
     );
   }
 
-// //get forecasted data
-// public getForecastedValue(){
-//   return this.http.get<any>('http://localhost:8080/api/data').pipe(
-//     retry(1),
-//     catchError(this.handleError)
-//   );
-// }
+//get forecasted data
+public getForecastedValue(){
+  return this.http.get<any>('http://localhost:8080/api/data').pipe(
+    retry(1),
+    catchError(this.handleError)
+  );
+}
 
   handleError(error) {
     let errorMessage = '';

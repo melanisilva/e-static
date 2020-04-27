@@ -54,10 +54,10 @@ export class PredictDemandPageComponent implements OnInit {
         }
       });
 
-      // this.service.getForecastedValue().subscribe(
-      //   (response) => {
-      //     console.log(response);
-      //   }
-      // )
+      this.service.getForecastedValue().subscribe(
+        (res) => {
+          console.log(res);
+        }
+      )
   }
 }
