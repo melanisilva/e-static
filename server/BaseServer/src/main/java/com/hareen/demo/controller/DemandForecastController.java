@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 import javax.validation.Valid;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -42,16 +43,14 @@ public class DemandForecastController {
                 .map(demandForecast -> ResponseEntity.ok().body(demandForecast))
                 .orElse(ResponseEntity.notFound().build());
     }
-
-    @GetMapping(value="/data")
-    public ResponseEntity<List> get1(){
+    @CrossOrigin("*")
+    @GetMapping(value="/predict")
+    public ResponseEntity<Prediction> getPrediction() throws Exception{
         Prediction p = new Prediction();
-        p.setId("123");
-        p.setValue("999");
-        System.out.println(p);
-        List<Prediction> veh = new ArrayList<Prediction>();
-        veh.add(p);
-        return new ResponseEntity<List>(veh, HttpStatus.OK);
+        BigDecimal prediction1 = DatabaseController.predict();
+        String prediction = prediction1.toString();
+        p.setValue(prediction);
+        return new ResponseEntity<Prediction>(p, HttpStatus.OK);
     }
 
 //    @PutMapping(value="/demf/{id}")
