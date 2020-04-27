@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 import { PredictDemandPageComponent } from './pages/statistics/predict-demand-page/predict-demand-page.component';
+import { LoginComponent } from './pages/login/login.component';
 
 const appRoutes: Routes = [
   {path: 'pets', component : ViewComponent}
@@ -31,6 +32,7 @@ const appRoutes: Routes = [
     UpdateComponent,
     ViewComponent,
     PredictDemandPageComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

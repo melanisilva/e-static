@@ -5,6 +5,7 @@ import com.hareen.demo.repository.DemandForecastRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -26,10 +27,8 @@ public class DemandForecastController {
         return demandForecastRepository.findAll(sortByCreatedAtDesc);
     }
 
-    @PostMapping("/demf")
-    public DemandForecast createForecast(@Valid @RequestBody DemandForecast demandForecast) {
-        return demandForecastRepository.save(demandForecast);
-    }
+
+
 
     @GetMapping(value="/demf/{id}")
     public ResponseEntity<DemandForecast> getForecastById(@PathVariable("id") String id) {
@@ -50,13 +49,26 @@ public class DemandForecastController {
 ////                }).orElse(ResponseEntity.notFound().build());
 //    }
 
-    @DeleteMapping(value="/demf/{year}")
-    public ResponseEntity<?> deleteForecast(@PathVariable("year") String year) {
-        return demandForecastRepository.findById(year)
-                .map(demandForecast -> {
-                    demandForecastRepository.deleteById(year);
-                    return ResponseEntity.ok().build();
-                }).orElse(ResponseEntity.notFound().build());
+ //   @DeleteMapping(value="/demf/{year}")
+   // public ResponseEntity<?> deleteForecast(@PathVariable("year") String year) {
+     //  return demandForecastRepository.findById(year)
+       //       .map(demandForecast -> {
+         //          demandForecastRepository.deleteById(year);
+           //        return ResponseEntity.ok().build();
+            //   }).orElse(ResponseEntity.notFound().build());
+   // }
+
+    @RequestMapping(value = "/demf/{year}", method = RequestMethod.DELETE)
+    public boolean deleteData(@PathVariable("year") String year) {
+       demandForecastRepository.deleteByYear(year);
+        return true;
     }
+//
+//    @RequestMapping(value = "/demf/{add}",method = RequsetMethod.POST)
+//    public add add(@RequestBody add addData){
+//        DemandForecast demandForecast = new DemandForecast();
+//        demandForecastController.
+//        return addData;
+//    }
 
 }
