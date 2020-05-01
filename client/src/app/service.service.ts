@@ -56,7 +56,7 @@ export class DataServiceService {
 
 //get forecasted data
 public getForecastedValue(){
-  return this.http.get<any>('http://localhost:8080/api/data').pipe(
+  return this.http.get<any>('http://localhost:8080/api/predict').pipe(
     retry(1),
     catchError(this.handleError)
   );

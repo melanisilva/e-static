@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { ChartDataSets, ChartOptions } from 'chart.js';
-import { Color, Label } from 'ng2-charts';
-import { DataServiceService } from '../../../service.service';
-import { Subscription } from 'rxjs';
-import { IStatistics } from '../../../models';
+import {Subscription} from 'rxjs';
+import {Color, Label} from 'ng2-charts';
+import {ChartDataSets} from 'chart.js';
+import {DataServiceService} from '../../../service.service';
+import {IStatistics} from '../../../models';
 
 @Component({
-  selector: 'app-predict-demand-page',
-  templateUrl: './predict-demand-page.component.html',
-  styleUrls: ['./predict-demand-page.component.scss'],
+  selector: 'app-predict-demand-fifty-years',
+  templateUrl: './predict-demand-fifty-years.component.html',
+  styleUrls: ['./predict-demand-fifty-years.component.scss']
 })
-export class PredictDemandPageComponent implements OnInit {
+export class PredictDemandFiftyYearsComponent implements OnInit {
+
   private statsDataSubscription: Subscription;
-  public demand: any = {};
   // Demand Chart
   public lineChartLabels: Label[] = [];
   public demandChartData: ChartDataSets[] = [
@@ -55,12 +55,13 @@ export class PredictDemandPageComponent implements OnInit {
       });
 
     this.service.getForecastValue20().subscribe(
-        (res) => {
-          console.log(res);
-          this.lineChartLabels.push('2038');
-          this.demandChartData[0].data.push(6000);
-          this.demand = res;
-        }
-      );
+      (res) => {
+        console.log(res);
+        this.lineChartLabels.push('2058');
+        this.demandChartData[0].data.push(6000);
+        console.log(res);
+      }
+    );
   }
+
 }
