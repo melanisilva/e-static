@@ -98,9 +98,9 @@ public class DemandForecastController {
     @PostMapping("/demf")
     public ResponseEntity<DemandForecast>addDemandForecast(@RequestBody DemandForecast demandForecast){
         try{
-            DemandForecast _demandForecast = demandForecastRepository.save(new DemandForecast(demandForecast.getYear(),demandForecast.getPopulation(),,demandForecast.getGDPAgri(),demandForecast.getGDPPerCap(),demandForecast.getDomesticConsumer(),demandForecast.getAvgElectricity(),false));
+            DemandForecast _demandForecast = demandForecastRepository.save(new DemandForecast(demandForecast.getYear(),demandForecast.getPopulation(),demandForecast.getGDPAgri(),demandForecast.getDomesticConsumer(),demandForecast.getGDPPerCap(),demandForecast.getGDPService(),demandForecast.getAvgElectricity()));
             return new ResponseEntity<>(_demandForecast,HttpStatus.CREATED)
-        }catch{
+        }catch(Exception e){
             return new ResponseEntity<>(null,HttpStatus.EXPECTATION_FAILED);
         }
     }
@@ -114,8 +114,9 @@ public class DemandForecastController {
             DemandForecast _demandForecast = demandForecastData.get();
             _demandForecast.setPopulation(demandForecast.getPopulation());
             _demandForecast.setGDPAgri(demandForecast.getGDPAgri());
-            _demandForecast.setGDPPerCap(demandForecast.getGDPPerCap());
             _demandForecast.setDomesticConsumer(demandForecast.getDomesticConsumer());
+            _demandForecast.setGDPPerCap(demandForecast.getGDPPerCap());
+            _demandForecast.setGDPService(demandForecast.getGDPService());
             _demandForecast.setAvgElectricity(demandForecast.getAvgElectricity());
              return new ResponseEntity<>(demandForecastRepository.save(_demandForecast),HttpStatus.OK);
              }else{
