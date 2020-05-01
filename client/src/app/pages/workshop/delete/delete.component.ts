@@ -24,7 +24,11 @@ message = '';
         response => {
           console.log(response);
           console.log("The data was succesfully deleted")
-          alert( 'The data was succesfully deleted');
+          if (response==true){
+            alert(" Data deleted");}
+            else{
+              alert("Year not found");
+            }
         },
         error => {
           console.log(error);
