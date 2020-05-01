@@ -50,6 +50,16 @@ public class DemandForecastController {
         return new ResponseEntity<Prediction>(p, HttpStatus.OK);
     }
 
+    @CrossOrigin("*")
+    @GetMapping(value="/predict50")
+    public ResponseEntity<Prediction> getPrediction50() throws Exception{
+        Prediction p = new Prediction();
+        BigDecimal prediction1 = DatabaseController.predict50();
+        String prediction = prediction1.toString();
+        p.setValue(prediction);
+        return new ResponseEntity<Prediction>(p, HttpStatus.OK);
+    }
+
 //    @PutMapping(value="/demf/{id}")
 //    public ResponseEntity<DemandForecast> updateForecast(@PathVariable("id") String id,
 //                                                     @Valid @RequestBody DemandForecast demandForecast) {
