@@ -28,6 +28,7 @@ message = '';
         },
         error => {
           console.log(error);
+          alert("Year not found");
         });
   }
 
