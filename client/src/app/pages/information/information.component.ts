@@ -14,10 +14,12 @@ export class InformationComponent{
   public infoTitle5 = "";
   public infoTitle6 = "";
   public infoTitle7 = "";
+  public infoTitle8 = "";
   public para1 ="";
   public para2 ="";
   public para3 ="";
   public para4 ="";
+  public para5 ="";
 
 
 
@@ -270,12 +272,23 @@ displayBlock6(){
 displayBlock7(){
   var toggle = document.getElementById("block7");
   this.infoTitle7 = "Electricity Sales (Billed) ";
-  this.para4 = "The total Electricity Sales (billed) in the year 2018 was 14,091 GWh. The corresponding figure in 2017 was 13,431 GWh.  Average daily sale of electricity for the year 2018 was 38.6 GWh/day.Electricity sales for the Domestic category (including Religious Purpose) has increased by 4% representing 33% of the total sales in 2018. When compare the electricity sales by consumer category, the domestic category has exceeded the industrial category from the year 2006 consecutively. Electricity sales for the Industrial category and General Purpose category in 2018 represented 31% and 21% of the total sales respectively. The electricity sales for LECO has increased by 3% representing 12% of the total sales.The total number of consumer accounts (billed) in CEB in 2018 has increased by 161,150 accounts from 6,193,131 in 2017 to 6,354,281 in 2018 showing annual growth of 3%. Monthly average number of new consumer accounts added to the total consumer accounts in 2018 was 13,429 as against 19,078 in the previous year.";
+  this.para4 = "The total Electricity Sales (billed) in the year 2018 was 14,091 GWh. The corresponding figure in 2017 was 13,431 GWh.  Average daily sale of electricity for the year 2018 was 38.6 GWh/day.Electricity sales for the Domestic category (including Religious Purpose) has increased by 4% representing 33% of the total sales in 2018. When compare the electricity sales by consumer category, the domestic category has exceeded the industrial category from the year 2006 consecutively. Electricity sales for the Industrial category and General Purpose category in 2018 represented 31% and 21% of the total sales respectively. The electricity sales for LECO has increased by 3% representing 12% of the total sales.The total number of consumer accounts (billed) in CEB in 2018 has increased by 161,150 accounts from 6,193,131 in 2017 to 6,354,281 in 2018 showing annual growth of 3%. Monthly average number of new consumer accounts added to the total consumer accounts in 2018 was 13,429 as against 19,078 in the previous year.Average daily revenue (billed) from electricity sales in 2018 was Rs.629 Million/day. The average selling price per unit in the year 2018 was 16.29 Rs. /kWh.In the year 2018 the Commercial Sector (General purposes & Hotels) represented the highest percentage (33%) of the total revenue. The percentage share of Domestic category and Industrial category was 27.0% and 27.5% respectively.";
   if(toggle.style.display === "none"){
     toggle.style.display ="block";
   }else{
     toggle.style.display = "none";
   }
   }
+
+  displayBlock8(){
+    var toggle = document.getElementById("block8");
+    this.infoTitle8 = "Fuel Consumption & Fuel Cost ";
+    this.para5 = "The fuel consumption for the CEB thermal (Oil) generation was decreased by 30% from 695 M.Litres in 2017 to 485 M. Litres in 2018. The coal power station used 2,009 M.kg of coal for electricity generation in 2018. The total fuel cost for CEB thermal generation has decreased by 15% from Rs.M. 94,317 in 2017 to Rs.M. 80,133 Number of consumer accounts in Domestic category (including Religious Purposes) has increased by 119,500 from 5,463,059 in 2017 to 5,582,559 in 2018 representing 88% of the total consumer accounts in the CEB. Average monthly unit consumption per consumer in Domestic category (including Religious Purpose) was approximately 69 kWh/month for the year 2018.Number of consumer accounts in Domestic category (including Religious Purposes) has increased by 119,500 from 5,463,059 in 2017 to 5,582,559 in 2018 representing 88% of the total consumer accounts in the CEB. Average monthly unit consumption per consumer in Domestic category (including Religious Purpose) was approximately 69 kWh/month for the year 2018.Number of consumer accounts in Domestic category (including Religious Purposes) has increased by 119,500 from 5,463,059 in 2017 to 5,582,559 in 2018 representing 88% of the total consumer accounts in the CEB. Average monthly unit consumption per consumer in Domestic category (including Religious Purpose) was approximately 69 kWh/month for the year 2018.Number of consumer accounts in Domestic category (including Religious Purposes) has increased by 119,500 from 5,463,059 in 2017 to 5,582,559 in 2018 representing 88% of the total consumer accounts in the CEB. Average monthly unit consumption per consumer in Domestic category (including Religious Purpose) was approximately 69 kWh/month for the year 2018.Number of consumer accounts in Industrial category represented 1.0% of the total number of consumer accounts in 2018. Average monthly electricity consumption per consumer in Industrial category in CEB was 5,714 kWh/month. Number of consumer accounts in General Purpose category represents 11% of the total number of consumer accounts in 2018.According to the tariff rates prevailed during the year, the total revenue (billed) from electricity sales has increased by 5% from Rs. 218,450 Million in 2017 to Rs.229,571 Million in 2018. ";
+    if(toggle.style.display === "none"){
+      toggle.style.display ="block";
+    }else{
+      toggle.style.display = "none";
+    }
+    }
   
 }

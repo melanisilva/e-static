@@ -25,7 +25,9 @@ def databaseConnect():
 
     df = DataFrame([], columns=list('ABCDEFGHI'))
     for post in cursor:
-        df2 = DataFrame([[post["Year"], post["Population"], post["GDP Agriculture"], post["GDP Per Capita"], post["Domestic Consumer Account"], post["Average Electricity Price"], post["Electricity Sales"], post["Electricity Classes"], post["GDP Service"]]], columns=list('ABCDEFGHI'))
+        df2 = DataFrame([[post["Year"], post["Population"], post["GDP Agriculture"], post["GDP Per Capita"],
+                          post["Domestic Consumer Account"], post["Average Electricity Price"],
+                          post["Electricity Sales"], post["Electricity Classes"], post["GDP Service"]]], columns=list('ABCDEFGHI'))
         df = df.append(df2, ignore_index = True)
     return df
 
@@ -97,7 +99,6 @@ def main():
     g = np.dot(b,e)
 
     coeff = np.dot(d,g)
-    
     print(weights)
     for i in range(len(weights)):
        modelFile.write(str(weights[i]))

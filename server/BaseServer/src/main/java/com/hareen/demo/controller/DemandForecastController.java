@@ -10,12 +10,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
-
-
 import javax.validation.Valid;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @RestController // im saying this is my rest controller
 @RequestMapping("/api") // the url to comeinto the controller
@@ -34,7 +32,7 @@ public class DemandForecastController {
     }
 
 
-  
+
 
     @GetMapping(value="/demf/{id}")
     public ResponseEntity<DemandForecast> getForecastById(@PathVariable("id") String id) {
@@ -42,16 +40,24 @@ public class DemandForecastController {
                 .map(demandForecast -> ResponseEntity.ok().body(demandForecast))
                 .orElse(ResponseEntity.notFound().build());
     }
-
-    @GetMapping(value="/data")
-    public ResponseEntity<List> get1(){
+    @CrossOrigin("*")
+    @GetMapping(value="/predict")
+    public ResponseEntity<Prediction> getPrediction() throws Exception{
         Prediction p = new Prediction();
-        p.setId("123");
-        p.setValue("999");
-        System.out.println(p);
-        List<Prediction> veh = new ArrayList<Prediction>();
-        veh.add(p);
-        return new ResponseEntity<List>(veh, HttpStatus.OK);
+        BigDecimal prediction1 = DatabaseController.predict();
+        String prediction = prediction1.toString();
+        p.setValue(prediction);
+        return new ResponseEntity<Prediction>(p, HttpStatus.OK);
+    }
+
+    @CrossOrigin("*")
+    @GetMapping(value="/predict50")
+    public ResponseEntity<Prediction> getPrediction50() throws Exception{
+        Prediction p = new Prediction();
+        BigDecimal prediction1 = DatabaseController.predict50();
+        String prediction = prediction1.toString();
+        p.setValue(prediction);
+        return new ResponseEntity<Prediction>(p, HttpStatus.OK);
     }
 
 //    @PutMapping(value="/demf/{id}")
@@ -64,7 +70,7 @@ public class DemandForecastController {
 ////                    DemandForecast updatedDemandForecast = demandForecastRepository.save(demandForecastData);
 ////                    return ResponseEntity.ok().body(updatedDemandForecast);
 ////                }).orElse(ResponseEntity.notFound().build());
-//  }
+//    }
 
  //   @DeleteMapping(value="/demf/{year}")
    // public ResponseEntity<?> deleteForecast(@PathVariable("year") String year) {
