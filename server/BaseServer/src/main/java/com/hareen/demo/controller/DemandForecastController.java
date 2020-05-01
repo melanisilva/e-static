@@ -94,4 +94,37 @@ public class DemandForecastController {
 //        return addData;
 //    }
 
+
+    @PostMapping("/demf")
+    public ResponseEntity<DemandForecast>addDemandForecast(@RequestBody DemandForecast demandForecast){
+        try{
+            DemandForecast _demandForecast = demandForecastRepository.save(new DemandForecast(demandForecast.getYear(),demandForecast.getPopulation(),,demandForecast.getGDPAgri(),demandForecast.getGDPPerCap(),demandForecast.getDomesticConsumer(),demandForecast.getAvgElectricity(),false));
+            return new ResponseEntity<>(_demandForecast,HttpStatus.CREATED)
+        }catch{
+            return new ResponseEntity<>(null,HttpStatus.EXPECTATION_FAILED);
+        }
+    }
+
+
+    @PutMapping("/demf/{year}")
+    public ResponseEntity <DemandForecast>updatedDemandForecast(@PathVariable("year") int year,@RequestBody DemandForecast demandForecast){
+        Optional<DemandForecast> demandForecastData = demandForecastRepository.findById(year);
+
+        if(demandForecastData.isPresent()){
+            DemandForecast _demandForecast = demandForecastData.get();
+            _demandForecast.setPopulation(demandForecast.getPopulation());
+            _demandForecast.setGDPAgri(demandForecast.getGDPAgri());
+            _demandForecast.setGDPPerCap(demandForecast.getGDPPerCap());
+            _demandForecast.setDomesticConsumer(demandForecast.getDomesticConsumer());
+            _demandForecast.setAvgElectricity(demandForecast.getAvgElectricity());
+             return new ResponseEntity<>(demandForecastRepository.save(_demandForecast),HttpStatus.OK);
+             }else{
+                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+             }
+    }
+
+
+
+
+
 }
