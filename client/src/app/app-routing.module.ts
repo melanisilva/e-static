@@ -7,6 +7,9 @@ import { WorkshopComponent } from './pages/workshop/workshop.component';
 import { StatisticsComponent } from './pages/statistics/statistics.component';
 import { PredictDemandPageComponent } from './pages/statistics/predict-demand-page/predict-demand-page.component';
 import { InformationComponent } from './pages/information/information.component';
+import { DistributionDivisionComponent } from './pages/information/distribution-division/distribution-division.component';
+import { InstalledCapacityComponent } from './pages/information/installed-capacity/installed-capacity.component';
+import { ElectricityGenerationComponent } from './pages/information/electricity-generation/electricity-generation.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { AddComponent } from './pages/workshop/add/add.component';
 import { DeleteComponent } from './pages/workshop/delete/delete.component';
@@ -29,6 +32,15 @@ const routes: Routes = [{
   }, {
     path: 'statistics',
     component: StatisticsComponent
+  }, {
+    path: 'distribution-division',
+    component: DistributionDivisionComponent
+  }, {
+    path: 'installed-capacity',
+    component: InstalledCapacityComponent
+  }, {
+    path: 'electricity-generation',
+    component: ElectricityGenerationComponent
   }, {
     path: 'information',
     component: InformationComponent

@@ -22,15 +22,15 @@ export class DataServiceService {
     );
   }
 // calling api for add
-  addData(adding: object){
-    return this.http.post<any>('http://localhost:8080/add/api/demf',adding).pipe(
+  addData(adding){
+    return this.http.post(baseUrl,adding).pipe(
       retry(1),
       catchError(this.handleError)
     );
   }
 //callimn api for update
-  updateData(updating:object){
-    return this.http.post<any>("http://localhost:8080/update/api/demf",updating).pipe(
+  updateData(year,updating){
+    return this.http.put(`${baseUrl}/${year}`, updating).pipe(
       retry(1),
       catchError(this.handleError)
     );

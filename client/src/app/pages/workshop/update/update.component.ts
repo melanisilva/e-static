@@ -111,11 +111,11 @@ export class UpdateComponent implements OnInit {
           updateAvg:updateAvg
         };
 
-        // this.service.updateData(updating,year).subscribe(
-        //   (data)=>{
-        //     console.log(data);
-        //   }
-        // )
+        this.service.updateData(year,updating).subscribe(
+           (data)=>{
+            console.log(data);
+         }
+        )
       }else{
 
         document.getElementById("Mainerror").innerHTML = this.mainError;
