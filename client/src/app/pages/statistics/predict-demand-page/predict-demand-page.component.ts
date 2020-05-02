@@ -31,8 +31,8 @@ export class PredictDemandPageComponent implements OnInit {
   };
   lineChartColors: Color[] = [
     {
-      borderColor: '#0c7b93',
-      backgroundColor: 'rgba(166,177,225,1)',
+      borderColor: '#fad76e',
+      backgroundColor: '#424874',
     },
   ];
 
@@ -58,8 +58,8 @@ export class PredictDemandPageComponent implements OnInit {
         (res) => {
           console.log(res);
           this.lineChartLabels.push('2038');
-          this.demandChartData[0].data.push(6000);
-          this.demand = res;
+          this.demandChartData[0].data.push(parseInt(res.value, 10));
+          this.demand = parseInt(res.value, 10);
         }
       );
   }

@@ -13,6 +13,7 @@ import {IStatistics} from '../../../models';
 export class PredictDemandFiftyYearsComponent implements OnInit {
 
   private statsDataSubscription: Subscription;
+  public demand: any = {};
   // Demand Chart
   public lineChartLabels: Label[] = [];
   public demandChartData: ChartDataSets[] = [
@@ -31,8 +32,8 @@ export class PredictDemandFiftyYearsComponent implements OnInit {
   };
   lineChartColors: Color[] = [
     {
-      borderColor: '#0c7b93',
-      backgroundColor: 'rgba(166,177,225,1)',
+      borderColor: '#fad76e',
+      backgroundColor: '#424874',
     },
   ];
 
@@ -57,9 +58,17 @@ export class PredictDemandFiftyYearsComponent implements OnInit {
     this.service.getForecastValue20().subscribe(
       (res) => {
         console.log(res);
-        this.lineChartLabels.push('2058');
+        this.lineChartLabels.push('2038');
         this.demandChartData[0].data.push(6000);
+      }
+    );
+
+    this.service.getForecastValue50().subscribe(
+      (res) => {
         console.log(res);
+        this.lineChartLabels.push('2058');
+        this.demandChartData[0].data.push(parseInt(res.value, 10));
+        this.demand = parseInt(res.value, 10);
       }
     );
   }
