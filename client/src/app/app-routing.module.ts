@@ -6,6 +6,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { WorkshopComponent } from './pages/workshop/workshop.component';
 import { StatisticsComponent } from './pages/statistics/statistics.component';
 import { PredictDemandPageComponent } from './pages/statistics/predict-demand-page/predict-demand-page.component';
+import { PredictDemandFiftyYearsComponent } from './pages/statistics/predict-demand-fifty-years/predict-demand-fifty-years.component';
 import { InformationComponent } from './pages/information/information.component';
 import { DistributionDivisionComponent } from './pages/information/distribution-division/distribution-division.component';
 import { InstalledCapacityComponent } from './pages/information/installed-capacity/installed-capacity.component';
@@ -62,6 +63,9 @@ const routes: Routes = [{
 }, {
     path: 'predict-demand',
     component : PredictDemandPageComponent
+}, {
+    path: 'predict-demand-fifty-years',
+    component: PredictDemandFiftyYearsComponent
   }
 ]
 }];
