@@ -6,77 +6,30 @@
         <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </head>
     <body>
+        <div class="mainGrid">
 
-        <header>
-                <h1>{{title}}</h1>
-        </header>
-  
-        <button (click)="displayBlock1()">Deviation Destributions</button>
-        <div id = "block1">
-            <div class = "grid1">
-                <div class="divisions">
-                    <div class="division1" (click)="division1()">Deviation - 1</div>
-                    <div class="division2" (click)="division2()">Deviation - 2</div>
-                    <div class="division3" (click)="division3()">Deviation - 3</div>  
-                    <div class="division4" (click)="division4()">Deviation - 4</div>
+            <div class = 'div1' [routerLink]="['/distribution-division']">
+                <div class="card_icon">
                 </div>
-
-                <div class = "information-display">
-                    <h2>{{infoTitle}}</h2>
-                    <div id = "table1"></div>
+                <div class="card__inner">
+                    <h2>Deviation Destributions</h2>
                 </div>
+            </div>
 
-
-
+            <div class = 'div2' [routerLink]="['/installed-capacity']">
+                <div class="card_icon">
+                </div>
+                <div class="card__inner">
+                    <h2>Installed Capacity</h2>
+                </div>
+            </div>
+            <div class = 'div3' [routerLink]="['/electricity-generation']">
+                <div class="card_icon">
+                </div>
+                <div class="card__inner">
+                    <h2>Electricity Generation</h2>
+                </div>
             </div>
         </div>
-
-        <button (click)="displayBlock2()">The total Installed Capacity Of CEB</button>
-        <div id = "block2">
-            <h2>{{infoTitle2}}</h2>
-            <h1></h1>
-            <div id = "table2"></div>
-        </div>
-
-        <button (click)="displayBlock3()"> The total Installed Capacity Of Private</button>
-        <div id = "block3">
-            <h2>{{infoTitle3}}</h2>
-            <div id = "table3"></div>
-        </div>
-
-        
-        <button (click)="displayBlock4()">Electricity Generation</button>
-        <div id = "block4">
-            <h2>{{infoTitle4}}</h2>
-            <p>{{para1}}</p>
-        </div>
-
-        <button (click)="displayBlock5()">Maximum Demand</button>
-        <div id = "block5">
-            <h2>{{infoTitle5}}</h2>
-            <p>{{para2}}</p>
-        </div>
-
-        <button (click)="displayBlock6()">System Losses </button>
-        <div id = "block6">
-            <h2>{{infoTitle6}}</h2>
-            <p>{{para3}}</p>
-        </div>
-
-        <button (click)="displayBlock7()">Electricity Sales (Billed)</button>
-        <div id = "block7">
-            <h2>{{infoTitle7}}</h2>
-            <p>{{para4}}</p>
-        </div>
-
-        <button (click)="displayBlock8()">Fuel Consumption & Fuel Cost</button>
-        <div id = "block8">
-            <h2>{{infoTitle8}}</h2>
-            <p>{{para5}}</p>
-        </div>
-          
-
-        
-        <footer></footer>
     </body>
 </html>
