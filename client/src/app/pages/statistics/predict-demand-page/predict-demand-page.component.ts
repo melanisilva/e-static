@@ -13,6 +13,7 @@ import { IStatistics } from '../../../models';
 export class PredictDemandPageComponent implements OnInit {
   private statsDataSubscription: Subscription;
   public demand: any = {};
+  public accuracy: any = {};
   // Demand Chart
   public lineChartLabels: Label[] = [];
   public demandChartData: ChartDataSets[] = [
@@ -60,6 +61,7 @@ export class PredictDemandPageComponent implements OnInit {
           this.lineChartLabels.push('2038');
           this.demandChartData[0].data.push(parseInt(res.value, 10));
           this.demand = parseInt(res.value, 10);
+          this.accuracy = parseFloat(res.accurcy);
         }
       );
   }

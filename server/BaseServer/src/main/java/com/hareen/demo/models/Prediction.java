@@ -2,14 +2,14 @@ package com.hareen.demo.models;
 
 public class Prediction {
     private String value;
-    private String accurcy;
+    private String accuracy;
 
     public String getAccurcy() {
-        return accurcy;
+        return accuracy;
     }
 
     public void setAccurcy(String accurcy) {
-        this.accurcy = accurcy;
+        this.accuracy = accurcy;
     }
 
     public String getValue() {
@@ -24,7 +24,7 @@ public class Prediction {
     public String toString() {
         return "Prediction{" +
                 "value='" + value + '\'' +
-                ", accurcy='" + accurcy + '\'' +
+                ", accurcy='" + accuracy + '\'' +
                 '}';
     }
 }
