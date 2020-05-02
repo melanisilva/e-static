@@ -3,35 +3,24 @@
         <title>Electricity GenerationS</title>
     </head>
     <body>
-        
-        <button (click)="displayBlock4()">Electricity Generation</button>
-        <div id = "block4">
-            <h2>{{infoTitle4}}</h2>
-            <p>{{para1}}</p>
+        <h2>Electricity Generation</h2>
+        <div class = "grid1">
+
+
+            <div class="divisions">
+                <div class = "division1" (click)="displayBlock1()">Electricity Generation</div>
+                <div class = "division2" (click)="displayBlock2()">Maximum Demand</div>
+                <div class = "division3" (click)="displayBlock3()">System Losses </div>
+                <div class = "division4" (click)="displayBlock4()">Electricity Sales (Billed)</div>
+                <div class = "division5" (click)="displayBlock5()">Fuel Consumption & Fuel Cost</div>
+            </div>
+
+
+            <div id = "block">
+                <h2 class = "topic">{{infoTitle}}</h2>
+                <div id = "para"></div>
+            </div>
         </div>
 
-        <button (click)="displayBlock5()">Maximum Demand</button>
-        <div id = "block5">
-            <h2>{{infoTitle5}}</h2>
-            <p>{{para2}}</p>
-        </div>
-
-        <button (click)="displayBlock6()">System Losses </button>
-        <div id = "block6">
-            <h2>{{infoTitle6}}</h2>
-            <p>{{para3}}</p>
-        </div>
-
-        <button (click)="displayBlock7()">Electricity Sales (Billed)</button>
-        <div id = "block7">
-            <h2>{{infoTitle7}}</h2>
-            <p>{{para4}}</p>
-        </div>
-
-        <button (click)="displayBlock8()">Fuel Consumption & Fuel Cost</button>
-        <div id = "block8">
-            <h2>{{infoTitle8}}</h2>
-            <p>{{para5}}</p>
-        </div>
     </body>    
 </html>
