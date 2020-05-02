@@ -107,7 +107,7 @@ public class DemandForecastController {
 
 
     @PutMapping("/demf/{year}")
-    public ResponseEntity <DemandForecast>updatedDemandForecast(@PathVariable("year") int year,@RequestBody DemandForecast demandForecast){
+    public ResponseEntity <DemandForecast>updatedDemandForecast(@PathVariable("year") String year,@RequestBody DemandForecast demandForecast){
         Optional<DemandForecast> demandForecastData = demandForecastRepository.findById(year);
 
         if(demandForecastData.isPresent()){
