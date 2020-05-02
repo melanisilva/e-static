@@ -105,7 +105,7 @@ public class DatabaseController {
     }
 
     public static void train() throws Exception{
-        Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"cd ../../data_science && python predict.py\"");
+        Runtime.getRuntime().exec("cmd \"cd ../../data_science && python predict.py\"");
     }
 
 }
