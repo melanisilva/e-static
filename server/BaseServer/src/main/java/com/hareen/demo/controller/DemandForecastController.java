@@ -50,9 +50,11 @@ public class DemandForecastController {
     @GetMapping(value="/predict")
     public ResponseEntity<Prediction> getPrediction() throws Exception{
         Prediction p = new Prediction();
-        BigDecimal prediction1 = DatabaseController.predict();
-        String prediction = prediction1.toString();
+        ArrayList<BigDecimal> prediction1 = DatabaseController.predict();
+        String prediction = prediction1.get(0).toString();
+        String accuracy = prediction1.get(1).toString();
         p.setValue(prediction);
+        p.setAccurcy(accuracy);
         return new ResponseEntity<Prediction>(p, HttpStatus.OK);
     }
 
@@ -60,9 +62,11 @@ public class DemandForecastController {
     @GetMapping(value="/predict50")
     public ResponseEntity<Prediction> getPrediction50() throws Exception{
         Prediction p = new Prediction();
-        BigDecimal prediction1 = DatabaseController.predict50();
-        String prediction = prediction1.toString();
+        ArrayList<BigDecimal> prediction1 = DatabaseController.predict50();
+        String prediction = prediction1.get(0).toString();
+        String accuracy = prediction1.get(1).toString();
         p.setValue(prediction);
+        p.setAccurcy(accuracy);
         return new ResponseEntity<Prediction>(p, HttpStatus.OK);
     }
 

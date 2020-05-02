@@ -23,7 +23,7 @@ def databaseConnect():
     cursor = collection.find({})
     print(type(cursor))    
 
-    df = DataFrame([], columns=list('ABCDEFGHI'))
+\    df = DataFrame([], columns=list('ABCDEFGHI'))
     for post in cursor:
         df2 = DataFrame([[post["Year"], post["Population"], post["GDP Agriculture"], post["GDP Per Capita"],
                           post["Domestic Consumer Account"], post["Average Electricity Price"],
@@ -37,19 +37,19 @@ def main():
     modelFile = open("Model.txt","w+")
 
     #Learning
-    for i in range(1,len(df.index)-4):   #Population
+    for i in range(1,len(df.index)-2):   #Population
        Learn(float(df.loc[i][1]),float(df.loc[i+1][1]),0)
        
-    for i in range(1,len(df.index)-4):  #GDP Per capita
+    for i in range(1,len(df.index)-2):  #GDP Per capita
        Learn(float(df.loc[i][3]),float(df.loc[i+1][3]),1)
 
-    for i in range(1,len(df.index)-4):    #Domestic consumer account  
+    for i in range(1,len(df.index)-2):    #Domestic consumer account  
        Learn(float(df.loc[i][4]),float(df.loc[i+1][4]),2)
 
-    for i in range(1,len(df.index)-4):    #GDP Agriculture  
+    for i in range(1,len(df.index)-2):    #GDP Agriculture  
        Learn(float(df.loc[i][2]),float(df.loc[i+1][2]),3)
 
-    for i in range(1,len(df.index)-4):    #GDP Service  
+    for i in range(1,len(df.index)-2):    #GDP Service  
        Learn(float(df.loc[i][8]),float(df.loc[i+1][8]),4)
 
     #testing
@@ -59,32 +59,32 @@ def main():
     predictedAgriculture = []
     predictedService = []
     #print("Testing population")
-    for i in range(len(df.index)-4,len(df.index)):
+    for i in range(len(df.index)-2,len(df.index)):
         outputP = float(df.loc[i][1])+weights[0]
         predictedPopulation.append(outputP)
 
     #print("GDP Per Capita")
-    for i in range(len(df.index)-4,len(df.index)):
+    for i in range(len(df.index)-2,len(df.index)):
         outputP = float(df.loc[i][3])+weights[1]
         predictedGdp.append(outputP)
 
      #print("Domestic Consumer Acc")
-    for i in range(len(df.index)-4,len(df.index)):
+    for i in range(len(df.index)-2,len(df.index)):
         outputP = float(df.loc[i][4])+weights[2]
         predictedDCA.append(outputP)
 
     #print("Agriculture")
-    for i in range(len(df.index)-4,len(df.index)):
+    for i in range(len(df.index)-2,len(df.index)):
         outputP = float(df.loc[i][2])+weights[3]
         predictedAgriculture.append(outputP)
         
     #print("Service")
-    for i in range(len(df.index)-4,len(df.index)):
+    for i in range(len(df.index)-2,len(df.index)):
         outputP = float(df.loc[i][8])+weights[4]
         predictedService.append(outputP)
 
     a = np.array([[1,float(df.loc[1][1]),float(df.loc[1][3]),float(df.loc[1][4]),float(df.loc[1][2]),float(df.loc[1][8])]])
-    for i in range(2,len(df.index)-4):
+    for i in range(2,len(df.index)-2):
         b = np.array([[1,float(df.loc[i][1]),float(df.loc[i][3]),float(df.loc[i][4]),float(df.loc[i][2]),float(df.loc[i][8])]])
         a = np.append(a,b,axis=0)
 
@@ -92,7 +92,7 @@ def main():
     c = np.dot(b,a)
     d = np.linalg.inv(c)
     e = np.array([[float(df.loc[1][6])]])
-    for i in range(2,len(df.index)-4):
+    for i in range(2,len(df.index)-2):
             f = np.array([[float(df.loc[i][6])]])
             e = np.append(e,f,axis=0)
 
@@ -115,13 +115,12 @@ def main():
     percentage = 0
     theCount = 0
     print(predictedPopulation)
-    for i in range(len(df.index)-4,len(df.index)):
+    for i in range(len(df.index)-2,len(df.index)):
             print(df.loc[i][1],df.loc[i][3],df.loc[i][4],df.loc[i][2],df.loc[i][8])
             #popu gdppercapita Dmc agri serv
             predicted = coeff[0][0]+(float(df.loc[i][1])*coeff[1][0])+(float(df.loc[i][3])*coeff[2][0])+(float(df.loc[i][4])*coeff[3][0])+(float(df.loc[i][2])*coeff[4][0])+(float(df.loc[i][8])*coeff[5][0])
             theCount = theCount + 1
             percentage =  percentage + predicted/float(df.loc[i][6])*100
-            print(predicted)
 
     print("accuracy percentage : ", percentage/(theCount))
     print("done")
