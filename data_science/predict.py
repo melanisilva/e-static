@@ -23,7 +23,7 @@ def databaseConnect():
     cursor = collection.find({})
     print(type(cursor))    
 
-\    df = DataFrame([], columns=list('ABCDEFGHI'))
+    df = DataFrame([], columns=list('ABCDEFGHI'))
     for post in cursor:
         df2 = DataFrame([[post["Year"], post["Population"], post["GDP Agriculture"], post["GDP Per Capita"],
                           post["Domestic Consumer Account"], post["Average Electricity Price"],
