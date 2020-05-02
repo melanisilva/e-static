@@ -41,15 +41,15 @@ export class DistributionDivisionComponent {
 
   division1(){
     this.infoTitle = "Deviation - 1"
-    this.pass = "<table style= 'margin-left: 50px;margin-bottom: 50px;width:70%;border-collapse: collapse;'>"
+    this.pass = "<table style= 'margin-left: 10px;margin-bottom: 50px;width:99%;border-collapse: collapse;'>"
 
       for(var i = 0;i<this.distributdiv1.length;i++){
         for(var j = 1;j<this.distributdiv1[i].length;j++){
           if(j == 1){
-            this.pass += "<tr><th rowspan='"+(this.distributdiv1[i].length-1)+"' style= 'border: 1px solid #ddd; padding-top: 12px;padding-bottom: 12px;padding-left:30px;text-align: left;background-color: black;color: white;'>"+
-            this.distributdiv1[i][j-1]+"</th><td  style= 'border: 1px solid #ddd;padding: 8px;'>"+this.distributdiv1[i][j]+"</td></tr>";
+            this.pass += "<tr><th rowspan='"+(this.distributdiv1[i].length-1)+"' style= 'border: 1px solid #a79fb1; padding-top: 12px;padding-bottom: 12px;padding-left:30px;text-align: left;background-color: #e4dbf3;color: #424874;'>"+
+            this.distributdiv1[i][j-1]+"</th><td style= 'border: 1px solid #a79fb1;padding: 8px;'>"+this.distributdiv1[i][j]+"</td></tr>";
           }else{
-            this.pass +="<tr><td style= 'border: 1px solid #ddd;padding: 8px;'>"+this.distributdiv1[i][j]+"</td></tr>";
+            this.pass +="<tr><td style= 'border: 1px solid #a79fb1;padding: 8px;'>"+this.distributdiv1[i][j]+"</td></tr>";
           }
         }
 
@@ -62,16 +62,17 @@ export class DistributionDivisionComponent {
 
   division2(){
     this.infoTitle = "Deviation - 2"
-    this.pass = "<table style= 'margin-left: 50px;margin-bottom: 50px;width:70%;border-collapse: collapse;'>"
+    this.pass = "<table style= 'margin-left: 10px;margin-bottom: 50px;width:99%;border-collapse: collapse;'>"
+
 
 
       for(var i = 0;i<this.distributdiv2.length;i++){
         for(var j = 1;j<this.distributdiv2[i].length;j++){
           if(j == 1){
-            this.pass += "<tr><th rowspan='"+(this.distributdiv2[i].length-1)+"'  style= 'border: 1px solid #ddd; padding-top: 12px;padding-bottom: 12px;padding-left:30px;text-align: left;background-color: black;color: white;'>"+
-            this.distributdiv2[i][j-1]+"</th><td style= 'border: 1px solid #ddd;padding: 8px;'>"+this.distributdiv2[i][j]+"</td></tr>";
+            this.pass += "<tr><th rowspan='"+(this.distributdiv2[i].length-1)+"'style= 'border: 1px solid #a79fb1; padding-top: 12px;padding-bottom: 12px;padding-left:30px;text-align: left;background-color: #e4dbf3;color: #424874;'>"+
+            this.distributdiv2[i][j-1]+"</th><td style= 'border: 1px solid #a79fb1;padding: 8px;'>"+this.distributdiv2[i][j]+"</td></tr>";
           }else{
-            this.pass +="<tr><td style= 'border: 1px solid #ddd;padding: 8px;'>"+this.distributdiv2[i][j]+"</td></tr>";
+            this.pass +="<tr><td style= 'border: 1px solid #a79fb1;padding: 8px;'>"+this.distributdiv2[i][j]+"</td></tr>";
           }
         }
 
@@ -84,16 +85,17 @@ export class DistributionDivisionComponent {
 
   division3(){
     this.infoTitle = "Deviation - 3"
-    this.pass = "<table style= 'margin-left: 50px;margin-bottom: 50px;width:70%;border-collapse: collapse;'>"
+    this.pass = "<table style= 'margin-left: 10px;margin-bottom: 50px;width:99%;border-collapse: collapse;'>"
+
 
     
       for(var i = 0;i<this.distributdiv3.length;i++){
         for(var j = 1;j<this.distributdiv3[i].length;j++){
           if(j == 1){
-            this.pass += "<tr><th rowspan='"+(this.distributdiv3[i].length-1)+"'  style= 'border: 1px solid #ddd; padding-top: 12px;padding-bottom: 12px;padding-left:30px;text-align: left;background-color: black;color: white;'>"+
-            this.distributdiv3[i][j-1]+"</th><td style= 'border: 1px solid #ddd;padding: 8px;'>"+this.distributdiv3[i][j]+"</td></tr>";
+            this.pass += "<tr><th rowspan='"+(this.distributdiv3[i].length-1)+"'  style= 'border: 1px solid #a79fb1; padding-top: 12px;padding-bottom: 12px;padding-left:30px;text-align: left;background-color: #e4dbf3;color: #424874;'>"+
+            this.distributdiv3[i][j-1]+"</th><td style= 'border: 1px solid #a79fb1;padding: 8px;'>"+this.distributdiv3[i][j]+"</td></tr>";
           }else{
-            this.pass +="<tr><td style= 'border: 1px solid #ddd;padding: 8px;'>"+this.distributdiv3[i][j]+"</td></tr>";
+            this.pass +="<tr><td style= 'border: 1px solid #a79fb1;padding: 8px;'>"+this.distributdiv3[i][j]+"</td></tr>";
           }
         }
 
@@ -105,16 +107,16 @@ export class DistributionDivisionComponent {
   }
     division4(){
         this.infoTitle = "Deviation - 4"
-        this.pass = "<table style= 'margin-left: 50px;margin-bottom: 50px;width:70%;border-collapse: collapse;'>"
+        this.pass = "<table style= 'margin-left: 10px;margin-bottom: 50px;width:99%;border-collapse: collapse;'>"
 
 
         for(var i = 0;i<this.distributdiv4.length;i++){
           for(var j = 1;j<this.distributdiv4[i].length;j++){
             if(j == 1){
-              this.pass += "<tr><th rowspan='"+(this.distributdiv4[i].length-1)+"'  style= 'border: 1px solid #ddd; padding-top: 12px;padding-bottom: 12px;padding-left:30px;text-align: left;background-color: black;color: white;'>"+
-              this.distributdiv4[i][j-1]+"</th><td style= 'border: 1px solid #ddd;padding: 8px;'>"+this.distributdiv4[i][j]+"</td></tr>";
+              this.pass += "<tr><th rowspan='"+(this.distributdiv4[i].length-1)+"'   style= 'border: 1px solid #a79fb1; padding-top: 12px;padding-bottom: 12px;padding-left:30px;text-align: left;background-color: #e4dbf3;color: #424874;'>"+
+              this.distributdiv4[i][j-1]+"</th><td style= 'border: 1px solid #a79fb1;padding: 8px;'>"+this.distributdiv4[i][j]+"</td></tr>";
             }else{
-              this.pass +="<tr><td style= 'border: 1px solid #ddd;padding: 8px;'>"+this.distributdiv4[i][j]+"</td></tr>";
+              this.pass +="<tr><td style= 'border: 1px solid #a79fb1;padding: 8px;'>"+this.distributdiv4[i][j]+"</td></tr>";
             }
           }
     
