@@ -3,6 +3,12 @@ package com.hareen.demo.controller;
 import com.hareen.demo.models.DemandForecast;
 import com.hareen.demo.models.Prediction;
 import com.hareen.demo.repository.DemandForecastRepository;
+import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
+import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoDatabase;
+
+import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
@@ -44,9 +50,11 @@ public class DemandForecastController {
     @GetMapping(value="/predict")
     public ResponseEntity<Prediction> getPrediction() throws Exception{
         Prediction p = new Prediction();
-        BigDecimal prediction1 = DatabaseController.predict();
-        String prediction = prediction1.toString();
+        ArrayList<BigDecimal> prediction1 = DatabaseController.predict();
+        String prediction = prediction1.get(0).toString();
+        String accuracy = prediction1.get(1).toString();
         p.setValue(prediction);
+        p.setAccurcy(accuracy);
         return new ResponseEntity<Prediction>(p, HttpStatus.OK);
     }
 
@@ -54,9 +62,11 @@ public class DemandForecastController {
     @GetMapping(value="/predict50")
     public ResponseEntity<Prediction> getPrediction50() throws Exception{
         Prediction p = new Prediction();
-        BigDecimal prediction1 = DatabaseController.predict50();
-        String prediction = prediction1.toString();
+        ArrayList<BigDecimal> prediction1 = DatabaseController.predict50();
+        String prediction = prediction1.get(0).toString();
+        String accuracy = prediction1.get(1).toString();
         p.setValue(prediction);
+        p.setAccurcy(accuracy);
         return new ResponseEntity<Prediction>(p, HttpStatus.OK);
     }
 
@@ -81,11 +91,7 @@ public class DemandForecastController {
             //   }).orElse(ResponseEntity.notFound().build());
    // }
 
-    @RequestMapping(value = "/demf/{year}", method = RequestMethod.DELETE)
-    public boolean deleteData(@PathVariable("year") String year) {
-       demandForecastRepository.deleteByYear(year);
-        return true;
-    }
+ 
 //
 //    @RequestMapping(value = "/demf/{add}",method = RequsetMethod.POST)
 //    public add add(@RequestBody add addData){
@@ -95,17 +101,18 @@ public class DemandForecastController {
 //    }
 
 
-    @PostMapping("/demf")
-    public ResponseEntity<DemandForecast>addDemandForecast(@RequestBody DemandForecast demandForecast){
-        try{
-            DemandForecast _demandForecast = demandForecastRepository.save(new DemandForecast(demandForecast.getYear(),demandForecast.getPopulation(),demandForecast.getGDPAgri(),demandForecast.getDomesticConsumer(),demandForecast.getGDPPerCap(),demandForecast.getGDPService(),demandForecast.getAvgElectricity()));
-            return new ResponseEntity<>(_demandForecast,HttpStatus.CREATED)
-        }catch(Exception e){
-            return new ResponseEntity<>(null,HttpStatus.EXPECTATION_FAILED);
-        }
-    }
+//    @PostMapping("/demf")
+  //  public ResponseEntity<DemandForecast>addDemandForecast(@RequestBody DemandForecast demandForecast){
+    //    try{
+      //      DemandForecast _demandForecast = demandForecastRepository.save(new DemandForecast(demandForecast.getYear(),demandForecast.getPopulation(),demandForecast.getGDPAgri(),demandForecast.getDomesticConsumer(),demandForecast.getGDPPerCap(),demandForecast.getGDPService(),demandForecast.getAvgElectricity()));
+        //    return new ResponseEntity<>(_demandForecast,HttpStatus.CREATED)
+        //}catch(Exception e){
+        //    return new ResponseEntity<>(null,HttpStatus.EXPECTATION_FAILED);
+        //}
+   // }
 
 
+<<<<<<< HEAD
     @PutMapping("/demf/{year}")
     public ResponseEntity <DemandForecast>updatedDemandForecast(@PathVariable("year") String year,@RequestBody DemandForecast demandForecast){
         Optional<DemandForecast> demandForecastData = demandForecastRepository.findById(year);
@@ -122,10 +129,48 @@ public class DemandForecastController {
              }else{
                  return new ResponseEntity<>(HttpStatus.NOT_FOUND);
              }
+=======
+  //  @PutMapping("/demf/{year}")
+    //public ResponseEntity <DemandForecast>updatedDemandForecast(@PathVariable("year") int year,@RequestBody DemandForecast demandForecast){
+      //  Optional<DemandForecast> demandForecastData = demandForecastRepository.findById(year);
+
+        //if(demandForecastData.isPresent()){
+          //  DemandForecast _demandForecast = demandForecastData.get();
+            //_demandForecast.setPopulation(demandForecast.getPopulation());
+            //_demandForecast.setGDPAgri(demandForecast.getGDPAgri());
+            //_demandForecast.setDomesticConsumer(demandForecast.getDomesticConsumer());
+            //_demandForecast.setGDPPerCap(demandForecast.getGDPPerCap());
+            //_demandForecast.setGDPService(demandForecast.getGDPService());
+            //_demandForecast.setAvgElectricity(demandForecast.getAvgElectricity());
+            // return new ResponseEntity<>(demandForecastRepository.save(_demandForecast),HttpStatus.OK);
+            // }else{
+              //   return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            // }
+    //}
+
+
+    public static boolean activityExists(MongoDatabase db, String year) {
+        MongoClientURI url = new MongoClientURI("mongodb+srv://admin:admin@cluster0-1er6h.mongodb.net/estatic?retryWrites=true&w=majority");
+        MongoClient client = new MongoClient(url);
+        db = client.getDatabase("estatic");
+        FindIterable<org.bson.Document> iterable = db.getCollection("demand_forecast").find(new Document("Year", year));
+        return iterable.first() != null;
+>>>>>>> ee9d96761f9e2999f55e1be40af4687c2ef3d2a9
     }
-
-
-
+      
+      @RequestMapping(value = "/demf/{year}", method = RequestMethod.DELETE)
+      public boolean deleteData(@PathVariable("year") String year) {
+        MongoClientURI url = new MongoClientURI("mongodb+srv://admin:admin@cluster0-1er6h.mongodb.net/estatic?retryWrites=true&w=majority");
+        MongoClient client = new MongoClient(url);
+        MongoDatabase db = client.getDatabase("estatic");
+        if(activityExists(db, year)){
+          demandForecastRepository.deleteByYear(year);
+          return true;
+        }
+        else{
+          return false;
+        }
+      }
 
 
 }

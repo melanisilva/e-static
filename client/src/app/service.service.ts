@@ -46,7 +46,7 @@ export class DataServiceService {
 
     );
   }
-//get data for satistics charts
+// get data for statistics charts
   public getStatistics(): Observable<IStatistics[]> {
     return this.http.get<IStatistics[]>('http://localhost:8080/api/demf').pipe(
       retry(1),
@@ -54,13 +54,21 @@ export class DataServiceService {
     );
   }
 
-//get forecasted data
-public getForecastedValue(){
-  return this.http.get<any>('http://localhost:8080/api/data').pipe(
-    retry(1),
-    catchError(this.handleError)
-  );
-}
+// get forecast data for 20 years
+  public getForecastValue20() {
+    return this.http.get<any>('http://localhost:8080/api/predict').pipe(
+      retry(1),
+      catchError(this.handleError)
+    );
+  }
+
+  // get forecast data for 50 years
+  public getForecastValue50() {
+    return this.http.get<any>('http://localhost:8080/api/predict50').pipe(
+      retry(1),
+      catchError(this.handleError)
+    );
+  }
 
   handleError(error) {
     let errorMessage = '';

@@ -1,13 +1,15 @@
 .main_container{
-  background-color: white;
 }
 .title{
+  margin-bottom: 5%;
   h2 {
     text-align: center;
     font-family: "Montserrat";
   }
 }
+
 .cards {
+  background-color: white;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -29,14 +31,48 @@
   background: white;
 
   &.main{
-    width: 75%;
+    width: 99%;
 
   }
 
   &.sub{
-    width: 40%;
+    width: 99%;
     float: left;
   }
 
 }
+//forecast buttons list styles
 
+.button_grid_tile{
+  align-items: unset;
+  box-shadow: 1px 1px 5px #999;
+  border-radius: 4%;
+  background-color: white;
+}
+
+.card_icon{
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.card_buttons_list {
+  margin-left: 0px;
+  padding-left: 0px;
+
+  .card_button {
+    position: relative;
+    padding: 2%;
+    margin: 3%;
+    box-shadow: 1px 1px 5px #999;
+    border-radius: 3%;
+    background: white;
+    font-size: 0.65vw;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-bottom:8%;
+  }
+  .card_button:hover{
+    box-shadow: -1px 8px 20px 0px rgba(166,177,225,0.7);
+  }
+}

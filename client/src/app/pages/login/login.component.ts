@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ export class LoginComponent implements OnInit {
 
   username: string;
   password: String;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -20,6 +21,7 @@ export class LoginComponent implements OnInit {
   {
     console.log("Welcome")
     alert("log in succesfull");
+    this.router.navigateByUrl('/');
     
   }else{
     alert("invalid");

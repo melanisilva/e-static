@@ -1,60 +1,80 @@
 <div class="main_container">
   <div class="title">
-    <h2 >Statistics</h2>
+    <h2>Statistics</h2>
   </div>
-  <ul class="cards">
-    <!--demand chart-->
-    <li class="card main">
-      <div class="demand-chart-wrapper">
-        <canvas
-          baseChart
-          [datasets]="demandChartData"
-          [labels]="lineChartLabels"
-          [options]="lineChartOptions"
-          [colors]="lineChartColors"
-          [legend]="lineChartLegend"
-          [chartType]="lineChartType"
-          [plugins]="lineChartPlugins"
-        >
-        </canvas>
-      </div>
-    </li>
-    <div>
-      <button mat-button [routerLink]="['/predict-demand']">
-        Predict Future Demand
-      </button>
-    </div>
-    <!--Gdp chart-->
-    <li class="card sub">
-      <div class="gdp-chart-wrapper">
-        <canvas
-          baseChart
-          [datasets]="gdpChartData"
-          [labels]="lineChartLabels"
-          [options]="lineChartOptions"
-          [colors]="lineChartColors"
-          [legend]="lineChartLegend"
-          [chartType]="lineChartType"
-          [plugins]="lineChartPlugins"
-        >
-        </canvas>
-      </div>
-    </li>
-    <!--population chart-->
-    <li class="card sub">
-      <div class="gdp-chart-wrapper">
-        <canvas
-          baseChart
-          [datasets]="populationChartData"
-          [labels]="lineChartLabels"
-          [options]="lineChartOptions"
-          [colors]="lineChartColors"
-          [legend]="lineChartLegend"
-          [chartType]="lineChartType"
-          [plugins]="lineChartPlugins"
-        >
-        </canvas>
-      </div>
-    </li>
-  </ul>
+  <mat-grid-list cols="4" rowHeight="1.4:2">
+    <mat-grid-tile [colspan]="3">
+      <li class="card main">
+        <div class="demand-chart-wrapper">
+          <canvas
+            baseChart
+            [datasets]="demandChartData"
+            [labels]="lineChartLabels"
+            [options]="lineChartOptions"
+            [colors]="lineChartColors"
+            [legend]="lineChartLegend"
+            [chartType]="lineChartType"
+            [plugins]="lineChartPlugins"
+          >
+          </canvas>
+        </div>
+      </li>
+    </mat-grid-tile>
+    <mat-grid-tile class="button_grid_tile">
+      <ul class="card_buttons_list" style="list-style-type:none;">
+        <li>
+          <div class="card_icon">
+            <img src="../../../assets/img/icon1.png" alt="">
+          </div>
+        </li>
+        <li class="card_button" [routerLink]="['/predict-demand']">
+          <div class="card_buttons_title"  >
+            <h5>Forecast Demand - 20 Years</h5>
+          </div>
+        </li>
+
+        <li class="card_button" [routerLink]="['/predict-demand-fifty-years']">
+          <div class="card_buttons_title" >
+            <h5>Forecast Demand - 50 Years </h5>
+          </div>
+        </li>
+      </ul>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="2">
+      <!--Gdp chart-->
+      <li class="card sub">
+        <div class="gdp-chart-wrapper">
+          <canvas
+            baseChart
+            [datasets]="gdpChartData"
+            [labels]="lineChartLabels"
+            [options]="lineChartOptions"
+            [colors]="lineChartColors"
+            [legend]="lineChartLegend"
+            [chartType]="lineChartType"
+            [plugins]="lineChartPlugins"
+          >
+          </canvas>
+        </div>
+      </li>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="2">
+      <!--population chart-->
+      <li class="card sub">
+        <div class="gdp-chart-wrapper">
+          <canvas
+            baseChart
+            [datasets]="populationChartData"
+            [labels]="lineChartLabels"
+            [options]="lineChartOptions"
+            [colors]="lineChartColors"
+            [legend]="lineChartLegend"
+            [chartType]="lineChartType"
+            [plugins]="lineChartPlugins"
+          >
+          </canvas>
+        </div>
+      </li>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>
