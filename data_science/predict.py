@@ -14,6 +14,7 @@ def Learn(input1, output,x) :
    weights[x] = weights[x]+errorRate
 
 def databaseConnect():
+
     client = MongoClient('mongodb+srv://admin:admin@cluster0-1er6h.mongodb.net/estatic?retryWrites=true&w=majority')
     print(type(client))
     db = client.estatic
