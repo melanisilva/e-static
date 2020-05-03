@@ -6,118 +6,70 @@ import { DataServiceService } from 'src/app/service.service';
   selector: 'app-add',
   templateUrl: './add.component.html',
   styleUrls: ['./add.component.scss'],
-  template:'<input [(ngModel)] ="name" type ="text"> {{name}} '
-  
+
 })
 export class AddComponent implements OnInit {
-  public name="";
 
-
-  public mainError = '<p style= "color: red;">an error has occored</p>';
-  public error = '<p style= "color: red;">an error has occored</p>';
-
-
+  DemandForecast = {
+    year: '',
+    population:'',
+    domesticConsumer:'',
+    avgElectricity:'',
+    eSales:'',
+    eClass:'',
+    gdpservice:'',
+    gdpperCap:'',
+    gdpagri:''
+  };
+  submitted = false;
 
   constructor(private service:DataServiceService) { }
 
   ngOnInit(): void {
   }
 
+  saveDF() {
+    const data = {
+      year: this.DemandForecast.year,
+      population: this.DemandForecast.population,
+      domesticConsumer: this.DemandForecast.domesticConsumer,
+      avgElectricity: this.DemandForecast.avgElectricity,
+      eSales: this.DemandForecast.eSales,
+      eClass: this.DemandForecast.eClass,
+      gdpservice: this.DemandForecast.gdpservice,
+      gdpperCap: this.DemandForecast.gdpperCap,
+      gdpagri: this.DemandForecast.gdpagri,
+    };
 
-  errorControl(){
-    var addPopulation = document.getElementById("addPopulation");
-    var addGDP1 = document.getElementById("addGDP1");
-    var addDom = document.getElementById("addDom");
-    var addGDP2 = document.getElementById("addGDP2");
-    var addGDP3 = document.getElementById("addGDP3");
-    var addAvg = document.getElementById("addAvg");
-
-
-    if(typeof(addPopulation) == 'number'){
-
-       if(typeof(addGDP1) == 'number'){
-
-        if(typeof(addDom) == 'number'){
-
-          if(typeof(addGDP2) == 'number'){
-
-            if(typeof(addGDP3) == 'number'){
-
-              if(typeof(addAvg) == 'number'){
-                return true;
-
-
-                }else{
-                  document.getElementById("error6").innerHTML = this.error;
-                  return false;
-                }
-            
+    console.log(this.DemandForecast);
+    this.service.addData(data)
+      .subscribe(
+        response => {
+          console.log(response);
+          this.submitted = true;
+        },
+        error => {
+          console.log(error);
+        });
 
 
-              }else{
-                document.getElementById("error5").innerHTML = this.error;
-                return false;
-              }
-            
 
-
-            }else{
-              document.getElementById("error4").innerHTML = this.error;
-              return false;
-            }
-            
-
-
-          }else{
-            document.getElementById("error3").innerHTML = this.error;
-            return false;
-          }
-
-        }else{
-          document.getElementById("error2").innerHTML = this.error;
-          return false;
-        }
-
-      
-    }else{
-      document.getElementById("error1").innerHTML = this.error;
-      return false;
-    }
   }
 
-
-
-  passAdd(){
-
-    if(this.errorControl){
-      let addYear = (<HTMLInputElement>document.getElementById('addYear')).value;
-      let addPopulation = (<HTMLInputElement>document.getElementById('addPopulation')).value;
-      let addGDP1 = (<HTMLInputElement>document.getElementById('addGDP1')).value;
-      let addDom = (<HTMLInputElement>document.getElementById('addDom')).value;
-      let addGDP2 = (<HTMLInputElement>document.getElementById('addGDP2')).value;
-      let addGDP3 = (<HTMLInputElement>document.getElementById('addGDP3')).value;
-      let addAvg = (<HTMLInputElement>document.getElementById('addAvg')).value;
-  
-      var adding ={
-        addYear:addYear,
-        addPopulation:addPopulation,
-        addGDP1:addGDP1,
-        addDom:addDom,
-        addGDP2:addGDP2,
-        addGDP3:addGDP3,
-        addAvg:addAvg
-      };
-  
-      this.service.addData(adding).subscribe(
-        (data)=>{
-          console.log(data);
-        }
-      )
-    }else{
-      document.getElementById("Mainerror").innerHTML = this.mainError;
-    }
-
-    }
+  newDF() {
+    this.submitted = false;
+    this.DemandForecast = {
+      year: '',
+      population:'',
+      domesticConsumer:'',
+      avgElectricity:'',
+      eSales:'',
+      eClass:'',
+      gdpservice:'',
+      gdpperCap:'',
+      gdpagri:''
+    };
+  }
 
 
 }
