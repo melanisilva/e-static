@@ -3,19 +3,21 @@
     <head>
         <title>Information</title>
         <link rel="stylesheet" href="information.component.scss">
-        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </head>
     <body>
         <div class="mainGrid">
 
+
+            <!-- routed for sub topic Division Destributions -->
             <div class = 'div1' [routerLink]="['/distribution-division']">
                 <div class="card_icon">
                 </div>
                 <div class="card__inner">
-                    <h2>Deviation Destributions</h2>
+                    <h2>Distribution Division</h2>
                 </div>
             </div>
 
+            <!-- routed for sub topic Installed Capacity -->
             <div class = 'div2' [routerLink]="['/installed-capacity']">
                 <div class="card_icon">
                 </div>
@@ -23,6 +25,8 @@
                     <h2>Installed Capacity</h2>
                 </div>
             </div>
+
+            <!-- routed for sub topic Electricity Generation -->
             <div class = 'div3' [routerLink]="['/electricity-generation']">
                 <div class="card_icon">
                 </div>

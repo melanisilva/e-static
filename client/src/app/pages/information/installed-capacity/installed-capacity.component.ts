@@ -13,8 +13,11 @@ export class InstalledCapacityComponent {
   ngOnInit() {
   }
   
+// used to passs in the HTML to the divs
 public pass;
 
+
+  //arrays that hold values of the tables
 public CEBinstalledCapacity = [  
 ["CEB Installed Capacity","2019","Percentage of Total 2019","2018"],
 ["Hydro","1,399","35%","1,391"],
@@ -38,8 +41,10 @@ public PinstalledCapacity =[
 
 displayBlock1(){
 
-
+//display summery
+//topic
   this.infoTitle = "The Total Installed Capacity Summary";
+  //assigning 
   this.pass = "<p>"+
   "The total Installed Capacity decreased by 0.3% (14 MW) when compared with 2017. The installed capacity of Major hydro power plants represented 35% of the total capacity.<br>"+
   "The other Renewable Energy (ORE) plants including Mini Hydro represent 15% (Mini Hydro – 10%, Wind, Solar, Dendro and Biomass represented 5%) as given above. The<br>"+
@@ -54,6 +59,7 @@ displayBlock1(){
   "The installed capacity of Unit No. 2 of Polpitiya Power Station was improved from 37.5 MW to 45 MW after rehabilitation project works, making the installed capacity of<br>"+
   "the plant to 90 MW. The 3 MW CEB owned wind power plant in Hambantota was de-commissioned and dismantled on 23rd October 2018."+
   "</p>"
+  //passing html to the div
   document.getElementById("table").innerHTML = this.pass;
   document.getElementById("table").style.marginLeft = "100px";
 }
@@ -69,9 +75,11 @@ displayBlock1(){
 displayBlock2(){
 
 
-    
+    //assigning 
   this.pass = "<table style= 'margin-left: 10px;margin-bottom: 50px;width:99%;border-collapse: collapse;'>";
 
+
+  //loops will dinamicly genarate the table
   for(var i = 0;i<this.CEBinstalledCapacity.length;i++){
     if(i!=0){
       this.pass += "<tr><td style= 'border: 1px solid #a79fb1;padding: 8px;'>"+this.CEBinstalledCapacity[i][0]+
@@ -90,6 +98,7 @@ displayBlock2(){
   
   this.pass+="</table>"
   this.infoTitle = "The Total Installed Capacity Of CEB";
+  //passing html to the div
   document.getElementById("table").innerHTML = this.pass;
   document.getElementById("table").style.marginLeft = "0px";
 }
@@ -101,9 +110,11 @@ displayBlock2(){
 displayBlock3(){
 
  
-
+//assigning 
   this.pass = "<table style= 'margin-left: 10px;margin-bottom: 50px;width: 99%;border-collapse: collapse;'>";
 
+
+  //loops will dinamicly genarate the table
   for(var i = 0;i<this.PinstalledCapacity.length;i++){
     if(i!=0){
       this.pass += "<tr><td  style= 'border: 1px solid #a79fb1;padding: 8px;'>"+this.PinstalledCapacity[i][0]+
@@ -123,6 +134,7 @@ displayBlock3(){
   
   this.pass+="</table>"
   this.infoTitle = "The Total Installed Capacity Of Private";
+  //passing html to the div
   document.getElementById("table").innerHTML = this.pass;
   document.getElementById("table").style.marginLeft = "0px";
 }

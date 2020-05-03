@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DistributionDivisionComponent {
 
-  public infoTitle = " distribution division";
+  public infoTitle = " Distribution Division";
 
 
   constructor() { }
@@ -15,6 +15,8 @@ export class DistributionDivisionComponent {
   ngOnInit() {
   }
   
+
+  //arrays that hold values of the tables
   public distributdiv1 = [   ["Number of CEB Distribution Areas","17/62"],
                                 ["Number of Consumer Service Centres","57/221"],
                                 ["Distribution Divistion 1","Anuradhapura","Vavuniya","Mannar","Mullativu","Jaffna","Kilinochchi","Puttalam","Kurunegala","Polonnaruwa"]
@@ -34,15 +36,19 @@ export class DistributionDivisionComponent {
                             ]; 
 
  
-
+// used to passs in the HTML to the divs
   public pass;
 
 
 
   division1(){
-    this.infoTitle = "Deviation - 1"
+
+    //topic 
+    this.infoTitle = "Division - 1"
+    //assigning 
     this.pass = "<table style= 'margin-left: 10px;margin-bottom: 50px;width:99%;border-collapse: collapse;'>"
 
+    //loops will dinamicly genarate the table
       for(var i = 0;i<this.distributdiv1.length;i++){
         for(var j = 1;j<this.distributdiv1[i].length;j++){
           if(j == 1){
@@ -56,16 +62,19 @@ export class DistributionDivisionComponent {
     }
 
     this.pass+="</table>"
+    //passing html to the div
     document.getElementById("table1").innerHTML = this.pass;
       
   }
 
   division2(){
-    this.infoTitle = "Deviation - 2"
+    //topic 
+    this.infoTitle = "Division - 2"
+    //assigning 
     this.pass = "<table style= 'margin-left: 10px;margin-bottom: 50px;width:99%;border-collapse: collapse;'>"
 
 
-
+    //loops will dinamicly genarate the table
       for(var i = 0;i<this.distributdiv2.length;i++){
         for(var j = 1;j<this.distributdiv2[i].length;j++){
           if(j == 1){
@@ -79,16 +88,19 @@ export class DistributionDivisionComponent {
     }
 
     this.pass+="</table>"
+    //passing html to the div
     document.getElementById("table1").innerHTML = this.pass;
       
   }
 
   division3(){
-    this.infoTitle = "Deviation - 3"
+    //topic 
+    this.infoTitle = "Division - 3"
+    //assigning 
     this.pass = "<table style= 'margin-left: 10px;margin-bottom: 50px;width:99%;border-collapse: collapse;'>"
 
 
-    
+    //loops will dinamicly genarate the table
       for(var i = 0;i<this.distributdiv3.length;i++){
         for(var j = 1;j<this.distributdiv3[i].length;j++){
           if(j == 1){
@@ -102,14 +114,18 @@ export class DistributionDivisionComponent {
     }
 
     this.pass+="</table>"
+    //passing html to the div
     document.getElementById("table1").innerHTML = this.pass;
       
   }
     division4(){
-        this.infoTitle = "Deviation - 4"
+      //topic 
+        this.infoTitle = "Division - 4"
+        //assigning 
         this.pass = "<table style= 'margin-left: 10px;margin-bottom: 50px;width:99%;border-collapse: collapse;'>"
 
 
+        //loops will dinamicly genarate the table
         for(var i = 0;i<this.distributdiv4.length;i++){
           for(var j = 1;j<this.distributdiv4[i].length;j++){
             if(j == 1){
@@ -123,16 +139,8 @@ export class DistributionDivisionComponent {
       }
     
       this.pass+="</table>"
+      //passing html to the div
       document.getElementById("table1").innerHTML = this.pass;
-    }
-
-    displayBlock1(){
-      var toggle = document.getElementById("block1");
-      if(toggle.style.display === "none"){
-        toggle.style.display ="block";
-      }else{
-        toggle.style.display = "none";
-      }
     }
   
 }
