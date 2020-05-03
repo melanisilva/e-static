@@ -22,10 +22,10 @@ const routes: Routes = [{
   path: '',
   component: DefaultComponent,
   children: [{
-    path: '',
+    path: 'dashboard',
     component: DashboardComponent
   }, {
-    path: 'login',
+    path: '',
     component: LoginComponent
   }, {
     path: 'workshop',

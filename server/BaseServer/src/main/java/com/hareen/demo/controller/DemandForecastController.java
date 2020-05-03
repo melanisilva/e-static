@@ -93,4 +93,25 @@ public class DemandForecastController {
         }
       }
 
+
+    @PostMapping("/demf")
+    public ResponseEntity<DemandForecast> createForecast(@RequestBody DemandForecast df) {
+        try {
+            DemandForecast forecast = demandForecastRepository.save(new DemandForecast(
+                    df.getYear(),
+                    df.getPopulation(),
+                    df.getGDPAgri(),
+                    df.getGDPPerCap(),
+                    df.getDomesticConsumer(),
+                    df.getAvgElectricity(),
+                    df.geteSales(),
+                    df.geteClass(),
+                    df.getGDPService()
+                    ));
+            return new ResponseEntity<>(forecast, HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.EXPECTATION_FAILED);
+        }
+    }
+
 }

@@ -38,8 +38,7 @@ public class DemandForecast {
     public DemandForecast() {
     }
 
-    public DemandForecast(String id, String year, String population, String GDPAgri, String GDPPerCap, String domesticConsumer, String avgElectricity, String eSales, String eClass, String GDPService) {
-        this.id = id;
+    public DemandForecast( String year, String population, String GDPAgri, String GDPPerCap, String domesticConsumer, String avgElectricity, String eSales, String eClass, String GDPService) {
         this.year = year;
         this.population = population;
         this.GDPAgri = GDPAgri;
