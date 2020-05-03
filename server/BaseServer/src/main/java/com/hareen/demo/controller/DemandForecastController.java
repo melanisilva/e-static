@@ -37,8 +37,6 @@ public class DemandForecastController {
         return demandForecastRepository.findAll(sortByCreatedAtDesc);
     }
 
-
-    
     @GetMapping(value="/demf/{id}")
     public ResponseEntity<DemandForecast> getForecastById(@PathVariable("id") String id) {
         return demandForecastRepository.findById(id)
