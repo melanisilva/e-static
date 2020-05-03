@@ -20,46 +20,56 @@
 <div class="container">
   <h1>Enter details to add data  </h1>
   <form >
+
     <div class="form-group">
-      <label for="name">Year *</label>
-      <input type="text" class="form-control" id="addYear" required>
+      <label for="year">Year *</label>
+      <input id="year" type="text" class="form-control" id="addYear" [(ngModel)]="DemandForecast.year" name="year" required>
     </div>
 
     <div class="form-group">
-      <label for="alterEgo">Population *</label>
-      <input type="text" class="form-control" id="addPopulation" ng-model="error1" required>
-
+      <label for="population">Population *</label>
+      <input id="population" type="text" class="form-control" [(ngModel)]="DemandForecast.population " name="population" required>
     </div>
 
     <div class="form-group">
-      <label for="alterEgo">GDP per capita *</label>
-      <input type="text" class="form-control" id="addGDP1" required>
+      <label for="gdpperCap">GDP per capita *</label>
+      <input id="gdpperCap" type="text" class="form-control" [(ngModel)]="DemandForecast.gdpperCap" name="gdpperCap" required>
     </div>
 
     <div class="form-group">
-      <label for="alterEgo">Domestic Consumer Account*</label>
-      <input type="text" class="form-control" id="addDom" required >
+      <label for="domesticConsumer">Domestic Consumer Account*</label>
+      <input id="domesticConsumer" type="text" [(ngModel)]="DemandForecast.domesticConsumer" class="form-control"  name="domesticConsumer" required >
     </div>
 
     <div class="form-group">
-      <label for="alterEgo">GDP for Agriculture Sector*</label>
-      <input type="text" class="form-control" id="addGDP2" required >
+      <label for="gdpagri">GDP for Agriculture Sector*</label>
+      <input id="gdpagri" type="text" class="form-control" [(ngModel)]="DemandForecast.gdpagri" name="gdpagri"  required >
     </div>
 
     <div class="form-group">
-      <label for="alterEgo">GDP for Service Sector *</label>
-      <input type="text" class="form-control" id="addGDP3" required>
+      <label for="gdpservice">GDP for Service Sector *</label>
+      <input id="gdpservice" type="text" class="form-control" [(ngModel)]="DemandForecast.gdpservice" name="gdpservice" required>
     </div>
 
     <div class="form-group">
-      <label for="alterEgo">Average Electricty Price *</label>
-      <input type="text" class="form-control" id="addAvg" required>
+      <label for="avgElectricity">Average Electricty Price *</label>
+      <input id="avgElectricity" type="text" class="form-control" [(ngModel)]="DemandForecast.avgElectricity" name="avgElectricity" required>
+    </div>
+
+    <div class="form-group">
+      <label for="eSales">Electricity Sales *</label>
+      <input id="eSales" type="text" class="form-control" [(ngModel)]="DemandForecast.eSales" name="eSales" required>
+    </div>
+
+    <div class="form-group">
+    <label for="eClass">Electricity Class *</label>
+      <input id="eClass" type="text" class="form-control" [(ngModel)]="DemandForecast.eClass" name="eClass" required>
     </div>
 
 
 
-    <button type="submit" class="btn btn-success button" (click) = "passAdd()">Submit</button>
-    <button type="reset" class="btn btn-success button" value="Reset">Reset</button>
+    <button type="submit" class="btn btn-success button" (click)= "saveDF()">Submit</button>
+    <button type="reset" class="btn btn-success button" (click)="newDF()" value="Reset">Reset</button>
   </form>
 </div>
 
