@@ -7,11 +7,13 @@
         <h2>Installed Capacity</h2>
         <div class = "grid1">
             <div class="divisions">
+                 <!-- buttons for the relavent information-->
                 <div class="division1" (click)="displayBlock1()"> The Total Installed Capacity Summary</div>
                 <div class="division2" (click)="displayBlock2()">The Total Installed Capacity Of CEB</div>
                 <div class="division3" (click)="displayBlock3()"> The Total Installed Capacity Of Private</div>
             </div>
             <div id = "block">
+                <!-- Area of display-->
                 <h2 id = "topic">{{infoTitle}}</h2>
                 <div id = "table"></div>
             </div>

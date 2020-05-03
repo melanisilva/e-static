@@ -12,9 +12,11 @@ export class ElectricityGenerationComponent  {
   ngOnInit(){} 
 
 
+  // used to passs in the HTML to the divs
   public pass;
   
 displayBlock1(){
+  //topic 
   this.infoTitle = "Electricity Generation";
   this.pass = "<p>The total Electricity Generation (Net) (CEB & PPP) during the year 2018 was 15,374 GWh with an increase of 4.8% over the previous year. The average daily generation has increased<br>"+
               "from 40.19 GWh/day in 2017 to 42.12 GWh/day in 2018. The details of Gross Generation, Auxilary Consumption are given in the pages 63-64.The CEB power stations (hydro, thermal,<br>"+
@@ -28,24 +30,30 @@ displayBlock1(){
               "2018 and 3.5% in 2017. The total thermal (CEB and Private) generation was decreased by 17% from 10,148 GWh in 2017 to 8,392 GWh in 2018 representing 55% of the total. The total<br>"+
               "Hydro plants (Except Mini Hydro) were generated 3.9% in (CEB Hydro and ORE Mini Hydro) generation was increased by 59% from 4,004 GWh in 2017 to 6,381 GWh in 2018 representing<br>"+
               "41.5% of the total.</p>";
+  //passing html to the div
   document.getElementById("para").innerHTML = this.pass;
 
 }
 displayBlock2(){
+  //topic 
   this.infoTitle = "Maximum Demand";
   this.pass = "<p>The maximum night Peak Demand from the National Grid in 2018 was 2,616.1 MW. This was recorded on Tuesday, 01st May 2018. The maximum night Peak Demand in 2017<br>"+
               "was 2,523.2 MW. The system maximum day peak demand was recorded as 2,260.2 MW on Friday, 23rd March 2018. The Annual System Load Factor in 2018 was 67.1% whereas<br>"+
               "that of 2017 was 66.4%.(Calculated on Net Generation)in 2018 including Rs.M.38,731 as cost for coal. The average fuel cost per unit for CEB thermal generation <br>"+
               "including coal was Rs.11.06 for the year 2018.</p>";
+  //passing html to the div
   document.getElementById("para").innerHTML = this.pass;
 }
 displayBlock3(){
   this.infoTitle = "System Losses ";
   this.pass = "<p>The System Losses (Excluding Auxiliary Consumption) was calculated as 8.34% in 2018 whereas System Losses in 2017 was 8.45%. This is a 0.11 decreased.The total Auxiliary<br>"+
                 "Consumption in CEB power stations was 612 GWh in 2018 including 57 GWh of the Thermal Oil power station and 536 GWh of the Thermal Coal power station.</p>";
+
+  //passing html to the div
   document.getElementById("para").innerHTML = this.pass;
 }
 displayBlock4(){
+  //topic 
   this.infoTitle = "Electricity Sales (Billed) ";
   this.pass = "<p>The total Electricity Sales (billed) in the year 2018 was 14,091 GWh. The corresponding figure in 2017 was 13,431 GWh.  Average daily sale of electricity for the year 2018<br>"+
               "was 38.6 GWh/day.Electricity sales for the Domestic category (including Religious Purpose) has increased by 4% representing 33% of the total sales in 2018. When compare<br>"+
@@ -56,10 +64,12 @@ displayBlock4(){
               "Average daily revenue (billed) from electricity sales in 2018 was Rs.629 Million/day. The average selling price per unit in the year 2018 was 16.29 Rs. /kWh.In the year 2018 the <br>"+
               "Commercial Sector (General purposes & Hotels) represented the highest percentage (33%) of the total revenue. The percentage share of Domestic category and Industrial<br>"+
               "category was 27.0% and 27.5% respectively.</p>";
+  //passing html to the div
   document.getElementById("para").innerHTML = this.pass;  
 }
 
   displayBlock5(){
+    //topic 
     this.infoTitle = "Fuel Consumption & Fuel Cost ";
     this.pass = "<p>The fuel consumption for the CEB thermal (Oil) generation was decreased by 30% from 695 M.Litres in 2017 to 485 M. Litres in 2018. The coal power station used 2,009 M.kg<br>"+
                 "of coal for electricity generation in 2018. The total fuel cost for CEB thermal generation has decreased by 15% from Rs.M. 94,317 in 2017 to Rs.M. 80,133 Number of consumer<br>"+
@@ -75,6 +85,7 @@ displayBlock4(){
                 "accounts in 2018. Average monthly electricity consumption per consumer in Industrial category in CEB was 5,714 kWh/month. Number of consumer accounts in General Purpose<br>"+
                 "in 2018.According to the tariff rates prevailed during the year, the total revenue (billed) from electricity sales has increased by 5% from Rs. 218,450 Million in 2017 to category<br>"+
                 "represents 11% of the total number of consumer accounts Rs.229,571 Million in 2018. </p>";
+    //passing html to the div
     document.getElementById("para").innerHTML = this.pass;  
   }
 
