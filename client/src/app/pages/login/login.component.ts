@@ -20,8 +20,8 @@ export class LoginComponent implements OnInit {
     if(this.username== "admin" && this.password=="12345")
   {
     console.log("Welcome")
-    alert("log in succesfull");
-    this.router.navigateByUrl('/');
+    //alert("log in succesfull");
+    this.router.navigateByUrl('/dashboard');
     
   }else{
     alert("invalid");
