@@ -6,16 +6,16 @@
 <router-outlet></router-outlet>
 <ul>
   <li> <a routerLink="/add">
-    Add Data 
+    Add Data
   </a></li>
   <li> <a routerLink="/delete">
-    Delete Data 
+    Delete Data
   </a></li>
   <li> <a routerLink="/update">
-    Update Data 
+    Update Data
   </a></li>
   <li> <a routerLink="/view">
-    View Data 
+    View Data
   </a></li>
 </ul>
 <div>
@@ -24,15 +24,15 @@
   <form >
     <div class="form-group">
       <label for="name">Year *</label>
-      <input class="form-control" id="year"  [(ngModel)]="currentTutorial.year" name = "year" required (keypress)="numberOnly($event)">
-        
-      
+      <input class="form-control" id="year"  [(ngModel)]="currentTutorial.year" name = "year" required>
+
+
     </div>
 
     <button type="submit" class="btn btn-success button" (click) = "deleteTutorial()">Submit</button>
     <button type="reset" class="btn btn-success button" value="Reset">Reset</button>
   </form>
-  
+
 </div>
 </div>
 </body>
