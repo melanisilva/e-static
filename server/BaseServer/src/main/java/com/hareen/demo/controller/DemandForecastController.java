@@ -79,12 +79,13 @@ public class DemandForecastController {
     }
 
       @RequestMapping(value = "/demf/{year}", method = RequestMethod.DELETE)
-      public boolean deleteData(@PathVariable("year") String year) {
+      public boolean deleteData(@PathVariable("year") String year) throws Exception {
         MongoClientURI url = new MongoClientURI("mongodb+srv://admin:admin@cluster0-1er6h.mongodb.net/estatic?retryWrites=true&w=majority");
         MongoClient client = new MongoClient(url);
         MongoDatabase db = client.getDatabase("estatic");
         if(activityExists(db, year)){
           demandForecastRepository.deleteByYear(year);
+          DatabaseController.train();
           return true;
         }
         else{
@@ -107,6 +108,7 @@ public class DemandForecastController {
                     df.geteClass(),
                     df.getGDPService()
                     ));
+            DatabaseController.train();
             return new ResponseEntity<>(forecast, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.EXPECTATION_FAILED);
@@ -114,7 +116,7 @@ public class DemandForecastController {
     }
 
     @PutMapping("/demf/{year}")
-    public ResponseEntity<DemandForecast> updateTutorial(@PathVariable("year") String year, @RequestBody DemandForecast df) {
+    public ResponseEntity<DemandForecast> updateTutorial(@PathVariable("year") String year, @RequestBody DemandForecast df) throws Exception {
         Optional<DemandForecast> demandForecastData = demandForecastRepository.findByYear(year);
 
         if (demandForecastData.isPresent()) {
@@ -128,7 +130,7 @@ public class DemandForecastController {
             demandForecast.setAvgElectricity(df.getAvgElectricity());
             demandForecast.seteClass(df.geteClass());
             demandForecast.seteSales(df.geteSales());
-
+            DatabaseController.train();
             return new ResponseEntity<>(demandForecastRepository.save(demandForecast), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
