@@ -11,7 +11,6 @@ import { InformationComponent } from './pages/information/information.component'
 import { DistributionDivisionComponent } from './pages/information/distribution-division/distribution-division.component';
 import { InstalledCapacityComponent } from './pages/information/installed-capacity/installed-capacity.component';
 import { ElectricityGenerationComponent } from './pages/information/electricity-generation/electricity-generation.component';
-import { SettingsComponent } from './pages/settings/settings.component';
 import { AddComponent } from './pages/workshop/add/add.component';
 import { DeleteComponent } from './pages/workshop/delete/delete.component';
 import { UpdateComponent } from './pages/workshop/update/update.component';
@@ -45,9 +44,6 @@ const routes: Routes = [{
   }, {
     path: 'information',
     component: InformationComponent
-  }, {
-    path: 'settings',
-    component : SettingsComponent
   }, {
     path: 'add',
   component : AddComponent
