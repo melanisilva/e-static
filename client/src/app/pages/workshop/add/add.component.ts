@@ -54,8 +54,6 @@ export class AddComponent implements OnInit {
           alert("Data was not added.");
         });
 
-
-
   }
 
   newDF() {

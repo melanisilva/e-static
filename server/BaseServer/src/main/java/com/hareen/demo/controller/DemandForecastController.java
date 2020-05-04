@@ -20,6 +20,7 @@ import javax.validation.Valid;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RestController // im saying this is my rest controller
 @RequestMapping("/api") // the url to comeinto the controller
@@ -109,6 +110,28 @@ public class DemandForecastController {
             return new ResponseEntity<>(forecast, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.EXPECTATION_FAILED);
+        }
+    }
+
+    @PutMapping("/demf/{year}")
+    public ResponseEntity<DemandForecast> updateTutorial(@PathVariable("year") String year, @RequestBody DemandForecast df) {
+        Optional<DemandForecast> demandForecastData = demandForecastRepository.findByYear(year);
+
+        if (demandForecastData.isPresent()) {
+            DemandForecast demandForecast = demandForecastData.get();
+            demandForecast.setYear(df.getYear());
+            demandForecast.setPopulation(df.getPopulation());
+            demandForecast.setGDPAgri(df.getGDPAgri());
+            demandForecast.setGDPPerCap(df.getGDPPerCap());
+            demandForecast.setGDPService(df.getGDPService());
+            demandForecast.setDomesticConsumer(df.getDomesticConsumer());
+            demandForecast.setAvgElectricity(df.getAvgElectricity());
+            demandForecast.seteClass(df.geteClass());
+            demandForecast.seteSales(df.geteSales());
+
+            return new ResponseEntity<>(demandForecastRepository.save(demandForecast), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 

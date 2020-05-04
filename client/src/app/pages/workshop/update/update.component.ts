@@ -100,18 +100,20 @@ export class UpdateComponent implements OnInit {
         let updateGDP2 = (<HTMLInputElement>document.getElementById('updateGDP2')).value;
         let updateGDP3 = (<HTMLInputElement>document.getElementById('updateGDP3')).value;
         let updateAvg = (<HTMLInputElement>document.getElementById('updateAvg')).value;
+        let eSales = (<HTMLInputElement>document.getElementById('eSales')).value;
 
-        var updating ={
+        var DemandForecast ={
           year:year,
-          updatePopulation:updatePopulation,
-          updateGDP1:updateGDP1,
-          updateDom:updateDom,
-          updateGDP2:updateGDP2,
-          updateGDP3:updateGDP3,
-          updateAvg:updateAvg
+          population:updatePopulation,
+          gdpperCap:updateGDP1,
+          domesticConsumer:updateDom,
+          gdpagri:updateGDP2,
+          gdpservice:updateGDP3,
+          avgElectricity:updateAvg,
+          eSales:eSales
         };
 
-        this.service.updateData(year,updating).subscribe(
+        this.service.updateData(year,DemandForecast).subscribe(
            (data)=>{
             console.log(data);
          }
