@@ -1,6 +1,7 @@
 package com.hareen.demo.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.hareen.demo.models.DemandForecast;
 import org.springframework.data.mongodb.repository.MongoRepository;
@@ -12,6 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 public interface DemandForecastRepository extends MongoRepository <DemandForecast,String> {
     
     public boolean deleteByYear();
-    List<DemandForecast> findByYear(String year);
+    Optional<DemandForecast> findByYear(String year);
 	public void deleteByYear(String year);
 }

@@ -23,47 +23,47 @@
 
     <div class="form-group">
       <label for="year">Year *</label>
-      <input id="year" type="text" class="form-control" id="addYear" [(ngModel)]="DemandForecast.year" name="year" required>
+      <input id="year" type="text" class="form-control" id="addYear" [(ngModel)]="DemandForecast.year" name="year" required (keypress)="numberOnly($event)">
     </div>
 
     <div class="form-group">
       <label for="population">Population *</label>
-      <input id="population" type="text" class="form-control" [(ngModel)]="DemandForecast.population " name="population" required>
+      <input id="population" type="text" class="form-control" [(ngModel)]="DemandForecast.population " name="population" required (keypress)="numberOnly($event)">
     </div>
 
     <div class="form-group">
       <label for="gdpperCap">GDP per capita *</label>
-      <input id="gdpperCap" type="text" class="form-control" [(ngModel)]="DemandForecast.gdpperCap" name="gdpperCap" required>
+      <input id="gdpperCap" type="text" class="form-control" [(ngModel)]="DemandForecast.gdpperCap" name="gdpperCap" required (keypress)="numberOnly($event)">
     </div>
 
     <div class="form-group">
       <label for="domesticConsumer">Domestic Consumer Account*</label>
-      <input id="domesticConsumer" type="text" [(ngModel)]="DemandForecast.domesticConsumer" class="form-control"  name="domesticConsumer" required >
+      <input id="domesticConsumer" type="text" [(ngModel)]="DemandForecast.domesticConsumer" class="form-control"  name="domesticConsumer" required (keypress)="numberOnly($event)">
     </div>
 
     <div class="form-group">
       <label for="gdpagri">GDP for Agriculture Sector*</label>
-      <input id="gdpagri" type="text" class="form-control" [(ngModel)]="DemandForecast.gdpagri" name="gdpagri"  required >
+      <input id="gdpagri" type="text" class="form-control" [(ngModel)]="DemandForecast.gdpagri" name="gdpagri"  required (keypress)="numberOnly($event)">
     </div>
 
     <div class="form-group">
       <label for="gdpservice">GDP for Service Sector *</label>
-      <input id="gdpservice" type="text" class="form-control" [(ngModel)]="DemandForecast.gdpservice" name="gdpservice" required>
+      <input id="gdpservice" type="text" class="form-control" [(ngModel)]="DemandForecast.gdpservice" name="gdpservice" required (keypress)="numberOnly($event)">
     </div>
 
     <div class="form-group">
       <label for="avgElectricity">Average Electricty Price *</label>
-      <input id="avgElectricity" type="text" class="form-control" [(ngModel)]="DemandForecast.avgElectricity" name="avgElectricity" required>
+      <input id="avgElectricity" type="text" class="form-control" [(ngModel)]="DemandForecast.avgElectricity" name="avgElectricity" required (keypress)="numberOnly($event)">
     </div>
 
     <div class="form-group">
       <label for="eSales">Electricity Sales *</label>
-      <input id="eSales" type="text" class="form-control" [(ngModel)]="DemandForecast.eSales" name="eSales" required>
+      <input id="eSales" type="text" class="form-control" [(ngModel)]="DemandForecast.eSales" name="eSales" required (keypress)="numberOnly($event)">
     </div>
 
     <div class="form-group">
     <label for="eClass">Electricity Class *</label>
-      <input id="eClass" type="text" class="form-control" [(ngModel)]="DemandForecast.eClass" name="eClass" required>
+      <input id="eClass" type="text" class="form-control" [(ngModel)]="DemandForecast.eClass" name="eClass" required (keypress)="numberOnly($event)">
     </div>
 
 

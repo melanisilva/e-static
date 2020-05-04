@@ -20,7 +20,6 @@ import java.util.ArrayList;
 public class DatabaseController {
     public static ArrayList<BigDecimal> predict() throws Exception{
         ArrayList<BigDecimal> values = new ArrayList<>();
-        train();
         ArrayList<BigDecimal> model = getModel();
         MongoClientURI url = new MongoClientURI("mongodb+srv://admin:admin@cluster0-1er6h.mongodb.net/estatic?retryWrites=true&w=majority");
         MongoClient client = new MongoClient(url);
@@ -57,7 +56,6 @@ public class DatabaseController {
 
     public static ArrayList<BigDecimal> predict50() throws Exception{
         ArrayList<BigDecimal> values = new ArrayList<>();
-        train();
         ArrayList<BigDecimal> model = getModel();
         MongoClientURI url = new MongoClientURI("mongodb+srv://admin:admin@cluster0-1er6h.mongodb.net/estatic?retryWrites=true&w=majority");
         MongoClient client = new MongoClient(url);
@@ -69,6 +67,7 @@ public class DatabaseController {
             s = cursor.next().toString();
         }
         String[] str = s.split(",");
+        System.out.println(str);
         BigDecimal population = new BigDecimal(str[2].substring(16,str[2].length()-1));
         BigDecimal agriculture = new BigDecimal(str[3].substring(21,str[3].length()-1));
         BigDecimal gdpPerCapita = new BigDecimal(str[4].substring(20,str[4].length()-1));
@@ -105,7 +104,7 @@ public class DatabaseController {
     }
 
     public static void train() throws Exception{
-        Runtime.getRuntime().exec("cmd \"cd ../../data_science && python predict.py\"");
+        Runtime.getRuntime().exec("cmd /c start cmd.exe /C \"cd ../../data_science && python predict.py\"");
     }
 
 }

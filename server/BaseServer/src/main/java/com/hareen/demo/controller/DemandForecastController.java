@@ -20,6 +20,7 @@ import javax.validation.Valid;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RestController // im saying this is my rest controller
 @RequestMapping("/api") // the url to comeinto the controller
@@ -37,8 +38,6 @@ public class DemandForecastController {
         return demandForecastRepository.findAll(sortByCreatedAtDesc);
     }
 
-
-    
     @GetMapping(value="/demf/{id}")
     public ResponseEntity<DemandForecast> getForecastById(@PathVariable("id") String id) {
         return demandForecastRepository.findById(id)
@@ -80,12 +79,13 @@ public class DemandForecastController {
     }
 
       @RequestMapping(value = "/demf/{year}", method = RequestMethod.DELETE)
-      public boolean deleteData(@PathVariable("year") String year) {
+      public boolean deleteData(@PathVariable("year") String year) throws Exception {
         MongoClientURI url = new MongoClientURI("mongodb+srv://admin:admin@cluster0-1er6h.mongodb.net/estatic?retryWrites=true&w=majority");
         MongoClient client = new MongoClient(url);
         MongoDatabase db = client.getDatabase("estatic");
         if(activityExists(db, year)){
           demandForecastRepository.deleteByYear(year);
+          DatabaseController.train();
           return true;
         }
         else{
@@ -108,9 +108,32 @@ public class DemandForecastController {
                     df.geteClass(),
                     df.getGDPService()
                     ));
+            DatabaseController.train();
             return new ResponseEntity<>(forecast, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.EXPECTATION_FAILED);
+        }
+    }
+
+    @PutMapping("/demf/{year}")
+    public ResponseEntity<DemandForecast> updateTutorial(@PathVariable("year") String year, @RequestBody DemandForecast df) throws Exception {
+        Optional<DemandForecast> demandForecastData = demandForecastRepository.findByYear(year);
+
+        if (demandForecastData.isPresent()) {
+            DemandForecast demandForecast = demandForecastData.get();
+            demandForecast.setYear(df.getYear());
+            demandForecast.setPopulation(df.getPopulation());
+            demandForecast.setGDPAgri(df.getGDPAgri());
+            demandForecast.setGDPPerCap(df.getGDPPerCap());
+            demandForecast.setGDPService(df.getGDPService());
+            demandForecast.setDomesticConsumer(df.getDomesticConsumer());
+            demandForecast.setAvgElectricity(df.getAvgElectricity());
+            demandForecast.seteClass(df.geteClass());
+            demandForecast.seteSales(df.geteSales());
+            DatabaseController.train();
+            return new ResponseEntity<>(demandForecastRepository.save(demandForecast), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 

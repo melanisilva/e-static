@@ -1,19 +1,19 @@
 input[type=text], select {
     width: 90%;
-    padding: 12px 20px;
-    margin: 10px 180px;
+    padding: 12px px;
+    margin: 10px 130px;
     display: inline-block;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 10px;
     box-sizing: border-box;
   }
   input[type=password], select {
     width: 90%;
-    padding: 12px 20px;
-    margin: 10px 180px;
+    padding: 12px px;
+    margin: 10px 130px;
     display: inline-block;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 10px;
     box-sizing: border-box;
   }
   
@@ -21,8 +21,8 @@ input[type=text], select {
     width: 50%;
     background-color: #46464e;
     color: white;
-    padding: 12px 20px;
-    margin: 8px 220px;
+    padding: px 20px;
+    margin: 8px 170px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
