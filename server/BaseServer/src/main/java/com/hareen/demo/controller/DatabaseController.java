@@ -20,7 +20,6 @@ import java.util.ArrayList;
 public class DatabaseController {
     public static ArrayList<BigDecimal> predict() throws Exception{
         ArrayList<BigDecimal> values = new ArrayList<>();
-        train();
         ArrayList<BigDecimal> model = getModel();
         MongoClientURI url = new MongoClientURI("mongodb+srv://admin:admin@cluster0-1er6h.mongodb.net/estatic?retryWrites=true&w=majority");
         MongoClient client = new MongoClient(url);
@@ -57,7 +56,6 @@ public class DatabaseController {
 
     public static ArrayList<BigDecimal> predict50() throws Exception{
         ArrayList<BigDecimal> values = new ArrayList<>();
-        train();
         ArrayList<BigDecimal> model = getModel();
         MongoClientURI url = new MongoClientURI("mongodb+srv://admin:admin@cluster0-1er6h.mongodb.net/estatic?retryWrites=true&w=majority");
         MongoClient client = new MongoClient(url);
